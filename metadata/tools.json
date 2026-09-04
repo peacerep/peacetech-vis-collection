@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "tools": [
+    {
+      "id": "tool_streamlit",
+      "name": "Streamlit",
+      "type": "front-end-framework",
+      "description": "Python framework for building interactive data apps and dashboards.",
+      "website": "https://streamlit.io",
+      "notes": "Identified from the streamlit.app domain in data.csv row 7's Embed Link."
+    },
+    {
+      "id": "tool_powerbi",
+      "name": "Microsoft Power BI",
+      "type": "commercial-vis-tool",
+      "description": "Business intelligence platform for building interactive dashboards and reports.",
+      "website": "https://powerbi.microsoft.com",
+      "notes": "Identified from the app.powerbi.com domain in data.csv rows 15 and 17's Embed Links."
+    },
+    {
+      "id": "tool_kumu",
+      "name": "Kumu",
+      "type": "commercial-vis-tool",
+      "description": "Web-based platform for visualising relationship maps and network data.",
+      "website": "https://kumu.io",
+      "notes": "Identified from the kumu.io domain in data.csv row 16's Embed Link."
+    },
+    {
+      "id": "tool_github_pages",
+      "name": "GitHub Pages",
+      "type": "hosting-service",
+      "description": "Static site hosting service used to publish visualisations directly from a GitHub repository.",
+      "website": "https://pages.github.com",
+      "notes": "Identified from *.github.io domains across many data.csv rows."
+    },
+    {
+      "id": "tool_render",
+      "name": "Render",
+      "type": "hosting-service",
+      "description": "Cloud hosting platform used to deploy web applications.",
+      "website": "https://render.com",
+      "notes": "Identified from the onrender.com domain across several data.csv rows."
+    },
+    {
+      "id": "tool_vue",
+      "name": "Vue.js",
+      "type": "front-end-framework",
+      "description": "JavaScript framework for building the app structure/UI.",
+      "website": "https://vuejs.org",
+      "notes": "Identified from vue.config.js and package.json dependencies in the actor-network and implementation-narratives-tracker repos."
+    },
+    {
+      "id": "tool_d3",
+      "name": "D3.js",
+      "type": "vis-library",
+      "description": "JavaScript library for data-driven visualisation.",
+      "website": "https://d3js.org",
+      "notes": "Identified in package.json/script includes across several peacerep and tvancisin repos."
+    },
+    {
+      "id": "tool_vite",
+      "name": "Vite",
+      "type": "software_library",
+      "description": "Front-end build tool/dev server.",
+      "website": "https://vitejs.dev",
+      "notes": "Identified from package.json in tvancisin/sudan_mediation."
+    },
+    {
+      "id": "tool_mapbox_gl",
+      "name": "Mapbox GL JS",
+      "type": "gis-tool",
+      "description": "JavaScript library for interactive vector maps.",
+      "website": "https://docs.mapbox.com/mapbox-gl-js/",
+      "notes": "Identified via CDN script includes or package.json across several tvancisin repos."
+    },
+    {
+      "id": "tool_leaflet",
+      "name": "Leaflet",
+      "type": "gis-tool",
+      "description": "JavaScript library for interactive maps.",
+      "website": "https://leafletjs.com",
+      "notes": "Identified via CDN script includes or package.json across several tvancisin repos."
+    },
+    {
+      "id": "tool_turf",
+      "name": "Turf.js",
+      "type": "gis-tool",
+      "description": "JavaScript library for geospatial analysis.",
+      "website": "https://turfjs.org",
+      "notes": "Identified via CDN script includes or package.json across several tvancisin repos."
+    },
+    {
+      "id": "tool_shiny",
+      "name": "Shiny",
+      "type": "front-end-framework",
+      "description": "R web application framework, deployed via shinyapps.io.",
+      "website": "https://shiny.posit.co",
+      "notes": "Identified from the peacerep.shinyapps.io public_link on the PA-X Chart Explorer."
+    },
+    {
+      "id": "tool_svelte",
+      "name": "Svelte",
+      "type": "front-end-framework",
+      "description": "JavaScript framework for building the app structure/UI.",
+      "website": "https://svelte.dev",
+      "notes": "Identified from svelte.config.js and package.json across several tvancisin and peacerep repos."
+    },
+    {
+      "id": "tool_rollup",
+      "name": "Rollup",
+      "type": "software_library",
+      "description": "Front-end build tool/module bundler.",
+      "website": "https://rollupjs.org",
+      "notes": "Identified from rollup.config.js in peacerep/pax_gender."
+    },
+    {
+      "id": "tool_maplibre_gl",
+      "name": "MapLibre GL JS",
+      "type": "gis-tool",
+      "description": "Open-source JavaScript library for interactive vector maps (Mapbox GL JS fork).",
+      "website": "https://maplibre.org",
+      "notes": "Identified via CDN script include in peacerep/ukraine-map."
+    },
+    {
+      "id": "tool_rawgraphs",
+      "name": "RAWGraphs",
+      "type": "design_tool",
+      "description": "Web app for creating custom vector-based visualisations from tabular data, used here to author the initial SVG.",
+      "website": "https://rawgraphs.io",
+      "notes": "Mentioned in the jaumet/Alluvial-of-Mentions README as used to create the initial visualisation."
+    },
+    {
+      "id": "tool_onsvisual_svelte_charts",
+      "name": "@onsvisual/svelte-charts",
+      "type": "vis-library",
+      "description": "Svelte charting component library.",
+      "website": "",
+      "notes": "Identified in package.json in peacerep/pax_gender."
+    },
+    {
+      "id": "tool_onsvisual_svelte_maps",
+      "name": "@onsvisual/svelte-maps",
+      "type": "gis-tool",
+      "description": "Svelte mapping component library.",
+      "website": "",
+      "notes": "Identified in package.json in peacerep/pax_gender."
+    },
+    {
+      "id": "tool_netpanorama",
+      "name": "NetPanorama",
+      "type": "vis-library",
+      "description": "Declarative grammar/template toolkit for constructing, transforming, and visualising networks.",
+      "website": "https://netpanorama.netlify.app/",
+      "notes": "Vendored directly as public/bundle.js (starts with 'var NetPanoramaTemplateViewer') and loaded via a plain <script> tag in public/index.html in peacerep/actor-network — not an npm dependency, so missed by the package.json-only check. public/templates/ (jigsaw.json, list.json, network.json, timeline.json) confirms NetPanorama's own template format. Not present in implementation-narratives-tracker (checked, no bundle.js there)."
+    },
+    {
+      "id": "tool_timelinejs",
+      "name": "TimelineJS",
+      "type": "vis-library",
+      "description": "Knight Lab open-source library for building interactive, embeddable timelines.",
+      "website": "https://timeline.knightlab.com",
+      "notes": "Confirmed via cdn.knightlab.com/libs/timeline3/latest/js/timeline.js loaded on the peaceagreements.org Afghanistan tracker timeline page (vis_timelines_institutional_change)."
+    },
+    {
+      "id": "tool_react",
+      "name": "React",
+      "type": "front-end-framework",
+      "description": "JavaScript library/framework for building the app UI.",
+      "website": "https://react.dev",
+      "notes": "Confirmed via the react-dom bundle and webpackJsonp/Create React App build output on areav3.surge.sh (vis_tile_grid_map_peace_issues). No source_code link exists to check package.json directly; no separate charting/GIS library fingerprint found in the bundled JS, so the tile grid appears to be built with plain CSS/SVG in React components."
+    },
+    {
+      "id": "tool_surge",
+      "name": "Surge",
+      "type": "hosting-service",
+      "description": "Static site hosting/publishing platform.",
+      "website": "https://surge.sh",
+      "notes": "Identified from the *.surge.sh domain (areav3.surge.sh) hosting vis_tile_grid_map_peace_issues."
+    },
+    {
+      "id": "tool_h5p",
+      "name": "H5P",
+      "type": "commercial-vis-tool",
+      "description": "Authoring tool for creating interactive HTML5 content, embedded here via iframe.",
+      "website": "https://h5p.org",
+      "notes": "Confirmed via the h5p-resizer.js include and the iframe embed at html5.is.ed.ac.uk/psrp/wp-admin/admin-ajax.php?action=h5p_embed on peacerep.org/digital-resources/infographics/political-power-sharing/ (vis_pax_key_themes_infographics). H5P itself is open-source, unlike the other tools in this category, but functions the same way here: a hosted, low/no-code platform used to build and embed the content. Self-hosted by University of Edinburgh Information Services (html5.is.ed.ac.uk) rather than a third-party SaaS instance."
+    },
+    {
+      "id": "tool_google_charts",
+      "name": "Google Charts",
+      "type": "vis-library",
+      "description": "Google's charting library/API for rendering interactive charts.",
+      "website": "https://developers.google.com/chart",
+      "notes": "Confirmed via gstatic.com/charts/loader.js and active google.visualization.BarChart/PieChart/DataView calls on peacerep.org/digital-resources/infographics/political-power-sharing/ (vis_pax_key_themes_infographics)."
+    },
+    {
+      "id": "tool_uoe_information_services",
+      "name": "University of Edinburgh Information Services",
+      "type": "hosting-service",
+      "description": "Self-hosted University of Edinburgh infrastructure (as opposed to a third-party commercial host).",
+      "website": "https://www.ed.ac.uk/information-services",
+      "notes": "peaceagreements.org/tracker resolves to a University of Edinburgh IP block (129.215.x.x) and is served by gunicorn rather than a commercial PaaS (vis_pax_tracker, per direct user confirmation). Also hosts the H5P content embedded in vis_pax_key_themes_infographics at html5.is.ed.ac.uk."
+    }
+  ]
+}

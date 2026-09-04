@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "dimensions": [
+    {
+      "id": "time",
+      "label": "Time",
+      "description": "Temporal information such as dates, years, periods, sequences, or durations."
+    },
+    {
+      "id": "space",
+      "label": "Space",
+      "description": "Geographical or spatial information such as country, region, coordinates, or place."
+    },
+    {
+      "id": "activity",
+      "label": "Activity",
+      "description": "Events, actions, processes, agreement types, or activities represented in the visualisation."
+    },
+    {
+      "id": "actor",
+      "label": "Actor",
+      "description": "People, organisations, groups, signatories, participants, or stakeholders."
+    },
+    {
+      "id": "relational_data",
+      "label": "Relational data",
+      "description": "Relationships or connections between entities, such as networks or links."
+    }
+  ],
+  "audiences": [
+    {
+      "id": "domain_researchers",
+      "label": "Domain researchers"
+    },
+    {
+      "id": "vis_researchers",
+      "label": "Visualisation researchers"
+    },
+    {
+      "id": "policy_makers",
+      "label": "Policy makers"
+    },
+    {
+      "id": "students",
+      "label": "Students"
+    },
+    {
+      "id": "educators",
+      "label": "Educators"
+    },
+    {
+      "id": "general_public",
+      "label": "General public"
+    },
+    {
+      "id": "internal_team",
+      "label": "Internal team"
+    }
+  ],
+  "contributor_roles": [
+    {
+      "id": "designer/developer",
+      "label": "Designer/Developer",
+      "description": "Person responsible for visual design, layout, interaction design, visual encoding decisions, or technical implementation."
+    },
+    {
+      "id": "domain_researcher",
+      "label": "Domain researcher",
+      "description": "Person contributing subject expertise, research framing, or interpretation."
+    },
+    {
+      "id": "data_curator",
+      "label": "Data curator",
+      "description": "Person responsible for preparing, cleaning, transforming, or managing data."
+    },
+    {
+      "id": "project_lead",
+      "label": "Project lead",
+      "description": "Person responsible for coordinating the project."
+    },
+    {
+      "id": "advisor",
+      "label": "Advisor",
+      "description": "Person providing feedback or advisory input."
+    },
+    {
+      "id": "research_partner",
+      "label": "Research partner",
+      "description": "Organisation or person contributing as a research partner."
+    }
+  ],
+  "visualisation_types": [
+    {
+      "id": "dashboard",
+      "label": "Dashboard"
+    },
+    {
+      "id": "map",
+      "label": "Map"
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline"
+    },
+    {
+      "id": "network",
+      "label": "Network"
+    },
+    {
+      "id": "bar_chart",
+      "label": "Bar chart"
+    },
+    {
+      "id": "line_chart",
+      "label": "Line chart"
+    },
+    {
+      "id": "scatterplot",
+      "label": "Scatterplot"
+    },
+    {
+      "id": "table",
+      "label": "Table"
+    },
+    {
+      "id": "heatmap",
+      "label": "Heatmap"
+    },
+    {
+      "id": "matrix",
+      "label": "Matrix"
+    },
+    {
+      "id": "tree",
+      "label": "Tree"
+    },
+    {
+      "id": "sankey",
+      "label": "Sankey diagram"
+    },
+    {
+      "id": "area_chart",
+      "label": "Area chart"
+    },
+    {
+      "id": "pie_chart",
+      "label": "Pie chart"
+    },
+    {
+      "id": "beeswarm",
+      "label": "Beeswarm",
+      "description": "Horizontal or vertical dot-strip plot with points offset to avoid overlap."
+    },
+    {
+      "id": "globe",
+      "label": "Globe",
+      "description": "3D interactive globe projection, distinct from a flat 2D map."
+    },
+    {
+      "id": "bubble_chart",
+      "label": "Bubble chart",
+      "description": "Scatter-style plot where a data value is also encoded as circle size."
+    },
+    {
+      "id": "tile_grid_map",
+      "label": "Tile grid map",
+      "description": "Grid of uniform tiles arranged to approximate geography (e.g. one tile per country/state), coloured by value, rather than a geographically accurate map."
+    },
+    {
+      "id": "alluvial",
+      "label": "Alluvial diagram",
+      "description": "Stacked-ribbon flow diagram tracking categorical membership across discrete stages; related to but distinct from a Sankey diagram."
+    },
+    {
+      "id": "dendrogram",
+      "label": "Dendrogram",
+      "description": "Radial or linear hierarchical clustering tree; the source component's own name for this specific tree layout."
+    },
+    {
+      "id": "waffle_chart",
+      "label": "Waffle chart",
+      "description": "Grid of individual unit rectangles/squares, one per data point, coloured/grouped to show proportions."
+    },
+    {
+      "id": "data_physicalisation",
+      "label": "Data physicalisation",
+      "description": "Genre-level: a physical, non-software artefact (e.g. a sculpture, printed object, or installation) used to represent data."
+    },
+    {
+      "id": "upset_plot",
+      "label": "UpSet plot",
+      "description": "Matrix-based visualisation of set intersections/co-occurrence, an alternative to a Venn diagram for many sets."
+    },
+    {
+      "id": "provenance_tree",
+      "label": "Provenance tree",
+      "description": "Bidirectional upstream/downstream tree showing how a piece of data or process came to be, distinct from a simple hierarchical tree."
+    },
+    {
+      "id": "scrollytelling",
+      "label": "Scrollytelling",
+      "description": "Genre-level: a scroll-driven narrative combining multiple chart-level views as the reader scrolls, rather than a single chart type."
+    },
+    {
+      "id": "infographic",
+      "label": "Infographic",
+      "description": "Genre-level: a static or lightly-interactive explainer combining charts, icons, and text on one topic, rather than a cross-filtering dashboard."
+    },
+    {
+      "id": "custom",
+      "label": "Custom"
+    }
+  ],
+  "component_types": [
+    {
+      "id": "view",
+      "label": "View"
+    },
+    {
+      "id": "filter",
+      "label": "Filter"
+    },
+    {
+      "id": "legend",
+      "label": "Legend"
+    },
+    {
+      "id": "search",
+      "label": "Search"
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation"
+    },
+    {
+      "id": "tooltip",
+      "label": "Tooltip"
+    },
+    {
+      "id": "control_panel",
+      "label": "Control panel"
+    },
+    {
+      "id": "annotation",
+      "label": "Annotation"
+    }
+  ],
+  "interaction_types": [
+    {
+      "id": "hover_tooltip",
+      "label": "Hover tooltip"
+    },
+    {
+      "id": "click_select",
+      "label": "Click select"
+    },
+    {
+      "id": "filter",
+      "label": "Filter"
+    },
+    {
+      "id": "search",
+      "label": "Search"
+    },
+    {
+      "id": "sort",
+      "label": "Sort"
+    },
+    {
+      "id": "zoom",
+      "label": "Zoom"
+    },
+    {
+      "id": "pan",
+      "label": "Pan"
+    },
+    {
+      "id": "brush",
+      "label": "Brush"
+    },
+    {
+      "id": "drag",
+      "label": "Drag"
+    },
+    {
+      "id": "range_select",
+      "label": "Range select"
+    },
+    {
+      "id": "linked_highlighting",
+      "label": "Linked highlighting"
+    }
+  ],
+  "link_types": [
+    {
+      "id": "public_link",
+      "label": "Public link",
+      "description": "Live, public-facing page intended for general audiences to view the visualisation."
+    },
+    {
+      "id": "embed_link",
+      "label": "Embedded link",
+      "description": "Standalone or iframe-embeddable link to the visualisation itself, separate from any public-facing page it may be embedded in."
+    },
+    {
+      "id": "source_code",
+      "label": "Source code",
+      "description": "Link to the code base (e.g. GitHub repository) for the visualisation."
+    },
+    {
+      "id": "live_demo",
+      "label": "Live demo"
+    },
+    {
+      "id": "documentation",
+      "label": "Documentation"
+    },
+    {
+      "id": "publication",
+      "label": "Publication"
+    },
+    {
+      "id": "dataset",
+      "label": "Dataset"
+    },
+    {
+      "id": "project_page",
+      "label": "Project page"
+    },
+    {
+      "id": "video_demo",
+      "label": "Video demo"
+    }
+  ],
+  "field_data_types": [
+    {
+      "id": "string",
+      "label": "String"
+    },
+    {
+      "id": "number",
+      "label": "Number"
+    },
+    {
+      "id": "integer",
+      "label": "Integer"
+    },
+    {
+      "id": "boolean",
+      "label": "Boolean"
+    },
+    {
+      "id": "date",
+      "label": "Date"
+    },
+    {
+      "id": "datetime",
+      "label": "Datetime"
+    },
+    {
+      "id": "category",
+      "label": "Category"
+    },
+    {
+      "id": "array",
+      "label": "Array"
+    },
+    {
+      "id": "object",
+      "label": "Object"
+    },
+    {
+      "id": "geometry",
+      "label": "Geometry"
+    },
+    {
+      "id": "url",
+      "label": "URL"
+    }
+  ],
+  "organisation_types": [
+    {
+      "id": "university",
+      "label": "University"
+    },
+    {
+      "id": "research_institute",
+      "label": "Research institute"
+    },
+    {
+      "id": "research_centre",
+      "label": "Research centre"
+    },
+    {
+      "id": "lab",
+      "label": "Lab"
+    },
+    {
+      "id": "government",
+      "label": "Government"
+    },
+    {
+      "id": "ngo",
+      "label": "NGO"
+    },
+    {
+      "id": "company",
+      "label": "Company"
+    },
+    {
+      "id": "funder",
+      "label": "Funder"
+    },
+    {
+      "id": "project",
+      "label": "Project"
+    }
+  ],
+  "tool_types": [
+    {
+      "id": "vis-library",
+      "label": "Visualisation library",
+      "description": "A library for rendering data-driven visualisations, e.g. D3, p5."
+    },
+    {
+      "id": "front-end-framework",
+      "label": "Front-end framework",
+      "description": "A framework the app/UI is built on, e.g. Vue, Svelte, Streamlit."
+    },
+    {
+      "id": "gis-tool",
+      "label": "GIS tool",
+      "description": "A mapping or geospatial-analysis library, e.g. Mapbox GL, Leaflet, Turf."
+    },
+    {
+      "id": "hosting-service",
+      "label": "Hosting service",
+      "description": "A platform used to deploy/host the visualisation, e.g. Render, GitHub Pages."
+    },
+    {
+      "id": "commercial-vis-tool",
+      "label": "Commercial visualisation tool",
+      "description": "A hosted, no-code/low-code commercial platform used to build and embed the visualisation, e.g. Power BI, Kumu."
+    },
+    {
+      "id": "software_library",
+      "label": "Software library"
+    },
+    {
+      "id": "programming_language",
+      "label": "Programming language"
+    },
+    {
+      "id": "notebook_platform",
+      "label": "Notebook platform"
+    },
+    {
+      "id": "database",
+      "label": "Database"
+    },
+    {
+      "id": "design_tool",
+      "label": "Design tool"
+    }
+  ],
+  "status": [
+    {
+      "id": "experimental",
+      "label": "Experimental"
+    },
+    {
+      "id": "outdated",
+      "label": "Outdated"
+    },
+    {
+      "id": "up-to-date",
+      "label": "Up-to-date"
+    },
+    {
+      "id": "archived",
+      "label": "Archived"
+    },
+    {
+      "id": "deprecated",
+      "label": "Deprecated"
+    },
+    {
+      "id": "excluded",
+      "label": "Excluded"
+    }
+  ]
+}

@@ -1,0 +1,6778 @@
+{
+  "schema_version": "1.0",
+  "datasets": [
+    {
+      "id": "dataset_pa_x",
+      "name": "PA-X Peace Agreements Database",
+      "short_name": "PA-X",
+      "description": "Database containing 2257 peace agreements found in more than 170 peace processes between 1990 and the end of 2025, now with 113 new agreements.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/downloads/",
+      "licence": "",
+      "citation": "Bell, C., & Badanjak, S. (2019). Introducing PA-X: A new peace agreement database and dataset. Journal of Peace Research, 56(3), 452-466.",
+      "versions": [
+        {
+          "id": "version_pa_x_v6",
+          "label": "v6",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "From data.csv row 15 ('subset of PA-X that has been expanded')."
+        },
+        {
+          "id": "version_pa_x_v8",
+          "label": "v8",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "'Agreements added' — from data.csv rows 10 and 12. Row 11 ('PA-X V8') also uses this version."
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_pax_con",
+          "name": "Con",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_contp",
+          "name": "Contp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_pp",
+          "name": "PP",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ppname",
+          "name": "PPName",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_reg",
+          "name": "Reg",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_agtid",
+          "name": "AgtId",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ver",
+          "name": "Ver",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_agt",
+          "name": "Agt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_dat",
+          "name": "Dat",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_pax_status",
+          "name": "Status",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_lgt",
+          "name": "Lgt",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_n_characters",
+          "name": "N_characters",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_agtp",
+          "name": "Agtp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_stage",
+          "name": "Stage",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_stagesub",
+          "name": "StageSub",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_part",
+          "name": "Part",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_thrdpart",
+          "name": "ThrdPart",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_othagr",
+          "name": "OthAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_loc1iso",
+          "name": "Loc1ISO",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_loc2iso",
+          "name": "Loc2ISO",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_loc1gwno",
+          "name": "Loc1GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_loc2gwno",
+          "name": "Loc2GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ucdpcon",
+          "name": "UcdpCon",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_ucdpagr",
+          "name": "UcdpAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_pamagr",
+          "name": "PamAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pax_cowwar",
+          "name": "CowWar",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_interim",
+          "name": "Interim",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_pax_imsrc",
+          "name": "ImSrc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gch",
+          "name": "GCh",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_gchrhet",
+          "name": "GChRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gchantid",
+          "name": "GChAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gchsubs",
+          "name": "GChSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gchoth",
+          "name": "GChOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gdis",
+          "name": "GDis",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_gdisrhet",
+          "name": "GDisRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gdisantid",
+          "name": "GDisAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gdissubs",
+          "name": "GDisSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gdisoth",
+          "name": "GDisOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gage",
+          "name": "GAge",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gagerhet",
+          "name": "GAgeRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gageantid",
+          "name": "GAgeAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gagesubs",
+          "name": "GAgeSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gageoth",
+          "name": "GAgeOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gmig",
+          "name": "GMig",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gmigrhet",
+          "name": "GMigRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gmigantid",
+          "name": "GMigAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gmigsubs",
+          "name": "GMigSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gmigoth",
+          "name": "GMigOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gra",
+          "name": "GRa",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_grarhet",
+          "name": "GRaRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_graantid",
+          "name": "GRaAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_grasubs",
+          "name": "GRaSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_graoth",
+          "name": "GRaOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gre",
+          "name": "GRe",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_grerhet",
+          "name": "GReRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_greantid",
+          "name": "GReAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gresubs",
+          "name": "GReSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_greoth",
+          "name": "GReOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gind",
+          "name": "GInd",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_gindrhet",
+          "name": "GIndRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gindantid",
+          "name": "GIndAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gindsubs",
+          "name": "GIndSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gindoth",
+          "name": "GIndOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_goth",
+          "name": "GOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gothrhet",
+          "name": "GOthRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gothantid",
+          "name": "GOthAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gothsubs",
+          "name": "GOthSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gothoth",
+          "name": "GOthOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gref",
+          "name": "GRef",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_grefrhet",
+          "name": "GRefRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_grefsubs",
+          "name": "GRefSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_grefoth",
+          "name": "GRefOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gsoc",
+          "name": "GSoc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gsocrhet",
+          "name": "GSocRhet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gsocantid",
+          "name": "GSocAntid",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gsocsubs",
+          "name": "GSocSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gsocoth",
+          "name": "GSocOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gewom",
+          "name": "GeWom",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_geme",
+          "name": "GeMe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gemenu",
+          "name": "GeMeNu",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gemeoth",
+          "name": "GeMeOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gelgbti",
+          "name": "GeLgbti",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gelgbtipos",
+          "name": "GeLgbtiPos",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gelgbtineg",
+          "name": "GeLgbtiNeg",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_gefa",
+          "name": "GeFa",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stdef",
+          "name": "StDef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stgen",
+          "name": "StGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stcon",
+          "name": "StCon",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stsd",
+          "name": "StSd",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stref",
+          "name": "StRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stsym",
+          "name": "StSym",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stind",
+          "name": "StInd",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stuni",
+          "name": "StUni",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stbor",
+          "name": "StBor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_stxbor",
+          "name": "StXbor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_pol",
+          "name": "Pol",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_polgen",
+          "name": "PolGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_polnewind",
+          "name": "PolNewInd",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_polnewtemp",
+          "name": "PolNewTemp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ele",
+          "name": "Ele",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_eleccomm",
+          "name": "ElecComm",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_polpar",
+          "name": "PolPar",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_polpartrans",
+          "name": "PolParTrans",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_polparoth",
+          "name": "PolParOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_civso",
+          "name": "Civso",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tral",
+          "name": "Tral",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_pubad",
+          "name": "Pubad",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_congen",
+          "name": "ConGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_conren",
+          "name": "ConRen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cons",
+          "name": "Cons",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_polps",
+          "name": "Polps",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ppsge",
+          "name": "PpsGe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsge_st",
+          "name": "PpsGe:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsge_sub",
+          "name": "PpsGe:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsex",
+          "name": "PpsEx",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsex_st",
+          "name": "PpsEx:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsex_sub",
+          "name": "PpsEx:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoro",
+          "name": "PpsOro",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoro_st",
+          "name": "PpsOro:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoro_sub",
+          "name": "PpsOro:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsothpr",
+          "name": "PpsOthPr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsothpr_st",
+          "name": "PpsOthPr:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsothpr_sub",
+          "name": "PpsOthPr:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsvet",
+          "name": "PpsVet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsvet_st",
+          "name": "PpsVet:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsvet_sub",
+          "name": "PpsVet:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsaut",
+          "name": "PpsAut",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsaut_st",
+          "name": "PpsAut:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsaut_sub",
+          "name": "PpsAut:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsint",
+          "name": "PpsInt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsint_st",
+          "name": "PpsInt:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsint_sub",
+          "name": "PpsInt:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoth",
+          "name": "PpsOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoth_st",
+          "name": "PpsOth:St",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ppsoth_sub",
+          "name": "PpsOth:Sub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_terps",
+          "name": "Terps",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tpssub",
+          "name": "TpsSub",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tpsloc",
+          "name": "TpsLoc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tpsaut",
+          "name": "TpsAut",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tpsoth",
+          "name": "TpsOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_eps",
+          "name": "Eps",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_epsres",
+          "name": "EpsRes",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_epsfis",
+          "name": "EpsFis",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_epsoth",
+          "name": "EpsOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_mps",
+          "name": "Mps",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_mpsme",
+          "name": "MpsMe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_mpsjt",
+          "name": "MpsJt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_mpspro",
+          "name": "MpsPro",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_mpsoth",
+          "name": "MpsOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrgen",
+          "name": "HrGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrbor",
+          "name": "HrBor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrtrinc",
+          "name": "HrTrinc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrcp",
+          "name": "HrCp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprlife",
+          "name": "CprLife",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprtort",
+          "name": "CprTort",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cpreq",
+          "name": "CprEq",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprslav",
+          "name": "CprSlav",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprlib",
+          "name": "CprLib",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprdet",
+          "name": "CprDet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprfmov",
+          "name": "CprFmov",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprfspe",
+          "name": "CprFspe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprfass",
+          "name": "CprFass",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprtria",
+          "name": "CprTria",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprpriv",
+          "name": "CprPriv",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprvote",
+          "name": "CprVote",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cprreli",
+          "name": "CprReli",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cproth",
+          "name": "CprOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrsec",
+          "name": "HrSec",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_serprop",
+          "name": "SerProp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_serwork",
+          "name": "SerWork",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_serheal",
+          "name": "SerHeal",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_seredu",
+          "name": "SerEdu",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_serstdl",
+          "name": "SerStdl",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_sershel",
+          "name": "SerShel",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_serss",
+          "name": "SerSs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_sercult",
+          "name": "SerCult",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_seroth",
+          "name": "SerOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrcit",
+          "name": "HrCit",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_citgen",
+          "name": "CitGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_citrights",
+          "name": "CitRights",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_citdef",
+          "name": "CitDef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_citoth",
+          "name": "CitOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrdem",
+          "name": "HrDem",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_hrdet",
+          "name": "HrDet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_med",
+          "name": "Med",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_medgov",
+          "name": "MedGov",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_medsubs",
+          "name": "MedSubs",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_medlog",
+          "name": "MedLog",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_medoth",
+          "name": "MedOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrmob",
+          "name": "HrMob",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_prot",
+          "name": "Prot",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_protciv",
+          "name": "ProtCiv",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_protgrp",
+          "name": "ProtGrp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_prototh",
+          "name": "ProtOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_rioth",
+          "name": "RiOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrni",
+          "name": "HrNi",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_hrnime",
+          "name": "HrNiMe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrnine",
+          "name": "HrNiNe",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrnioth",
+          "name": "HrNiOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hrii",
+          "name": "HrIi",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_hriimon",
+          "name": "HrIiMon",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hriibod",
+          "name": "HrIiBod",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_hriioth",
+          "name": "HrIiOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_juscr",
+          "name": "JusCr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_juscrsp",
+          "name": "JusCrSp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_juscrsys",
+          "name": "JusCrSys",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_juscrpow",
+          "name": "JusCrPow",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_jusem",
+          "name": "JusEm",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_jusju",
+          "name": "JusJu",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_juspri",
+          "name": "JusPri",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_justra",
+          "name": "JusTra",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_dev",
+          "name": "Dev",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_devsoc",
+          "name": "DevSoc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_devhum",
+          "name": "DevHum",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_devinfra",
+          "name": "DevInfra",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_nec",
+          "name": "NEC",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_natres",
+          "name": "NatRes",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_intfu",
+          "name": "IntFu",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_bus",
+          "name": "Bus",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tax",
+          "name": "Tax",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_taxpo",
+          "name": "TaxPo",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_taxref",
+          "name": "TaxRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_taxoth",
+          "name": "TaxOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ban",
+          "name": "Ban",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cenban",
+          "name": "CenBan",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_banpers",
+          "name": "BanPers",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_banint",
+          "name": "BanInt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_banxb",
+          "name": "BanXb",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_laref",
+          "name": "LaRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_larefman",
+          "name": "LaRefMan",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_larefret",
+          "name": "LaRefRet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_larefoth",
+          "name": "LaRefOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lanom",
+          "name": "LaNom",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lach",
+          "name": "LaCH",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lachta",
+          "name": "LaCHTa",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lachit",
+          "name": "LaCHIt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lachpro",
+          "name": "LaCHPro",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_lachoth",
+          "name": "LaCHOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_laen",
+          "name": "LaEn",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_wat",
+          "name": "Wat",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrgua",
+          "name": "SsrGua",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ce",
+          "name": "Ce",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ceprov",
+          "name": "CeProv",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cegen",
+          "name": "CeGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrpol",
+          "name": "SsrPol",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ssrarm",
+          "name": "SsrArm",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ssrddr",
+          "name": "SsrDdr",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ddrdemil",
+          "name": "DdrDemil",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ddrprog",
+          "name": "DdrProg",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrint",
+          "name": "SsrInt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrpsf",
+          "name": "SsrPsf",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrff",
+          "name": "SsrFf",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_cor",
+          "name": "Cor",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_ssrcrocr",
+          "name": "SsrCrOcr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ssrdrugs",
+          "name": "SsrDrugs",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_terr",
+          "name": "Terr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjgen",
+          "name": "TjGen",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjam",
+          "name": "TjAm",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjampro",
+          "name": "TjAmPro",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjsan",
+          "name": "TjSan",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjpower",
+          "name": "TjPower",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjamban",
+          "name": "TjAmBan",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjcou",
+          "name": "TjCou",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjjanc",
+          "name": "TjJaNc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjjaic",
+          "name": "TjJaIc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjmech",
+          "name": "TjMech",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjprire",
+          "name": "TjPrire",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjvet",
+          "name": "TjVet",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjvic",
+          "name": "TjVic",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjmis",
+          "name": "TjMis",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjrep",
+          "name": "TjRep",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pax_tjrsym",
+          "name": "TjRSym",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjrma",
+          "name": "TjRMa",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_tjnr",
+          "name": "TjNR",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_imun",
+          "name": "ImUN",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_imoth",
+          "name": "ImOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_imref",
+          "name": "ImRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_impk",
+          "name": "ImPK",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_pax_ime",
+          "name": "ImE",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        }
+      ],
+      "notes": "Source data uses 'PA-X' and 'PAX' interchangeably (data.csv rows 2, 6, 8 vs rows 10, 11, 12, 15, 32, 36, 37) — treated here as the same dataset. Please confirm this is correct. `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_paa_x",
+      "name": "Peace Agreement Actor Dataset",
+      "short_name": "PAA-X",
+      "description": "Non-local actors/signatories recorded from each peace agreement in PA-X's 'party' and 'third parties' metadata fields; actor IDs may link to UCDP and ACLED actor IDs.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [
+        {
+          "id": "version_paa_x_v7",
+          "label": "v7",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "From data.csv row 13 ('v7 country level')."
+        },
+        {
+          "id": "version_paa_x_subset_v7",
+          "label": "v7 (Practical Third Parties subset)",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "From data.csv rows 5 and 17 ('Practical Third Party Signatories data (PAA-X Subset)')."
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_paax_signatory_id",
+          "name": "signatory_id",
+          "label": "Signatory ID",
+          "description": "Unique identifier for the actor-agreement signatory instance (dyad). Unit of analysis.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_agtid",
+          "name": "AgtId",
+          "label": "Agreement ID",
+          "description": "Unique identifier of the agreement in the PA-X Peace Agreements database.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_agt_name",
+          "name": "agt_name",
+          "label": "Agreement Name",
+          "description": "Name of agreement as per PA-X, and the date agreement signed in brackets.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_signatory_type",
+          "name": "signatory_type",
+          "label": "Signatory Type",
+          "description": "Type of signatory to agreement as defined in PA-X, values can be  party  or  third party  depending on the field the actor was listed.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_practical_third",
+          "name": "practical_third",
+          "label": "Practical Third Party",
+          "description": "If the signatory instance by the actor is a third party to the conflict, this field takes the value of 1.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_condition",
+          "name": "condition",
+          "label": "Condition for Practical Third Party",
+          "description": "If there is a value of 1 for practical third, this denotes the condition under which it was categorised, as defined by the methodology (values can be C1, C2, C3, C4).",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_id",
+          "name": "actor_id",
+          "label": "Actor ID",
+          "description": "Numeric unique identifier of the actor",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_id_paax",
+          "name": "id_paax",
+          "label": "PAA-X ID",
+          "description": "Unique identifier for the actor. Primary key. Denotes type and numeric actor ID seperated by '_'",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_name",
+          "name": "actor_name",
+          "label": "Actor Name",
+          "description": "Primary name of actor",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_type",
+          "name": "actor_type",
+          "label": "Actor Type",
+          "description": "Overall type of actor as per actor definitions. Values can be: 'Country/State', 'Intergovernmental Organization',  'Political Party', 'Entity', 'State Coalition', 'Military',  'Civil Society', 'Armed Organization', 'Umbrella', 'Government/state' and 'Other'.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_sub_type",
+          "name": "sub_type",
+          "label": "Actor Sub-Type",
+          "description": "Actor sub-type which is only applicable to types intergovernmental organisations and civil society. Differentiates regional IGO's, and sub-types of civil society (non-governmental organisations, religious, communities and tribes, government agency and unions).",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_cs_type",
+          "name": "cs_type",
+          "label": "Civil Society Sub-Group",
+          "description": "The sub-type 'non-governmental organisation' is further split into - can take values of 'youth', 'women' or 'other'.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_iso3c",
+          "name": "actor_iso3c",
+          "label": "Actor Country Based ISO Code",
+          "description": "ISO 3 character code of the country where the actor is primarily based.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_country",
+          "name": "actor_country",
+          "label": "Actor Country Based",
+          "description": "Country name of where the actor is primarily based.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_gwno",
+          "name": "actor_gwno",
+          "label": "Actor Country Based GWNO",
+          "description": "Gledistch and Ward digit code of the country where the actor is primarily based.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_actor_region",
+          "name": "actor_region",
+          "label": "Actor Region Based",
+          "description": "Geographic region of the country where the actor is primarily based. If across numerous countries/regions this is left blank.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_abbreviation",
+          "name": "abbreviation",
+          "label": "Actor Abbreviation",
+          "description": "Abbreviation of actor name, if applicable",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_un_type",
+          "name": "un_type",
+          "label": "Type of UN Actor",
+          "description": "Type of UN Office/member, if applicable. Possible values include: United Nations, UN Mission, P5 member or none.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_international",
+          "name": "international",
+          "label": "International Actor",
+          "description": "If the actor is an IGO or NGO that acts internationally, they are labelled with a 1.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_regional",
+          "name": "regional",
+          "label": "Regional Actor",
+          "description": "If the actor is an IGO or NGO that acts regionally, they are labelled with a 1.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_domestic",
+          "name": "domestic",
+          "label": "Domestic Actor",
+          "description": "If the actor is a NGO that acts domestically, they are labelled with a 1.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_women",
+          "name": "women",
+          "label": "Women Actor",
+          "description": "If the actor is representing women, they are labelled with a 1.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_ucdp_id",
+          "name": "ucdp_id",
+          "label": "UCDP Actor ID",
+          "description": "The unique numeric ID of the actor in the UCDP Database: https://ucdp.uu.se/downloads/index.html#actor",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_ucdp_name",
+          "name": "ucdp_name",
+          "label": "UCDP Actor Name",
+          "description": "The name of the actor as recorded in the UCDP Database: https://ucdp.uu.se/downloads/index.html#actor",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_acled_name",
+          "name": "acled_name",
+          "label": "Primary ACLED Name",
+          "description": "The name of the actor as recorded in the ACLED Dataset: https://acleddata.com/",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_acled_other",
+          "name": "acled_other",
+          "label": "Other ACLED Name",
+          "description": "The alternative name(s) of the actor as recorded in the ACLED Dataset: https://acleddata.com/ . If more than one, separated by a pipe (\"|\")",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_con",
+          "name": "Con",
+          "label": "Country/Entity",
+          "description": "The country or jurisdiction in which the conflict originated; where the conflict has a territorial element, the entity to which the conflict relates according to PA-X.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_ppname",
+          "name": "PPName",
+          "label": "Peace Process",
+          "description": "Name of peace process according to PA-X. Defined as a formal attempt to bring political and/or military protagonists of conflict, to some sort of mutual agreement as to how to end the conflict, defined broadly as continuing through phases of mediation, unless formally terminated, or a new process has been formally created, taking context into account.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_reg",
+          "name": "Reg",
+          "label": "Region (Agreement)",
+          "description": "Region in which the conflict addressed by the agreement is taking place, as listed by PA-X. Regions listed: Africa (excl. MENA), Americas, Asia and Pacific, Europe and Eurasia, Middle East and North Africa, Cross-regional, Other.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_dat",
+          "name": "Dat",
+          "label": "Date Signed",
+          "description": "The date on which the agreement was signed or agreed, as recorded by PA-X. Listed in the dataset as YYYY-MM-DD. Sometimes, particularly in the case of  declarations  from meetings, the database contains a date period, e.g. 4-8 May 2015. In this case the last date is entered as the date of the agreement.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_year",
+          "name": "year",
+          "label": "Year Signed",
+          "description": "Year in which the agreement was signed or agreed, extracted from Dat.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_agt_type",
+          "name": "agt_type",
+          "label": "Agreement/conflict Type",
+          "description": "This is a character variable, describing the primary nature of the agreement and conflict as per PA-X Database. Values can be interstate, intrastate or interstate/mixed. Agreements labelled with IntraLocal in PA-X are excluded from this database.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_stage_process",
+          "name": "stage_process",
+          "label": "Stage of Process",
+          "description": "This is a character variable that provides information on the stage of the peace process that the agreement is signed in, assigned by PA-X. Values can be prenegotiation/process;  ceasefire/related; substantive-comprehensive; substantive-partial; implementation/renegotiation; renewal; other.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_part",
+          "name": "Part",
+          "label": "Parties",
+          "description": "Text from the 'Part' field in PA-X. Denotes the parties who directly sign the agreement, often the parties to the conflict and their regional allies. This was coded in  cut and paste  form, exactly as written in the original peace agreement in PA-X.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_thrdpart",
+          "name": "ThrdPart",
+          "label": "Third Parties",
+          "description": "Text from the 'ThrdPart' field in PA-X. Denotes parties who sign the agreement as third parties, such as observers, guarantors, or witnesses; these can be states, international organizations, and nongovernmental organizations.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_loc1iso",
+          "name": "Loc1ISO",
+          "label": "Primary Location ISO",
+          "description": "Indicates primary location of intrastate conflict and returns the ISO country designation. In cases of interstate conflict, indicates one of the two main locations, assigned randomly to location 1 or location 2. The fields are left empty in cases of agreements that deal with multiple locations and conflicts, such as the Great Lakes Agreements.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_loc2iso",
+          "name": "Loc2ISO",
+          "label": "Secondary Location ISO",
+          "description": "Only used in cases of interstate conflict, indicating one of the primary locations of interstate conflict, and returning the ISO country designation. The two main locations are assigned randomly to location 1 or location 2. The exception to this common usage of the variable is in cases of local agreements which deal with cross-border communities and local peace practices therein. In these cases, the locations of both countries are noted, with random assignment of each to Location 1 or Location 2.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_loc1gwno",
+          "name": "Loc1GWNO",
+          "label": "Primary Location GWNO",
+          "description": "Indicates primary location of intrastate conflict and returns the Gleditsch-Ward country code. In cases of interstate conflict, indicates one of the two main locations, assigned randomly to location 1 or location 2. The fields are left empty in cases of agreements that deal with multiple locations and conflicts, such as the Great Lakes Agreements. For more on GWNO codes, see: Gleditsch, Kristian S., and Michael D. Ward. 1999.  Interstate System Membership: A Revised List of the Independent States since 1816.  International Interactions 25(4): 393 413.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_loc2gwno",
+          "name": "Loc2GWNO",
+          "label": "Secondary Location GWNO",
+          "description": "Only used in cases of interstate conflict, indicating one of the primary locations of interstate conflict, and returning the Gleditsch-Ward country code. The two main locations are assigned randomly to location 1 or location 2. The exception to this common usage of the variable is in cases of local agreements which deal with crossborder communities and local peace practices therein. In these cases, the locations of both countries are noted, with random assignment of each to Location 1 or Location 2. For more on GWNO codes, see: Gleditsch, Kristian S., and Michael D. Ward. 1999.  Interstate System Membership: A Revised List of the Independent States since 1816.  International Interactions 25(4): 393 413.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_ucdpcon",
+          "name": "UcdpCon",
+          "label": "UCDP Conflict ID",
+          "description": "Uppsala Conflict Data Program Conflict ID. Note that the Conflict IDs applied are from 2017 and onward, after the UCDP introduced a new system of conflict designation. It is possible that this field is empty this happens in cases of conflicts not registered in the UCDP conflict data. For more information on the UCDP data and conflict codes and definition see: Pettersson, Ther se, and Kristine Eck. 2018.  Organized Violence, 1989 2017.  Journal of Peace Research 55(4): 535 47. Also see http://ucdp.uu.se/downloads/",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_ucdpagr",
+          "name": "UcdpAgr",
+          "label": "UCDP Agreement ID",
+          "description": "Uppsala Conflict Data Program peace agreement ID. For more information on these data, see H gbladh, Stina. 2011.  Peace Agreements 1975-2011 - Updating the UCDP Peace Agreement Dataset Peace in the UCDP Dataset.  States in Armed Conflict 2011: Uppsala University: Department of Peace and Conflict Research Report 99: 39 56",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_pamagr",
+          "name": "PamAgr",
+          "label": "PAM Agreement ID",
+          "description": "Kroc Institute s Peace Accords Matrix agreement ID. It is possible that this field is empty   this happens in cases of agreements not part of the PAM data. The PAM focuses on comprehensive agreements only, so the bulk of PA-X documents do not have the PAM agreement code. For more information on PAM, see: Joshi, Madhav, Jason Michael Quinn, and Patrick M Regan. 2015.  Annualized Implementation Data on Comprehensive Intrastate Peace Accords, 1989 2012.  Journal of Peace Research 52(4): 551 62. http://journals.sagepub.com/doi/10.1177/0022343314567486.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_cowwar",
+          "name": "CowWar",
+          "label": "COW War Number",
+          "description": "Correlates of War: War Number. Many PA-X agreements come from peace processes in conflicts that do not meet the high battle-related deaths criterion of the Correlates of War project, so the war numbers are not provided for many of the agreements. For more information on the Correlates of War war list, see: Sarkees, Meredith Reid, and Frank Whelon. Wayman. 2010. Resort to War : A Data Guide to Inter-State, Extra-State, Intra-State, and Non-State Wars, 1816-2007. Washington D.C.: CQ Press.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_pax_hyperlink",
+          "name": "PAX_Hyperlink",
+          "label": "PA-X Agreement URL",
+          "description": "URL link to the coding page of the agreement on PA-X Database.",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paax_pdf_hyperlink",
+          "name": "PDF_Hyperlink",
+          "label": "PDF Full Text URL",
+          "description": "URL link to the translated PDF of the agreement text on PA-X Database.",
+          "data_type": "string"
+        }
+      ],
+      "notes": "data.csv row 7 also notes a 'prototype' stage using v7 PAA-X — treated as a status note rather than a distinct version. Field label/description filled directly from the 'variables' codebook sheet in paax_v0.3.xlsx (all 45 fields matched, no guessing needed)."
+    },
+    {
+      "id": "dataset_pa_x_local",
+      "name": "PA-X Local",
+      "short_name": "PA-X Local",
+      "description": "PA-X agreements that deal with local issues, involve local actors, or deal with forms of local/communal violent conflict; 396 local agreements with global coverage.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/agreements/lsearch",
+      "licence": "",
+      "citation": "Bell, Christine, Sanja Badanjak, Laura Wise, Monalisa Adhikari, Juline Beaujouan, Margherita Distrotti, Tim Epple, Robert Forster, Robert Wilson, and Laura Wise (2024). PA-X Local Peace Agreements Database and Dataset, Version 6.",
+      "versions": [
+        {
+          "id": "version_pa_x_local_v7",
+          "label": "v7",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "From data.csv row 3."
+        }
+      ],
+      "fields": [
+        {
+          "id": "f_paxlocal_con",
+          "name": "Con",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_contp",
+          "name": "Contp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_pp",
+          "name": "PP",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_ppname",
+          "name": "PPName",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_reg",
+          "name": "Reg",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_agtid",
+          "name": "AgtId",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_ver",
+          "name": "Ver",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_agt",
+          "name": "Agt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_dat",
+          "name": "Dat",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_paxlocal_status",
+          "name": "Status",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_lgt",
+          "name": "Lgt",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_n_characters",
+          "name": "N_characters",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_agtp",
+          "name": "Agtp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_stage",
+          "name": "Stage",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_stagesub",
+          "name": "StageSub",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_part",
+          "name": "Part",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_thrdpart",
+          "name": "ThrdPart",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_othagr",
+          "name": "OthAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_loc1iso",
+          "name": "Loc1ISO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_loc2iso",
+          "name": "Loc2ISO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_loc1gwno",
+          "name": "Loc1GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_loc2gwno",
+          "name": "Loc2GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxlocal_ucdpcon",
+          "name": "UcdpCon",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_ucdpagr",
+          "name": "UcdpAgr",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_pamagr",
+          "name": "PamAgr",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_cowwar",
+          "name": "CowWar",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_interim",
+          "name": "Interim",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_imsrc",
+          "name": "ImSrc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_pt_fsp",
+          "name": "PT_FSP",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_pt_isp",
+          "name": "PT_ISP",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_pt_ipp",
+          "name": "PT_IPP",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_pt_ute",
+          "name": "PT_UTE",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_linknatprocess",
+          "name": "LinkNatProcess",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_localename",
+          "name": "LocaleName",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxlocal_localenat",
+          "name": "LocaleNat",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_latdec",
+          "name": "LatDec",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_paxlocal_longdec",
+          "name": "LongDec",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_paxlocal_mediator",
+          "name": "Mediator",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxlocal_medcentstate",
+          "name": "MedCentState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medregstate",
+          "name": "MedRegState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medlocstate",
+          "name": "MedLocState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medlocarmed",
+          "name": "MedLocArmed",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medredomeld",
+          "name": "MedReDomEld",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medloccivsoc",
+          "name": "MedLocCivSoc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medintactor",
+          "name": "MedIntActor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_medotherunclear",
+          "name": "MedOtherUnclear",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_centstate",
+          "name": "CentState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_regstate",
+          "name": "RegState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_locstate",
+          "name": "LocState",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_locarmedgr",
+          "name": "LocArmedGr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_redomeld",
+          "name": "ReDomEld",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_loccomsoc",
+          "name": "LocComSoc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_intactor",
+          "name": "IntActor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_othactor",
+          "name": "OthActor",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_ritpray",
+          "name": "RitPray",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_grieve",
+          "name": "Grieve",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_cattle",
+          "name": "Cattle",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxlocal_cover",
+          "name": "Cover",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        }
+      ],
+      "notes": "`fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_glo_pad",
+      "name": "GLO-PAD",
+      "short_name": "GLO-PAD",
+      "description": "Pilot mediation-events dataset covering third-party mediation activity in the South Sudan peace process only; the initial single-country trial that MEND was later built out from.",
+      "publisher_organisation_id": "",
+      "source_url": "https://github.com/tvancisin/sudan_mediation",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_glopad_year",
+          "name": "year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_glopad_mediation_id",
+          "name": "mediation_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_lateral",
+          "name": "lateral",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_negotiation_id",
+          "name": "negotiation_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_conflict_locale",
+          "name": "conflict_locale",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_conflict_sub_locale",
+          "name": "conflict_sub_locale",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_locale_gleditsch_id",
+          "name": "locale_Gleditsch ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_third_party_type",
+          "name": "third_party_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_third_party_locale",
+          "name": "third_party_locale",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_third_party",
+          "name": "third_party",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_third_party_gleditsch_id",
+          "name": "third_party_Gleditsch ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_location_of_neogitations",
+          "name": "location_of_neogitations",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_negotiation_location_gleditsch_id",
+          "name": "negotiation_location_Gleditsch_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_negotiation_type",
+          "name": "negotiation_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_leading_actor",
+          "name": "leading_actor",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_leading_actor_2",
+          "name": "leading_actor_2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_leading_actor_3",
+          "name": "leading_actor_3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_good_offices",
+          "name": "good_offices",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_mediation",
+          "name": "mediation",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_hosting_talks",
+          "name": "hosting_talks",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_negotiating_and_drafting",
+          "name": "negotiating_and_drafting",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_manipulating",
+          "name": "manipulating",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_humanitarian",
+          "name": "humanitarian",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_witness_to_agreement",
+          "name": "witness_to_agreement",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_other",
+          "name": "other",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_agreement",
+          "name": "agreement",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_peace_agreement",
+          "name": "peace_agreement",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_ceasfire_agreement",
+          "name": "ceasfire_agreement",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_glopad_agreement_name",
+          "name": "agreement_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_notes_1",
+          "name": "notes_1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_source_1",
+          "name": "source_1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_note_2",
+          "name": "note_2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_source_2",
+          "name": "source_2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_note_3",
+          "name": "note_3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_source_3",
+          "name": "source_3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_note_4",
+          "name": "note_4",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_source_4",
+          "name": "source_4",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_note_5",
+          "name": "note_5",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_glopad_source_5",
+          "name": "source_5",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Fields extracted from tvancisin/sudan_mediation repo's public/data/sudan_update.csv (trailing empty spreadsheet columns 'Column1'..'Column9' dropped). data_type inferred from column name/sampling per user decision 2026-07-29 (name-only pass); label/description left blank."
+    },
+    {
+      "id": "dataset_implementation_reports",
+      "name": "Implementation Reports",
+      "short_name": "",
+      "description": "",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [],
+      "notes": "From data.csv row 2 ('PAX + Implementation Reports')."
+    },
+    {
+      "id": "dataset_acled",
+      "name": "ACLED",
+      "short_name": "ACLED",
+      "description": "Armed Conflict Location & Event Data Project. Records battles, explosions/remote violence, protests, riots, strategic developments, and violence against civilians (data.csv row 9).",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_acled_id",
+          "name": "id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_iso",
+          "name": "iso",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_event_id_cnty",
+          "name": "event_id_cnty",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_event_date",
+          "name": "event_date",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_acled_year",
+          "name": "year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acled_time_precision",
+          "name": "time_precision",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_event_type",
+          "name": "event_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_sub_event_type",
+          "name": "sub_event_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_actor1",
+          "name": "actor1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_assoc_actor_1",
+          "name": "assoc_actor_1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_inter1",
+          "name": "inter1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_actor2",
+          "name": "actor2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_assoc_actor_2",
+          "name": "assoc_actor_2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_inter2",
+          "name": "inter2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_interaction",
+          "name": "interaction",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_region",
+          "name": "region",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_country",
+          "name": "country",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_admin1",
+          "name": "admin1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_admin2",
+          "name": "admin2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_admin3",
+          "name": "admin3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_location",
+          "name": "location",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_latitude",
+          "name": "latitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_acled_longitude",
+          "name": "longitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_acled_source_scale",
+          "name": "source_scale",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_notes",
+          "name": "notes",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_fatalities",
+          "name": "fatalities",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acled_timestamp",
+          "name": "timestamp",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_geo_precision",
+          "name": "geo_precision",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_source",
+          "name": "source",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_civilian_targeting",
+          "name": "civilian_targeting",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_disorder_type",
+          "name": "disorder_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acled_tags",
+          "name": "tags",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "From data.csv row 9. Header extracted via byte-range request from peacerep/ukraine-map's data/ACLED-Ukraine.csv (full file is ~97MB, not downloaded). Name-only fields, data_type mostly inferred from column name, per 2026-07-29 convention."
+    },
+    {
+      "id": "dataset_ucdp",
+      "name": "UCDP",
+      "short_name": "UCDP",
+      "description": "Uppsala Conflict Data Program. Covers deaths from state-based conflict, non-state conflict, and one-sided conflict (data.csv row 9).",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_ucdp_id",
+          "name": "id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_ucdp_id",
+          "name": "ucdp_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_relid",
+          "name": "relid",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_year",
+          "name": "year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_ucdp_active_year",
+          "name": "active_year",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_code_status",
+          "name": "code_status",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_type_of_violence",
+          "name": "type_of_violence",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_conflict_dset_id",
+          "name": "conflict_dset_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_conflict_new_id",
+          "name": "conflict_new_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_conflict_name",
+          "name": "conflict_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_dyad_dset_id",
+          "name": "dyad_dset_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_dyad_new_id",
+          "name": "dyad_new_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_dyad_name",
+          "name": "dyad_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_a_dset_id",
+          "name": "side_a_dset_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_a_new_id",
+          "name": "side_a_new_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_a",
+          "name": "side_a",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_b_dset_id",
+          "name": "side_b_dset_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_b_new_id",
+          "name": "side_b_new_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_side_b",
+          "name": "side_b",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_number_of_sources",
+          "name": "number_of_sources",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_source_article",
+          "name": "source_article",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_source_office",
+          "name": "source_office",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_source_date",
+          "name": "source_date",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_source_headline",
+          "name": "source_headline",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_source_original",
+          "name": "source_original",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_where_prec",
+          "name": "where_prec",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_where_coordinates",
+          "name": "where_coordinates",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_where_description",
+          "name": "where_description",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_adm_1",
+          "name": "adm_1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_adm_2",
+          "name": "adm_2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_latitude",
+          "name": "latitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_ucdp_longitude",
+          "name": "longitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_ucdp_geom_wkt",
+          "name": "geom_wkt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_priogrid_gid",
+          "name": "priogrid_gid",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_country",
+          "name": "country",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_country_id",
+          "name": "country_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_region",
+          "name": "region",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_event_clarity",
+          "name": "event_clarity",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_date_prec",
+          "name": "date_prec",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_date_start",
+          "name": "date_start",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_ucdp_date_end",
+          "name": "date_end",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_ucdp_deaths_a",
+          "name": "deaths_a",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_deaths_b",
+          "name": "deaths_b",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_deaths_civilians",
+          "name": "deaths_civilians",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_deaths_unknown",
+          "name": "deaths_unknown",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_best",
+          "name": "best",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_ucdp_high",
+          "name": "high",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_ucdp_low",
+          "name": "low",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_ucdp_gwnoa",
+          "name": "gwnoa",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_gwnob",
+          "name": "gwnob",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_candidate",
+          "name": "candidate",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_ucdp_candidate_event_ingest_date",
+          "name": "candidate_event_ingest_date",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "From data.csv row 9. Header extracted via byte-range request from peacerep/ukraine-map's data/UCDP-Ukraine.csv (full file is ~18MB, not downloaded). Name-only fields, data_type mostly inferred from column name."
+    },
+    {
+      "id": "dataset_humanitarian_corridors",
+      "name": "Humanitarian Corridors",
+      "short_name": "",
+      "description": "Research by PeaceRep and partners (data.csv row 9).",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_hc_hc_id",
+          "name": "HC_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_date",
+          "name": "Date",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_date",
+          "name": "date",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_hc_month",
+          "name": "month",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_hc_day",
+          "name": "day",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_hc_year",
+          "name": "year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_hc_proposal",
+          "name": "proposal",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_status_result",
+          "name": "status_result",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_text",
+          "name": "text",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_link",
+          "name": "Link",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_article_source_id",
+          "name": "article_source_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_status_extra",
+          "name": "status_extra",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from",
+          "name": "From",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from_name",
+          "name": "from_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from_latitude",
+          "name": "from_latitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_hc_from_longitude",
+          "name": "from_longitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_hc_from_adm1_code_full",
+          "name": "from_adm1_code_full",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from_adm1_nr",
+          "name": "from_adm1_nr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from_adm1_name",
+          "name": "from_adm1_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_from_country_code",
+          "name": "from_country_code",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to",
+          "name": "To",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to_name",
+          "name": "to_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to_latitude",
+          "name": "to_latitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_hc_to_longitude",
+          "name": "to_longitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_hc_to_adm1_code_full",
+          "name": "to_adm1_code_full",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to_adm1_nr",
+          "name": "to_adm1_nr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to_adm1_name",
+          "name": "to_adm1_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_hc_to_country_code",
+          "name": "to_country_code",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "From data.csv row 9. publisher_organisation_id set to University of Edinburgh as the PeaceRep programme's host institution. Fields from peacerep/ukraine-map's data/Humanitarian Corridors Ukraine - HC_geocoded.csv."
+    },
+    {
+      "id": "dataset_power_plants",
+      "name": "Power Plants",
+      "short_name": "",
+      "description": "Power plant locations, from the Global Power Plant Database and OECD (data.csv row 9).",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_pp_country",
+          "name": "country",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_country_long",
+          "name": "country_long",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_name",
+          "name": "name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_gppd_idnr",
+          "name": "gppd_idnr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_capacity_mw",
+          "name": "capacity_mw",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_pp_latitude",
+          "name": "latitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_pp_longitude",
+          "name": "longitude",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_pp_primary_fuel",
+          "name": "primary_fuel",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_other_fuel1",
+          "name": "other_fuel1",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_other_fuel2",
+          "name": "other_fuel2",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_other_fuel3",
+          "name": "other_fuel3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_commissioning_year",
+          "name": "commissioning_year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_pp_owner",
+          "name": "owner",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_source",
+          "name": "source",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_url",
+          "name": "url",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_geolocation_source",
+          "name": "geolocation_source",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_wepp_id",
+          "name": "wepp_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_year_of_capacity_data",
+          "name": "year_of_capacity_data",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2013",
+          "name": "generation_gwh_2013",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2014",
+          "name": "generation_gwh_2014",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2015",
+          "name": "generation_gwh_2015",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2016",
+          "name": "generation_gwh_2016",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2017",
+          "name": "generation_gwh_2017",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2018",
+          "name": "generation_gwh_2018",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_gwh_2019",
+          "name": "generation_gwh_2019",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_generation_data_source",
+          "name": "generation_data_source",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_gwh_2013",
+          "name": "estimated_generation_gwh_2013",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_gwh_2014",
+          "name": "estimated_generation_gwh_2014",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_gwh_2015",
+          "name": "estimated_generation_gwh_2015",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_gwh_2016",
+          "name": "estimated_generation_gwh_2016",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_gwh_2017",
+          "name": "estimated_generation_gwh_2017",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_note_2013",
+          "name": "estimated_generation_note_2013",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_note_2014",
+          "name": "estimated_generation_note_2014",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_note_2015",
+          "name": "estimated_generation_note_2015",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_note_2016",
+          "name": "estimated_generation_note_2016",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_pp_estimated_generation_note_2017",
+          "name": "estimated_generation_note_2017",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "From data.csv row 9. Fields from peacerep/ukraine-map's data/global_power_plant_database_ukraine.csv."
+    },
+    {
+      "id": "dataset_epr",
+      "name": "Ethnic Power Relations",
+      "short_name": "EPR",
+      "description": "",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_epr_gwid",
+          "name": "gwid",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_epr_statename",
+          "name": "statename",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_epr_from",
+          "name": "from",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_epr_to",
+          "name": "to",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_epr_group",
+          "name": "group",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_epr_groupid",
+          "name": "groupid",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_epr_gwgroupid",
+          "name": "gwgroupid",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_epr_sqkm",
+          "name": "sqkm",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_epr_type",
+          "name": "type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "data.csv row 9 lists this as 'Ethic Make Up' in the Data column, but its own description text identifies the source as 'Ethnic makeup data from EPR' — resolved as the Ethnic Power Relations dataset. Fields from peacerep/ukraine-map's data/GeoEPR-2021-Ukraine.geojson feature properties."
+    },
+    {
+      "id": "dataset_colpus",
+      "name": "Colpus Dataset",
+      "short_name": "Colpus",
+      "description": "Global dataset on coups d'état in the post-World War II era, coding coup-maker identity, goals, and relationship to the ruling regime, and distinguishing leader-reshuffling coups from regime-change coups.",
+      "publisher_organisation_id": "",
+      "source_url": "https://doi.org/10.1093/isq/sqab058",
+      "licence": "",
+      "citation": "Chin, John J., David B. Carter, and Joseph G. Wright. 2021. 'The Varieties of Coups d'État: Introducing the Colpus Dataset.' International Studies Quarterly 65(4): 1040-1051. https://doi.org/10.1093/isq/sqab058.",
+      "versions": [],
+      "fields": [],
+      "notes": ""
+    },
+    {
+      "id": "dataset_constitute",
+      "name": "Constitute Project",
+      "short_name": "Constitute",
+      "description": "",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [],
+      "notes": "From data.csv row 10 ('constitute')."
+    },
+    {
+      "id": "dataset_nelda",
+      "name": "NELDA",
+      "short_name": "NELDA",
+      "description": "National Elections across Democracy and Autocracy dataset.",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [],
+      "notes": "From data.csv row 10. Row 10 also mentions 'other election data' with no specific name given — not created as a separate dataset record."
+    },
+    {
+      "id": "dataset_ssd_surveys",
+      "name": "SSD Surveys",
+      "short_name": "SSD Surveys",
+      "description": "",
+      "publisher_organisation_id": "",
+      "source_url": "",
+      "licence": "",
+      "citation": "",
+      "versions": [
+        {
+          "id": "version_ssd_surveys_wave4",
+          "label": "wave 4",
+          "release_date": "",
+          "download_url": "",
+          "accessed_at": "",
+          "notes": "From data.csv row 14."
+        }
+      ],
+      "fields": [],
+      "notes": ""
+    },
+    {
+      "id": "dataset_pa_x_gender",
+      "name": "PA-X Gender - Gender Provisions in Agreements",
+      "short_name": "PA-X Gender",
+      "description": "All PA-X peace agreements between 1990 and the end of 2025 with provisions on women, girls, gender, or sexual violence, with additional gender-related variables; shares core agreement metadata with the main PA-X database.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/wggsearch",
+      "licence": "",
+      "citation": "Bell, Christine, Sanja Badanjak, Juline Beaujouan, Tim Epple, Adam Farquhar, Robert Forster, Astrid Jamar, Sean Molloy, Kevin McNicholl, Kathryn Nash, Jan Pospisil, Robert Wilson, and Laura Wise (2024). PA-X Gender Peace Agreements Database and Dataset, Version 8.",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_paxgender_con",
+          "name": "Con",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_contp",
+          "name": "Contp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_pp",
+          "name": "PP",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_ppname",
+          "name": "PPName",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_reg",
+          "name": "Reg",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_agtid",
+          "name": "AgtId",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_ver",
+          "name": "Ver",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_agt",
+          "name": "Agt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_dat",
+          "name": "Dat",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_paxgender_status",
+          "name": "Status",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_lgt",
+          "name": "Lgt",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_n_characters",
+          "name": "N_characters",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_agtp",
+          "name": "Agtp",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_stage",
+          "name": "Stage",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_stagesub",
+          "name": "StageSub",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_part",
+          "name": "Part",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_thrdpart",
+          "name": "ThrdPart",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_othagr",
+          "name": "OthAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_loc1iso",
+          "name": "Loc1ISO",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_loc2iso",
+          "name": "Loc2ISO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_loc1gwno",
+          "name": "Loc1GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_loc2gwno",
+          "name": "Loc2GWNO",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_paxgender_ucdpcon",
+          "name": "UcdpCon",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_ucdpagr",
+          "name": "UcdpAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_pamagr",
+          "name": "PamAgr",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_cowwar",
+          "name": "CowWar",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_paxgender_interim",
+          "name": "Interim",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_paxgender_imsrc",
+          "name": "ImSrc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpar",
+          "name": "WggPar",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgggenquot",
+          "name": "WggGenQuot",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggeffpart",
+          "name": "WggEffPart",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggcitizen",
+          "name": "WggCitizen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggparoth",
+          "name": "WggParOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggeq",
+          "name": "WggEq",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggeqgen",
+          "name": "WggEqGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggsoceq",
+          "name": "WggSocEq",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggeqoth",
+          "name": "WggEqOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgggrp",
+          "name": "WggGrp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggindnom",
+          "name": "WggIndNom",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggrefdisp",
+          "name": "WggRefDisp",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpreg",
+          "name": "WggPreg",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgggrpoth",
+          "name": "WggGrpOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggintlaw",
+          "name": "WggIntLaw",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgghr",
+          "name": "WggHR",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgghrsta",
+          "name": "WggHrSta",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggunsc",
+          "name": "WggUnsc",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggintlawoth",
+          "name": "WggIntLawOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggnewinst",
+          "name": "WggNewInst",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgginstwom",
+          "name": "WggInstWom",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgginf",
+          "name": "WggInf",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggrecon",
+          "name": "WggRecon",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggnewinstoth",
+          "name": "WggNewInstOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggvio",
+          "name": "WggVio",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggviosex",
+          "name": "WggVioSex",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggviogen",
+          "name": "WggVioGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggvioprot",
+          "name": "WggVioProt",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggviooth",
+          "name": "WggVioOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggtrajus",
+          "name": "WggTraJus",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpast",
+          "name": "WggPast",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpri",
+          "name": "WggPri",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggtrajusoth",
+          "name": "WggTraJusOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgginstref",
+          "name": "WggInstRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggconst",
+          "name": "WggConst",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgglawref",
+          "name": "WggLawRef",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggjud",
+          "name": "WggJud",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpol",
+          "name": "WggPol",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggddr",
+          "name": "WggDdr",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggpubadm",
+          "name": "WggPubAdm",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgginstrefoth",
+          "name": "WggInstRefOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggdev",
+          "name": "WggDev",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggdevgen",
+          "name": "WggDevGen",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggrehab",
+          "name": "WggRehab",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggedu",
+          "name": "WggEdu",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wgghea",
+          "name": "WggHea",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggrepro",
+          "name": "WggRepro",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggdevoth",
+          "name": "WggDevOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggimpl",
+          "name": "WggImpl",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggimplrole",
+          "name": "WggImplRole",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggimplsign",
+          "name": "WggImplSign",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggimploth",
+          "name": "WggImplOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_paxgender_wggoth",
+          "name": "WggOth",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        }
+      ],
+      "notes": "Local file: pax_wgg_data_494_agreements_v10.csv. `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_covid_ceasefire",
+      "name": "CV-19 Ceasefire Database",
+      "short_name": "Covid Ceasefire",
+      "description": "Ceasefire declarations and agreements during the Covid-19 pandemic period, including updates, terminations, or extensions; covers all ceasefires agreed during the pandemic regardless of whether they referenced the UN Secretary-General's global ceasefire call.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/covid19ceasefires/",
+      "licence": "",
+      "citation": "Wise, L., Badanjak, S., Bell, C., and Knäussel, F. (2021). Pandemic Pauses: Understanding Ceasefires in a Time of Covid-19 (PSRP Research Report). Edinburgh: Global Justice Academy, University of Edinburgh.",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_cv19_uid",
+          "name": "UID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_declaration_date",
+          "name": "Declaration_date",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_cv19_ceasefire_start",
+          "name": "Ceasefire_start",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_cv19_ceasefire_termination",
+          "name": "Ceasefire_termination",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_cv19_country_entity",
+          "name": "Country_entity",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_region_entity",
+          "name": "Region_entity",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_ucdp_code",
+          "name": "UCDP_code",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_longitude_central",
+          "name": "Longitude_central",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_cv19_latitude_central",
+          "name": "Latitude_central",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_cv19_declaration_type",
+          "name": "Declaration_type",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_cv19_reciprocated",
+          "name": "Reciprocated",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_cv19_actors",
+          "name": "Actors",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_actors_type",
+          "name": "Actors_type",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_cv19_pdf",
+          "name": "PDF",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_headline",
+          "name": "Headline",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_information",
+          "name": "Information",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_past_agreements",
+          "name": "Past_agreements",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_past_ceasefires",
+          "name": "Past_ceasefires",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_cv19_sources",
+          "name": "Sources",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_media",
+          "name": "Media",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_media_credit",
+          "name": "Media_credit",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_cv19_media_caption",
+          "name": "Media_caption",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Local file PA-X_Ceasefire_Dataset.csv (generic filename) identified as this dataset by its date range (all Declaration_date values fall 2020-03-18 to 2020-07-01) and confirmed against the CV-19 Ceasefire Database entry on peaceagreements.org/downloads/. `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_vaxxpax",
+      "name": "VaxxPax: a dataset of vaccination ceasefires",
+      "short_name": "VaxxPax",
+      "description": "74 vaccination ceasefires reported in media/NGO sources worldwide, 1985-2018 — cessations of hostilities agreed specifically to support a vaccination campaign or related public health need.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://doi.org/10.7488/ds/3131",
+      "licence": "",
+      "citation": "Russell, Ian; Wise, Laura; Badanjak, Sanja. (2021). VaxxPax: a dataset of vaccination ceasefires, 1985-2018 [dataset]. University of Edinburgh Law School. https://doi.org/10.7488/ds/3131",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_vaxxpax_row_index",
+          "name": "",
+          "label": "",
+          "description": "Unnamed leading index/row-number column in the source CSV.",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_caseid",
+          "name": "CaseID",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_country",
+          "name": "Country",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_startyear",
+          "name": "StartYear",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_endyear",
+          "name": "EndYear",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_startmonth",
+          "name": "Startmonth",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_endmonth",
+          "name": "Endmonth",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_designation_of_the_event_s",
+          "name": "Designation of the Event(s)",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_public_health_activities",
+          "name": "Public Health Activities",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_vaxxpax_children",
+          "name": "Children",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_mothers_women",
+          "name": "Mothers_women",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_others",
+          "name": "Others",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_target_population_s",
+          "name": "Target Population(s)",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_vaxxpax_polio",
+          "name": "Polio",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_measles",
+          "name": "Measles",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_diphtheria",
+          "name": "Diphtheria",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_pertussis",
+          "name": "Pertussis",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_tetanus",
+          "name": "Tetanus",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_cholera",
+          "name": "Cholera",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_rubella",
+          "name": "Rubella",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_other",
+          "name": "Other",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_target_public_health_issue_s",
+          "name": "Target Public Health Issue(s)",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_parties_involved",
+          "name": "Parties Involved",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_un_involved",
+          "name": "UN_involved",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_ucdp_conflict",
+          "name": "UCDP_conflict",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_ucdp2",
+          "name": "UCDP2",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_vaxxpax_ucdp3",
+          "name": "UCDP3",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_vaxxpax_iso3",
+          "name": "ISO3",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_cases",
+          "name": "cases",
+          "label": "",
+          "description": "",
+          "data_type": "boolean"
+        },
+        {
+          "id": "f_vaxxpax_gwno",
+          "name": "gwno",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_vaxxpax_startdate",
+          "name": "Startdate",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_vaxxpax_enddate",
+          "name": "Enddate",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Local file VaxxPax.csv has an unnamed leading index column (kept as a field with blank `name`). `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_igo_capacity",
+      "name": "IGO Capacity of Engagement Dataset",
+      "short_name": "IGO Capacity",
+      "description": "Tracks engagement by global and regional intergovernmental organisations (facilitation, monitoring, implementation) in peace agreements in Latin America and Africa, 1990-2015.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/downloads/",
+      "licence": "",
+      "citation": "Coe, Brooke and Nash, Kathryn (2024). Inter-governmental Organisation (IGO) Engagement in Peace Agreements Codebook. Peace and Conflict Resolution Evidence Platform (PeaceRep), University of Edinburgh, Edinburgh.",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_igo_con",
+          "name": "Con",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_contp",
+          "name": "Contp",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_pp",
+          "name": "PP",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_igo_ppname",
+          "name": "PPName",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_reg",
+          "name": "Reg",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_agtid",
+          "name": "AgtId",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_igo_agt",
+          "name": "Agt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_dat",
+          "name": "Dat",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_igo_un_mention",
+          "name": "UN_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_au_mention",
+          "name": "AU_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_sadc_mention",
+          "name": "SADC_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_ecowas_mention",
+          "name": "ECOWAS_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_eac_mention",
+          "name": "EAC_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_eccas_mentio",
+          "name": "ECCAS_mentio",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_cen_sad_mention",
+          "name": "CEN-SAD_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_igad_mention",
+          "name": "IGAD_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_comesa_mention",
+          "name": "COMESA_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_amu_mentio",
+          "name": "AMU_mentio",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_igo_var1_o_au",
+          "name": "var1_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_o_au",
+          "name": "var2_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_o_au",
+          "name": "var3_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_o_au",
+          "name": "var4_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_o_au",
+          "name": "var5_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_o_au",
+          "name": "var6_(O)AU",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_ecowas",
+          "name": "var1_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_ecowas",
+          "name": "var2_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_ecowas",
+          "name": "var3_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_ecowas",
+          "name": "var4_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_ecowas",
+          "name": "var5_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_ecowas",
+          "name": "var6_ECOWAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_sadc",
+          "name": "var1_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_sadc",
+          "name": "var2_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_sadc",
+          "name": "var3_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_sadc",
+          "name": "var4_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_sadc",
+          "name": "var5_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_sadc",
+          "name": "var6_SADC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_igad",
+          "name": "var1_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_igad",
+          "name": "var2_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_igad",
+          "name": "var3_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_igad",
+          "name": "var4_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_igad",
+          "name": "var5_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_igad",
+          "name": "var6_IGAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_eccas",
+          "name": "var1_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_eccas",
+          "name": "var2_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_eccas",
+          "name": "var3_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_eccas",
+          "name": "var4_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_eccas",
+          "name": "var5_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_eccas",
+          "name": "var6_ECCAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_censad",
+          "name": "var1_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_censad",
+          "name": "var2_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_censad",
+          "name": "var3_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_censad",
+          "name": "var4_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_censad",
+          "name": "var5_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_censad",
+          "name": "var6_CENSAD",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_comesa",
+          "name": "var1_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_comesa",
+          "name": "var2_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_comesa",
+          "name": "var3_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_comesa",
+          "name": "var4_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_comesa",
+          "name": "var5_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_comesa",
+          "name": "var6_COMESA",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_eac",
+          "name": "var1_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_eac",
+          "name": "var2_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_eac",
+          "name": "var3_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_eac",
+          "name": "var4_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_eac",
+          "name": "var5_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_eac",
+          "name": "var6_EAC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_rec",
+          "name": "var1_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_rec",
+          "name": "var2_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_rec",
+          "name": "var3_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_rec",
+          "name": "var4_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_rec",
+          "name": "var5_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_rec",
+          "name": "var6_REC",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_ro",
+          "name": "var1_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_ro",
+          "name": "var2_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_ro",
+          "name": "var3_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_ro",
+          "name": "var4_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_ro",
+          "name": "var5_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_ro",
+          "name": "var6_RO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_un",
+          "name": "var1_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_un",
+          "name": "var2_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_un",
+          "name": "var3_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_un",
+          "name": "var4_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_un",
+          "name": "var5_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_un",
+          "name": "var6_UN",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_year",
+          "name": "Year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_igo_oas_mention",
+          "name": "OAS_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_otherro_mention",
+          "name": "otherRO_mention",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_oas",
+          "name": "var1_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_oas",
+          "name": "var2_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_oas",
+          "name": "var3_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_oas",
+          "name": "var4_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_oas",
+          "name": "var5_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_oas",
+          "name": "var6_OAS",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var1_otherro",
+          "name": "var1_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var2_otherro",
+          "name": "var2_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var3_otherro",
+          "name": "var3_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var4_otherro",
+          "name": "var4_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var5_otherro",
+          "name": "var5_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_var6_otherro",
+          "name": "var6_otherRO",
+          "label": "",
+          "description": "",
+          "data_type": "category"
+        },
+        {
+          "id": "f_igo_otherro_name",
+          "name": "otherRO name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Local file Coe2024_IGO-PAX_Capacity_of_Engagement__1990-2015.xlsx has two sheets (African Agreements, Latin American Agreements) with overlapping PA-X-linkage columns (Con/Contp/PP/PPName/Reg/AgtId/Agt/Dat) — deduplicated into one field list. `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_amnesties",
+      "name": "Peace Agreement Amnesties Dataset",
+      "short_name": "Amnesties",
+      "description": "PA-X agreements recoded for amnesty provisions, excluding localised agreements, domestic-rules-only provisions, unilateral texts, and agreements that only restate an amnesty commitment made in an earlier agreement.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/downloads/",
+      "licence": "",
+      "citation": "Mallinder, Louise. 2026. \"Peace Agreement Amnesties Dataset.\" Harvard Dataverse. https://doi.org/10.7910/DVN/FVKC79",
+      "versions": [],
+      "fields": [],
+      "notes": "UNCERTAIN structure: local file Peace_Agreement_Amnesties_Dataset_10_Oct_2025.xlsx's 'Full Peace Agreement Coding' sheet (the main data sheet) does not have a clean single header row — row 1 mixes real column labels (Country, Year, Peace Agreement Name) with what are actually data values from other rows (e.g. a full agreement-text excerpt appears as a 'column header'), consistent with this being a flattened/pasted pivot-table export rather than tidy tabular data. Other sheets in the workbook (Sheet1/3/4/8, 'No countries by region', etc.) are small pivot-summary outputs, not raw data. `fields` left empty rather than fabricated from this structure — flagging for a manual look rather than guessing which row is the real header."
+    },
+    {
+      "id": "dataset_acpa",
+      "name": "Amnesties, Conflict and Peace Agreements (ACPA) Quantitative Dataset",
+      "short_name": "ACPA",
+      "description": "Detailed quantitative coding of amnesty laws' recipients, crimes covered/excluded, conditions, and effects, cross-referenced to peace agreements, with post-amnesty conflict-intensity outcomes tracked at three and five years.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://www.peaceagreements.org/amnesties/",
+      "licence": "",
+      "citation": "Mallinder, Louise, Daniel Shaw, Kelsey Kestenbaum, Saketh Srinivas Pittala, and Surya Kiran Yadav (2025) ACPA dataset. Queen's University Belfast and Peace and Conflict Resolution Evidence Platform (PeaceRep), University of Edinburgh. https://doi.org/10.7910/DVN/XEHPDK",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_acpa_process_name",
+          "name": "Process Name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_amnestyid",
+          "name": "AmnestyID",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_country_name",
+          "name": "Country Name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_country_name_at_introduction_v_dem",
+          "name": "Country Name at Introduction (V-Dem)",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_gw_country_code",
+          "name": "GW Country Code",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_enacting_level",
+          "name": "Enacting Level",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_regime_type_freedom_house",
+          "name": "Regime Type (Freedom House)",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_legislation_title",
+          "name": "Legislation Title",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_legal_form",
+          "name": "Legal Form",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_world_sub_sub_reg",
+          "name": "World Sub-Sub Reg",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_world_sub_region",
+          "name": "World Sub-Region",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_world_region",
+          "name": "World Region",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_peace_agreement",
+          "name": "Peace Agreement",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_year_peace_agreement",
+          "name": "Year Peace Agreement",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_date_peace_agreement",
+          "name": "Date peace agreement",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_acpa_year_amnesty_enactment",
+          "name": "Year Amnesty Enactment",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_date_amnesty_entry_into_force",
+          "name": "Date amnesty entry into force",
+          "label": "",
+          "description": "",
+          "data_type": "date"
+        },
+        {
+          "id": "f_acpa_conflict_phase_when_amnesty_enacted",
+          "name": "Conflict phase when amnesty enacted",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_public_consultation",
+          "name": "Public Consultation",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_non_state_armed_groups",
+          "name": "Recipients: Non-state armed groups",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_non_state_armed_groups_simple",
+          "name": "Recipients: non-state armed groups simple",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_non_state_armed_groups_names",
+          "name": "Recipients: non-state armed groups names",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_state_actors",
+          "name": "Recipients: state actors",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_state_actors_simple",
+          "name": "Recipients: state actors simple",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_state_actors_institutions",
+          "name": "Recipients: state actors institutions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_foreign_nationals",
+          "name": "Recipients: foreign nationals",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_coup_participants",
+          "name": "Recipients: coup participants",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_draft_evasion",
+          "name": "Recipients: draft evasion",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_security_detainees",
+          "name": "Recipients: security detainees",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_nationals_outside_borders",
+          "name": "Recipients: nationals outside borders",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_recipients_cumulative_summary",
+          "name": "Recipients: cumulative summary",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_international_included",
+          "name": "Crimes: International Included",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_international_excluded",
+          "name": "Crimes: International Excluded",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_international_summary",
+          "name": "Crimes: international summary",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_gender_based_violence",
+          "name": "Crimes: Gender-based violence",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_gender_based_violence_simple",
+          "name": "Crimes: Gender-based violence simple",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_political",
+          "name": "Crimes: Political",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_political_simple",
+          "name": "Crimes: Political simple",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_economic",
+          "name": "Crimes: Economic ",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_economic_simple",
+          "name": "Crimes: Economic simple ",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_common",
+          "name": "Crimes: Common",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_common_simple",
+          "name": "Crimes: Common simple",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_crimes_non_performance_of_military_duties",
+          "name": "Crimes: non-performance of military duties",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_ddr",
+          "name": "Conditions: DDR",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_non_recividism_penalties",
+          "name": "Conditions: Non-Recividism Penalties",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_renounce_violence",
+          "name": "Conditions: Renounce violence",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_inform_on_comrades",
+          "name": "Conditions: Inform on Comrades",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_cumulative_security_conditions",
+          "name": "Conditions: Cumulative Security Conditions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_tell_truth_general",
+          "name": "Conditions:  Tell Truth General",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_truth_commission",
+          "name": "Conditions: Truth Commission",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_participate_in_alternative_justice_process",
+          "name": "Conditions: Participate in Alternative Justice Process",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_reparations",
+          "name": "Conditions: Reparations",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_cumulative_victims_rights",
+          "name": "Conditions: cumulative victims rights",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_unconditional",
+          "name": "Conditions: Unconditional",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conditions_cumulative_summary",
+          "name": "Conditions: cumulative summary",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_allow_civil_liability",
+          "name": "Effects: allow civil liability",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_bar_criminal_liability",
+          "name": "Effects: bar criminal liability",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_stop_trials_and_investigations",
+          "name": "Effects: stop trials and investigations",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_criminal_records",
+          "name": "Effects: criminal records",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_imposing_administrative_sanctions",
+          "name": "Effects: imposing administrative sanctions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_removing_admin_sanctions",
+          "name": "Effects: removing admin sanctions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_barring_admin_sanctions",
+          "name": "Effects: barring admin sanctions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_sentence_reductions",
+          "name": "Effects: sentence reductions",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_release_convicts",
+          "name": "Effects: release convicts",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_effects_cumulative_summary",
+          "name": "Effects: cumulative summary",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_incompatability",
+          "name": "Incompatability",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_type_of_conflict",
+          "name": "Type of Conflict",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_amnesty_enactment_year",
+          "name": "Conflict intensity amnesty enactment year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_after_three_years",
+          "name": "Conflict intensity after three years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_change_after_three_years",
+          "name": "Conflict intensity change after three years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_summary_after_three_years",
+          "name": "Conflict intensity summary after three years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_after_five_years",
+          "name": "Conflict intensity after five years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_change_after_five_years",
+          "name": "Conflict intensity change after five years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_conflict_intensity_summary_after_five_years",
+          "name": "Conflict intensity summary after five years",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_acpa_income_level_when_amnesty_enacted",
+          "name": "Income Level when amnesty enacted",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Confirmed via peaceagreements.org/downloads/ as a distinct, separately-published dataset from the Peace Agreement Amnesties Dataset above (not a duplicate/version of it), despite both being amnesty-related and co-authored by Louise Mallinder. Local file: Quantitative_ACPA_updated_OvkilDn.xlsx. `fields[].data_type` inferred by sampling raw values (or by column-name heuristic for xlsx files) per user decision 2026-07-29 to keep this pass name-only rather than pulling the full PA-X codebook; `label`/`description` intentionally left blank except where noted."
+    },
+    {
+      "id": "dataset_mend",
+      "name": "MEND",
+      "short_name": "MEND",
+      "description": "Mediation and mediation-related events involving external third-party actors; shares peace agreement ID (agmt_id_PAX) with PA-X where an event resulted in a signed peace agreement, and actor IDs with the GLO-PAD scheme (this dataset's own precursor, per direct user confirmation 2026-07-28).",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://peacehub.st-andrews.ac.uk",
+      "licence": "",
+      "citation": "",
+      "versions": [],
+      "fields": [
+        {
+          "id": "f_mend_med_event_id",
+          "name": "med_event_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_conflict_country",
+          "name": "conflict_country",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_conflict_counry_id",
+          "name": "conflict_counry_ID",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_conflict_id",
+          "name": "conflict_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_med_location_multiselect",
+          "name": "med_location - MULTISELECT",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_med_loc_cty",
+          "name": "med_loc_cty",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_med_loc_x",
+          "name": "med_loc_x",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_mend_med_loc_y",
+          "name": "med_loc_y",
+          "label": "",
+          "description": "",
+          "data_type": "number"
+        },
+        {
+          "id": "f_mend_day",
+          "name": "Day",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_mend_month",
+          "name": "Month",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_mend_year",
+          "name": "Year",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_mend_third_party",
+          "name": "third_party",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_third_party_id_glopad",
+          "name": "third_party_id_GLOPAD",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_third_party_id",
+          "name": "third_party_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_third_party_id_pax",
+          "name": "third_party_id_PAX",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_num_med",
+          "name": "num_med",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_mend_med_scope",
+          "name": "med_scope",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_individual_med_named",
+          "name": "individual_med_named",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_groupings_mechanisms",
+          "name": "groupings_mechanisms",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_local_parties",
+          "name": "local_parties",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_local_party_id",
+          "name": "local_party_id",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_local_indiv_group",
+          "name": "local_indiv_group",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_num_local",
+          "name": "num_local",
+          "label": "",
+          "description": "",
+          "data_type": "integer"
+        },
+        {
+          "id": "f_mend_if_loc_belig",
+          "name": "if_loc_belig",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_agmt",
+          "name": "agmt",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_agmt_name",
+          "name": "agmt_name",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_agmt_id_pax",
+          "name": "agmt_id_PAX",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_summary",
+          "name": "Summary",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_source_urls",
+          "name": "source_urls",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_shuttle",
+          "name": "shuttle",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        },
+        {
+          "id": "f_mend_med_type",
+          "name": "med_type",
+          "label": "",
+          "description": "",
+          "data_type": "string"
+        }
+      ],
+      "notes": "Fields extracted from tvancisin/mend repo's public/data/mend_april.csv (event-level data; 2 trailing unnamed columns in the source file dropped). A companion actor-lookup file in the same repo, mend_all_actors.csv, is keyed by GLOPAD_ID/PAAX_ID — not included as separate fields here. No citation found yet; flagging rather than guessing one."
+    }
+  ]
+}

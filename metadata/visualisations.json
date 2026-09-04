@@ -1,0 +1,4581 @@
+{
+  "schema_version": "1.0",
+  "visualisations": [
+    {
+      "id": "vis_peace_agreement_signatory_dashboard",
+      "title": "Peace Agreement Signatory Dashboard",
+      "description": {
+        "summary": "A network dashboard template that maps out actor's involvement in peace and transition processes.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "",
+            "field_ids": [
+              "f_paax_actor_name",
+              "f_paax_actor_type"
+            ],
+            "usage_note": "Actor dataset underlying the signatory network. field_ids from NetPanorama template field bindings (network/timeline/jigsaw/list.json all bind the same field set); other bound fields (Type, date, id, short_agt_name, target_type, year) are renamed/derived during data prep and not traceable 1:1 to a single raw column, so left unmapped rather than guessed."
+          },
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "usage_note": "Agreement metadata (AgtId, agt_name, agt_type, Part, ThrdPart, PAX_Hyperlink) merged with PAA-X actor data to build the per-country *_agt.json files (confirmed via src/data_prep_for_dashboard and the repo README). field_ids from NetPanorama template field bindings (network/timeline/jigsaw/list.json all bind the same field set); other bound fields (Type, date, id, short_agt_name, target_type, year) are renamed/derived during data prep and not traceable 1:1 to a single raw column, so left unmapped rather than guessed.",
+            "field_ids": [
+              "f_pax_agt",
+              "f_pax_ppname"
+            ]
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_jinrui_wang"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_christine_bell"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_vue",
+          "version": "3.2.13",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.8.3",
+          "purpose": "Network visualisation."
+        },
+        {
+          "tool_id": "tool_netpanorama",
+          "version": "",
+          "purpose": "Network diagram construction and rendering (vendored bundle, not an npm dependency)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/actor-network/country/UKG",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/actor-network",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/actor-networks/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "peace-agreement-signatory-dashboard.png",
+        "alt_text": "Node-link network diagram of peace agreement signatories, with actor nodes such as Russia connected by weighted edges.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_network",
+            "name": "Network",
+            "kind": "view",
+            "description": "Node-link network diagram of actors and their signatory relationships to agreements (NetPanorama network.json template, src/components/network.vue).",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor",
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Timeline layout of agreements/actors over time (NetPanorama timeline.json template, src/components/timeline.vue).",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_matrix",
+            "name": "Adjacency Matrix",
+            "kind": "view",
+            "description": "Actor-by-agreement adjacency matrix (src/components/adjacencymatrics.vue; custom D3, not a NetPanorama template).",
+            "visualisation_types": [
+              "matrix"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor",
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_jigsaw",
+            "name": "Jigsaw",
+            "kind": "view",
+            "description": "Jigsaw-piece layout grouping actors/agreements (NetPanorama jigsaw.json template, src/components/jigsaw.vue).",
+            "visualisation_types": [
+              "custom"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_list",
+            "name": "List",
+            "kind": "view",
+            "description": "Sortable list view of actors/agreements (NetPanorama list.json template, src/components/list.vue).",
+            "visualisation_types": [
+              "table"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "component_legend",
+            "name": "Actor Type Legend",
+            "kind": "component",
+            "description": "Shared colour legend for actor types, reused across all views (src/components/legends.vue, data/actor_definitions.json).",
+            "visualisation_types": [],
+            "component_type": "legend",
+            "interaction_types": [],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_implementation_narratives_interface",
+      "title": "Implementation Narratives + Interface",
+      "description": {
+        "summary": "Tracks implementation records in accordance with peace agreement provisions by topics.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Uses PAX manual codes and auto-tagging of topics to identify implementation-relevant provisions. Repo consumes precomputed/derived JSON (topic-tagged provisions with scores, report thresholds — src/data/topicTimelineData.json, agt_description_links.json), not raw dataset columns directly, so field_ids left empty rather than force-mapped."
+          },
+          {
+            "dataset_id": "dataset_implementation_reports",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Implementation report instances (e.g. RJMEC quarterly reports) linked to agreement provisions by topic. Repo consumes precomputed/derived JSON (topic-tagged provisions with scores, report thresholds — src/data/topicTimelineData.json, agt_description_links.json), not raw dataset columns directly, so field_ids left empty rather than force-mapped."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_roy_gardner"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_jinrui_wang"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_vue",
+          "version": "3.2.13",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.8.3",
+          "purpose": "Data visualisation (with d3-beeswarm)."
+        },
+        {
+          "tool_id": "tool_render",
+          "version": "",
+          "purpose": "Hosting."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://implementation-narratives.onrender.com",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://pax.peaceagreements.org/tracker/south-sudan/narrative-implementation",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/implementation-narratives-tracker",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "implementation-narrative.png",
+        "alt_text": "Two-panel interface showing agreement provisions for a selected topic (e.g. Constitutional reform/making) alongside a timeline and list of implementation report instances such as RJMEC quarterly reports.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_agreement_provisions",
+            "name": "Agreement Provisions",
+            "kind": "view",
+            "description": "List of agreement provisions for a selected topic; click a provision to view related implementation records.",
+            "visualisation_types": [
+              "table"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_implementation_instances",
+            "name": "Implementation Instances",
+            "kind": "view",
+            "description": "Timeline and list of implementation report instances since the agreement was signed.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_implementation_reports",
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_pax_local_agreements_map",
+      "title": "PA-X Local Agreements Map",
+      "description": {
+        "summary": "A map visualizes all agreements that deal in some way with local issues, involve local actors, and deal with forms of local/communal violent conflict.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x_local",
+            "version_id": "version_pa_x_local_v7",
+            "field_ids": [
+              "f_paxlocal_stage",
+              "f_paxlocal_dat"
+            ],
+            "usage_note": "Local agreements mapped globally. field_ids confirmed via js/index.js: Stage drives the filter/map layer, Dat drives date sorting."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "3.0.0",
+          "purpose": "Base map."
+        },
+        {
+          "tool_id": "tool_turf",
+          "version": "",
+          "purpose": "Geospatial analysis."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "",
+          "purpose": "Data-driven rendering."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://tvancisin.github.io/local_agreements/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/local_agreements",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/local-agreements/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "pax-local.png",
+        "alt_text": "Dark-themed interactive 3D globe titled 'PA-X Local Agreements', showing coloured markers clustered across Africa, the Middle East, and parts of Europe and Asia, with a filter panel.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "map"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "MapLibre GL choropleth/point map of local agreements, coloured by stage; click-through to agreement detail (js/index.js).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select",
+              "filter"
+            ],
+            "related_dimensions": [
+              "space",
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_local"
+            ]
+          },
+          {
+            "id": "component_stage_filter",
+            "name": "Stage Filter",
+            "kind": "component",
+            "description": "Filter panel to show/hide agreements by process stage (Pre-negotiation, Ceasefire, etc.).",
+            "visualisation_types": [],
+            "component_type": "filter",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": [
+              "dataset_pa_x_local"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_sudan_mediation_analysis",
+      "title": "Sudan Mediation Analysis",
+      "description": {
+        "summary": "GLO-PAD pilot data with Sudan and South Sudan visualisations.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_glo_pad",
+            "version_id": "",
+            "field_ids": [
+              "f_glopad_conflict_locale",
+              "f_glopad_third_party",
+              "f_glopad_third_party_type",
+              "f_glopad_year",
+              "f_glopad_negotiation_type",
+              "f_glopad_agreement_name"
+            ],
+            "usage_note": "GLO-PAD pilot data focused on Sudan and South Sudan mediation. field_ids are the columns the map/network/timeline views most directly render (locale, third party + type, year, negotiation type, agreement name); the ~15 boolean mediation-activity-type columns (mediation, hosting_talks, negotiating_and_drafting, etc.) also feed the visuals but aren't individually listed."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_mateja_peter"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_vite",
+          "version": "5.0.0",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.8.5",
+          "purpose": "Data visualisation."
+        },
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "3.1.0",
+          "purpose": "Base map."
+        },
+        {
+          "tool_id": "tool_leaflet",
+          "version": "1.9.4",
+          "purpose": "Map rendering."
+        },
+        {
+          "tool_id": "tool_turf",
+          "version": "",
+          "purpose": "Geospatial analysis."
+        },
+        {
+          "tool_id": "tool_render",
+          "version": "",
+          "purpose": "Hosting."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://south-sudan-mediation.onrender.com/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/sudan_mediation",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "south-sudan-mediation.png",
+        "alt_text": "Dashboard with Map, Network, and Timeline view tabs: a world map shaded by number of mediation events (highlighting Sudan, South Sudan, and the USA) above a bar chart of mediation events by year, annotated with events such as the Darfur War and South Sudan independence.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Choropleth map of mediation events by country.",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_glo_pad"
+            ]
+          },
+          {
+            "id": "view_network",
+            "name": "Network",
+            "kind": "view",
+            "description": "Network view tab visible in the screenshot.",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_glo_pad"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Bar chart of mediation events by year with event annotations.",
+            "visualisation_types": [
+              "timeline",
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_glo_pad"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_third_party_storytelling",
+      "title": "Third Party in Peace Agreements Storytelling",
+      "description": {
+        "summary": "Scrollytelling application of Practical Third Party data. Includes involvement over time, by stage, space and with who.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "version_paa_x_subset_v7",
+            "field_ids": [
+              "f_paax_actor_name",
+              "f_paax_practical_third",
+              "f_paax_signatory_type"
+            ],
+            "usage_note": "Practical Third Party Signatories subset of PAA-X, used to build per-actor summary statistics. field_ids from confirmed direct-name matches in all_update.csv/agts_rus_china.csv/paax_practical_third_labelled_signatories.csv; other bound columns (agt_type, date, year) are renamed/derived during data prep, not traceable 1:1, so left unmapped."
+          },
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "usage_note": "Agreement metadata (AgtId, agt_type, PP/PPName, PAX_Hyperlink, agt_description) merged with PAA-X signatory data in all_update.csv / agts_rus_china.csv / paax_practical_third_labelled_signatories.csv (confirmed via repo data files). field_ids from confirmed direct-name matches in all_update.csv/agts_rus_china.csv/paax_practical_third_labelled_signatories.csv; other bound columns (agt_type, date, year) are renamed/derived during data prep, not traceable 1:1, so left unmapped.",
+            "field_ids": [
+              "f_pax_agt",
+              "f_pax_ppname"
+            ]
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_mateja_peter"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_leaflet",
+          "version": "1.8.0",
+          "purpose": "Map rendering."
+        },
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "3.1.2",
+          "purpose": "Base map."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://tvancisin.github.io/peace_scroll/#",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/peace_scroll",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/third-party-scroll/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "third-party-story.png",
+        "alt_text": "Scrollytelling page titled 'Russia as a Third-Party in Peace Agreements', showing a globe centred on Russia and summary statistics: 27 peace processes, 134 agreements, 167 co-signatories, activity range 1990-2022.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "scrollytelling"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Mapbox GL map of third-party actor geography, persists across the intro and later scroll steps (js/main.js, #map).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan"
+            ],
+            "related_dimensions": [
+              "space",
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_beeswarm",
+            "name": "Beeswarm",
+            "kind": "view",
+            "description": "Horizontal beeswarm/dot-strip plot (js/main.js, #visualization, class 'horizontal_bee').",
+            "visualisation_types": [
+              "beeswarm"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_piechart",
+            "name": "Pie Chart",
+            "kind": "view",
+            "description": "Pie chart scroll step (js/main.js, #visualization05, piechart_svg).",
+            "visualisation_types": [
+              "pie_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_barchart",
+            "name": "Bar Chart",
+            "kind": "view",
+            "description": "Bar chart of practical third-party signatory counts (js/main.js, #visualization06, barchart_svg).",
+            "visualisation_types": [
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_unemployment_area",
+            "name": "Unemployment Area/Line Chart",
+            "kind": "view",
+            "description": "Combined area + multi-line chart of unemployment over time (js/scrollerVis.js multiline_svg, js/main.js #visualization075). Data comes from data/unemployment.csv, a file not yet linked to any registered dataset — flagging for a future dataset-coverage pass rather than fixing now.",
+            "visualisation_types": [
+              "area_chart",
+              "line_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_live_process_global_map",
+      "title": "Live process global map",
+      "description": {
+        "summary": "Globe as alternative entry point to tracker. Idea is to get a world snapshot of how things are going in terms of conflict levels and ongoing processes.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Tracker-derived process and conflict-level data displayed on a globe. public/data/agt_point_data.csv and country_data.csv are derived/aggregated files (central points per country, total_agreements/unique_processes counts), not raw PA-X columns, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_ucdp",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "public/data/country_data.csv aggregates rolling UCDP fatality/event counts per country (ucdp_fatalities_last_12 etc.) — a computed rollup, not raw UCDP columns, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_acled",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "public/data/country_data.csv aggregates rolling ACLED fatality/event counts per country (acled_fatalities_last_12 etc.) — a computed rollup, not raw ACLED columns, so field_ids left empty."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_render",
+          "version": "",
+          "purpose": "Hosting."
+        },
+        {
+          "tool_id": "tool_svelte",
+          "version": "4.2.18",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_vite",
+          "version": "5.4.0",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.9.0",
+          "purpose": "Data visualisation."
+        },
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "3.5.2",
+          "purpose": "Globe rendering."
+        },
+        {
+          "tool_id": "tool_turf",
+          "version": "3.0.14",
+          "purpose": "Geospatial analysis."
+        }
+      ],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://globe-tracker.onrender.com",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/tracker_globe",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker-globe.png",
+        "alt_text": "Interactive 3D globe titled 'PA-X Tracker Globe', with countries shaded by conflict fatality level and icon markers for agreements in 2024, local agreements in 2024, and agreements since 1990.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "globe"
+        ],
+        "views_components": [
+          {
+            "id": "view_globe",
+            "name": "Globe",
+            "kind": "view",
+            "description": "Mapbox GL v3 globe (no mercator override found; v3+ defaults to globe projection) showing country polygons and agreement points (src/lib/Map.svelte).",
+            "visualisation_types": [
+              "globe"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select",
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "space",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_country_dropdown",
+            "name": "Country Dropdown",
+            "kind": "component",
+            "description": "Country search/select dropdown (src/lib/Dropdown.svelte).",
+            "visualisation_types": [],
+            "component_type": "search",
+            "interaction_types": [
+              "search"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          },
+          {
+            "id": "component_info_panel",
+            "name": "Info Panel",
+            "kind": "component",
+            "description": "About/info panel shown on demand (src/lib/Info.svelte, public/data/info_section.json).",
+            "visualisation_types": [],
+            "component_type": "annotation",
+            "interaction_types": [],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_signatories_network_analysis",
+      "title": "Peace Agreement Signatories Network Analysis",
+      "description": {
+        "summary": "A deep dive into presence or absence of signatories in peace agreements using network analysis methodologies.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "version_paa_x_v7",
+            "field_ids": [],
+            "usage_note": "No source_code link and the embed is a JS-rendered Streamlit app (not inspectable via fetch), so field_ids left empty rather than guessed from the deployed app alone."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_roy_gardner"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_streamlit",
+          "version": "",
+          "purpose": "App framework, hosted embed."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://agreements-actors-jm3mmkozifmylnrtgjy4nb.streamlit.app/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://peacerep.org/signatories-network-analysis/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "signatory-network-analysis.png",
+        "alt_text": "Screenshot of the app's Credits section, listing 'Signatory data: Niamh Henry and Sanja Badanjak' and 'Analysis/coding: Roy Gardner', with navigation tabs for Actor, Signatory Data, Agreement, and Time views.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard",
+          "network"
+        ],
+        "views_components": [
+          {
+            "id": "view_network",
+            "name": "Network",
+            "kind": "view",
+            "description": "Signatory network graph (Streamlit app, no source_code link; description confirms 'network analysis methodology').",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor",
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "deprecated"
+    },
+    {
+      "id": "vis_semantic_mapping_constitutions",
+      "title": "Semantic Mapping: Peace Agreements — Constitutions",
+      "description": {
+        "summary": "An analysis of how peace agreements influence subsequent constitutions using semantic mapping of similar provisions in their later constitutions.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Peace agreement provisions semantically mapped onto later constitution sections."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_roy_gardner"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/agreement-constitution-mapping/index.html",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://peacerep.org/mapping-agreement-provisions-onto-constitution-texts/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/agreement-constitution-mapping",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "semantic-mapping-constitutions.png",
+        "alt_text": "Chart titled 'Agreement-constitution timeline' for Bosnia & Herzegovina, showing vertical bars for each peace agreement sized by the number of constitution sections it maps onto, alongside navigation tabs for Introduction, Mapping, Sections List, Timelines, and Metadata Analysis.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "timeline",
+          "bar_chart"
+        ],
+        "views_components": []
+      },
+      "notes": "",
+      "status": "excluded"
+    },
+    {
+      "id": "vis_ukraine_map",
+      "title": "Ukraine Map",
+      "description": {
+        "summary": "Our visualization of Ukraine conflict maps presents a comprehensive amalgamation of intricate data sourced from different portals. - Conflict violence data from ACLED, each dot depicts a record of battles, explosions/remote violence, protests, riots, strategic developments and violence against civilians - Deaths data from UCDP, covering deaths from state-based conflict, non-state conflict and one-sided conflict. - Ethnic makeup data from EPR, contributing critical context to the conflict. - Power Plants locations from global power plant database and OECD - Humanitarian corridors from research by PeaceRep and partners. Together, these multi-faceted layers provide a rich and detailed representation of the complex dynamics and human impact of the Russian-Ukraine War.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_acled",
+            "version_id": "",
+            "field_ids": [
+              "f_acled_event_type",
+              "f_acled_fatalities",
+              "f_acled_event_date",
+              "f_acled_latitude",
+              "f_acled_longitude"
+            ],
+            "usage_note": "field_ids are the columns rendered as map layer geometry/paint properties, per script.js addLayer calls; not exhaustive of every column in the source file."
+          },
+          {
+            "dataset_id": "dataset_ucdp",
+            "version_id": "",
+            "field_ids": [
+              "f_ucdp_type_of_violence",
+              "f_ucdp_best",
+              "f_ucdp_date_start",
+              "f_ucdp_latitude",
+              "f_ucdp_longitude"
+            ],
+            "usage_note": "field_ids are the columns rendered as map layer geometry/paint properties, per script.js addLayer calls; not exhaustive of every column in the source file."
+          },
+          {
+            "dataset_id": "dataset_epr",
+            "version_id": "",
+            "field_ids": [
+              "f_epr_group",
+              "f_epr_type",
+              "f_epr_from",
+              "f_epr_to"
+            ],
+            "usage_note": "field_ids are the columns rendered as map layer geometry/paint properties, per script.js addLayer calls; not exhaustive of every column in the source file."
+          },
+          {
+            "dataset_id": "dataset_power_plants",
+            "version_id": "",
+            "field_ids": [
+              "f_pp_name",
+              "f_pp_primary_fuel",
+              "f_pp_capacity_mw",
+              "f_pp_latitude",
+              "f_pp_longitude"
+            ],
+            "usage_note": "field_ids are the columns rendered as map layer geometry/paint properties, per script.js addLayer calls; not exhaustive of every column in the source file."
+          },
+          {
+            "dataset_id": "dataset_humanitarian_corridors",
+            "version_id": "",
+            "field_ids": [
+              "f_hc_status_result",
+              "f_hc_from_name",
+              "f_hc_to_name",
+              "f_hc_date"
+            ],
+            "usage_note": "field_ids are the columns rendered as map layer geometry/paint properties, per script.js addLayer calls; not exhaustive of every column in the source file."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_sarah_schottler"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_maplibre_gl",
+          "version": "",
+          "purpose": "Base map."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/ukraine-map/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://pax.peaceagreements.org/tracker/ukraine/map",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/ukraine-map",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "ukraine-map.png",
+        "alt_text": "Geographic point map of Ukraine with thousands of colour-coded dots representing different conflict and infrastructure data layers, including a dense cluster of overlapping points in the eastern Donetsk/Luhansk region and nuclear power plant icons at several sites.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "map"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "MapLibre GL map with 5 independently toggleable data layers (script.js addSource/addLayer for acled, ucdp, epr, powerplants, hc).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select"
+            ],
+            "related_dimensions": [
+              "space",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_acled",
+              "dataset_ucdp",
+              "dataset_epr",
+              "dataset_power_plants",
+              "dataset_humanitarian_corridors"
+            ]
+          },
+          {
+            "id": "component_layer_toggle",
+            "name": "Layer Toggle Panel",
+            "kind": "component",
+            "description": "Checkbox controls to show/hide each of the 5 data layers independently (script.js .layerToggle).",
+            "visualisation_types": [],
+            "component_type": "control_panel",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_timelines_institutional_change",
+      "title": "Timelines of Institutional Change",
+      "description": {
+        "summary": "Interactive timelines to illustrate the formal change process in a selected country, including: peace agreements, local agreements, constitutional events, amnesties, elections, coups & other relevant events.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "version_pa_x_v8",
+            "field_ids": [],
+            "usage_note": "No source_code link and no fetchable data-source URL found for TimelineJS's feed on this page, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_colpus",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Coup events from the Colpus dataset shown alongside peace agreements, local agreements, and other institutional-change events. No source_code link and no fetchable data-source URL found for TimelineJS's feed on this page, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_constitute",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "No source_code link and no fetchable data-source URL found for TimelineJS's feed on this page, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_nelda",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "No source_code link and no fetchable data-source URL found for TimelineJS's feed on this page, so field_ids left empty."
+          },
+          {
+            "dataset_id": "dataset_amnesties",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed via the live tracker page (117 mentions of amnesty/amnesties) matching the record's own description ('...amnesties, elections, coups...'). No source_code link and no fetchable data-source URL found for TimelineJS's feed on this page, so field_ids left empty."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_christine_bell"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_timelinejs",
+          "version": "",
+          "purpose": "Renders the interactive Afghanistan institutional-change timeline."
+        }
+      ],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/tracker/afghanistan/timeline/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker-timeline.png",
+        "alt_text": "Multi-row horizontal timeline of peace agreements and related events from 1990 onward, grouped by category, with a detail panel showing the full title, date, and summary of a selected agreement (e.g. the 1990 Statement of the Five Permanent Members of the UN Security Council on Cambodia).",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "timeline"
+        ],
+        "views_components": [
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "TimelineJS (Knight Lab) merged timeline of peace agreements, local agreements, constitutional events, amnesties, elections, and coups for the selected country.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select",
+              "search"
+            ],
+            "related_dimensions": [
+              "time",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x",
+              "dataset_colpus",
+              "dataset_constitute",
+              "dataset_nelda",
+              "dataset_amnesties"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_process_overview_dashboard",
+      "title": "Process Overview Dashboard",
+      "description": {
+        "summary": "Interactive data report/dashboard to provide a snapshot of high-level process data from PA-X - can see for all of PA-X or select specific countries or processes, or types of agreements. Can see number of agreements, types of agreements, the stage they were introduced, a timeline of agreements and a snapshot look at the key issues addressed in the agreement contents.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "version_pa_x_v8",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_christine_bell"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_powerbi",
+          "version": "",
+          "purpose": "Dashboard."
+        }
+      ],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/tracker/colombia/process/",
+          "label": ""
+        },
+        {
+          "type": "embed_link",
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiNDg1Yjk1N2EtNGZlMS00OTAwLTkxZDktM2Y0NjBjZmYyOWQzIiwidCI6IjJlOWYwNmIwLTE2NjktNDU4OS04Nzg5LTEwYTA2OTM0ZGM2MSIsImMiOjh9&pageName=ReportSection9021e359140872b5a4b8&pageName=ReportSection9021e359140872b5a4b8",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker-process-overview.png",
+        "alt_text": "Dashboard titled 'Process Overview: All' with country/process/conflict-type filters, a world choropleth map, summary stat tiles (175 peace processes, 2144 agreements, 463 ceasefires, and more), and a Gantt-style timeline of peace processes by category from 1990 onward.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map panel within the Power BI process-overview report (embed confirms Power BI; specific panel layout not independently inspectable without report access).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Timeline panel within the Power BI process-overview report.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_peace_impacts_dashboards",
+      "title": "Peace Impacts Dashboard(s)",
+      "description": {
+        "summary": "Interactive data report/dashboard to provide insights into the impacts the process has had on the general experiences in the country, across conflict, security, political, economic and humanitarian data indicators.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "version_pa_x_v8",
+            "field_ids": [],
+            "usage_note": "Power BI report content isn't fetchable; view/field detail limited to what the public_link page's title confirms ('Compare Impacts')."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_christine_bell"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_powerbi",
+          "version": "",
+          "purpose": "Dashboard."
+        }
+      ],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/tracker/all/impacts/",
+          "label": ""
+        },
+        {
+          "type": "embed_link",
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiODcxYmFkMDgtMzQ2Yy00YTE0LWJiN2MtYWJhMDBjMDU0MGJlIiwidCI6IjJlOWYwNmIwLTE2NjktNDU4OS04Nzg5LTEwYTA2OTM0ZGM2MSIsImMiOjh9&pageName=ReportSection28467493b3da7d83bb70"
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker-impact.png",
+        "alt_text": "Dashboard with Conflict Impacts and Peace Impacts tabs, showing stat tiles for conflict events and fatalities (UCDP, ACLED) since the most recent agreement, alongside gauge indicators for Varieties of Democracy, INFORM Severity Index, and OECD fragility ranking.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_comparison",
+            "name": "Compare Impacts",
+            "kind": "view",
+            "description": "Power BI report titled 'PA-X Tracker: Compare Impacts' (confirmed via the public_link page's own <title>); specific chart types inside the report aren't independently inspectable without report access.",
+            "visualisation_types": [
+              "table"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_agreement_actor_networks",
+      "title": "Agreement - Actor Networks",
+      "description": {
+        "summary": "Interactive agreement-actor networks where nodes can be actors or agreements, and connected if they were a party or third party signatory to an agreement. When you click on an agreement you can see information on it and a link to the full text as well as highlight all who sign it. When you click an actor you can see information on them, and a list of agreements they are signatories to.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "version_paa_x_v7",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_kumu",
+          "version": "",
+          "purpose": "Network diagram."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://embed.kumu.io/f7aa1f08fe1ffcf35b850f41ae118408?scroll=1",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/tracker/colombia/actors/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker-actor-network.png",
+        "alt_text": "Force-directed network diagram titled 'Signatories to Colombian Agreements', with Colombia as the largest central node connected to countries, international organisations, and armed groups such as FARC and the National Liberation Army.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "network"
+        ],
+        "views_components": [
+          {
+            "id": "view_network",
+            "name": "Network",
+            "kind": "view",
+            "description": "Kumu relationship map of agreement-actor connections (Kumu is network-only, per skill's known single-purpose tools).",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select"
+            ],
+            "related_dimensions": [
+              "actor",
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_south_sudan_perceptions_of_peace_survey",
+      "title": "South Sudan Perceptions of Peace Survey",
+      "description": {
+        "summary": "This interactive data report presents insights and key findings from a longitudinal survey on Perceptions of Peace in South Sudan by PeaceRep, Detcro, USIP and partners.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_ssd_surveys",
+            "version_id": "version_ssd_surveys_wave4",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_jan_pospisil"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_powerbi",
+          "version": "",
+          "purpose": "Dashboard."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiNGFlMjNiNGItNDQ3Zi00NTk2LWE5YjItMjkzMDEyYTE3YTUwIiwidCI6IjJlOWYwNmIwLTE2NjktNDU4OS04Nzg5LTEwYTA2OTM0ZGM2MSIsImMiOjh9&pageName=ReportSection",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://peacerep.org/perceptions-peace-south-sudan/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "south-sudan-survey.png",
+        "alt_text": "Dashboard titled 'Survey Sample Overview' showing stat tiles (22,677 respondents, 6 survey waves, 16 locations), a bar of response share by survey wave date, a map of South Sudan survey locations, age/gender bars, a displacement-status pie chart, and an occupation treemap.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map panel within the Power BI South Sudan perceptions-of-peace survey report.",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_ssd_surveys"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_children_and_youth_peace_agreements",
+      "title": "Children and Youth in Peace Agreements",
+      "description": {
+        "summary": "This interactive data report presents references to children and/or youth in peace agreements signed between 1990 and 2022. This dataset has drawn on 348 peace agreements in PA-X, which code for general references to children and/or youth. Using this data, the Children and Youth in Peace Agreements dataset further codes these provisions into specific topics. Coded topics include child soldiers, children's rights, children and transitional justice, children and third-party actors and children and references to their inclusion, protection and provision.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "version_pa_x_v6",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_sean_molloy"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_powerbi",
+          "version": "",
+          "purpose": "Dashboard."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiYjNmNjljZWMtODcxMy00OWE0LThhY2QtOWVmMDUyZjk4ZjI0IiwidCI6IjJlOWYwNmIwLTE2NjktNDU4OS04Nzg5LTEwYTA2OTM0ZGM2MSIsImMiOjh9",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://peacerep.org/children-and-youth-database/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "children-youth.png",
+        "alt_text": "Dashboard titled 'Children and Youth (C&Y) in Peace Agreements: Overview' with stat tiles (88 countries, 252 agreements, 84 processes), a world bubble map of agreements referencing children/youth by region and agreement type, a regional bar chart, and a line chart of agreements over time since 1990, co-branded with the PeaceRep and Newcastle University logos.",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map panel within the Power BI children-and-youth report.",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Timeline panel within the Power BI children-and-youth report.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_dialogue_mapping_ukraine",
+      "title": "Dialogue Mapping - Ukraine",
+      "description": {
+        "summary": "Over the course of the conflict there have been a number of published proposals for peace, from external countries or groups of country, and also some forms of agreement reached that include Ukraine and Russia, with respect to dimensions of the conflict. Based on Cindy Wittke's work on 'Islands of civility' we set out the agreements and proposals, to explore: (a) what topics they deal with (b) where there is overlap in topics (c) who has signed agreements that deal with dimensions of the conflict, where agreement has been reached. The tool also provides a short narrative of each talk topic or agreement, and easy access to the relevant documents and basic background information.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_christine_bell"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_kumu",
+          "version": "",
+          "purpose": "Relationship map."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://kumu.io/peacerep/islands-of-civility-russia-war-against-ukraine#islands-of-civility-and-agreement-in-russias-war-against-ukraine",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "ukraine-russia-dialogues-issues.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "network"
+        ],
+        "views_components": [
+          {
+            "id": "view_network",
+            "name": "Network",
+            "kind": "view",
+            "description": "Kumu relationship map of agreements/proposals, topics, and signatories in Russia's war against Ukraine, based on Cindy Wittke's 'Islands of Civility' research report (per data.csv description). Kumu is network-only (skill's known fact).",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select"
+            ],
+            "related_dimensions": [
+              "activity",
+              "actor"
+            ],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "Underlying data is a bespoke qualitative compilation drawn from Cindy Wittke's 'Islands of Civility' research report (per data.csv's Data column: 'Research report'), not a registered structured dataset — no source_code link and the Kumu page's content isn't fetchable (JS-rendered SPA), so no dataset_id is linked here rather than guessing one.",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_practical_third_parties_dashboard",
+      "title": "Practical Third Parties Dashboard",
+      "description": {
+        "summary": "Have subset of PAA-X data that looks at practical/de-facto third parties. Have made a dashboard to explore the data by actor or process and see overall trends.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "version_paa_x_subset_v7",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_powerbi",
+          "version": "",
+          "purpose": "Dashboard."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiMjA4NGZjM2EtMjRkOS00YTNkLWE3NTMtYjMzZTIzYWQ1OTg0IiwidCI6IjJlOWYwNmIwLTE2NjktNDU4OS04Nzg5LTEwYTA2OTM0ZGM2MSIsImMiOjh9",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "practical-third-party-dashboard.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_table",
+            "name": "Practical Third Parties Table",
+            "kind": "view",
+            "description": "Power BI table/report view of the Practical Third Parties (PAA-X subset) data.",
+            "visualisation_types": [
+              "table"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_dialogue_mapping_experiments",
+      "title": "Dialogue mapping experiments",
+      "description": {
+        "summary": "Need to finalise usable outputs from them - last instance was the myanmar questions unsure where to go from here - need to get from IDEA but even with this unsure how useful.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_robert_wilson"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sanja_badanjak"
+        }
+      ],
+      "tools": [],
+      "links": [],
+      "thumbnail": {
+        "url": "dialogue-mapping.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [],
+        "views_components": []
+      },
+      "notes": "No public_link, embed_link, or source_code exists for this record, and its data.csv description ('Need to finalise usable outputs... unsure where to go from here... unsure how useful') reads as an internal note about an unfinished/abandoned experiment rather than a description of a deployed visualisation. Leaving content.visualisation_types and views_components empty rather than guessing — there is nothing fetchable to investigate.",
+      "status": "deprecated"
+    },
+    {
+      "id": "vis_hierarchy_continuity_key_issues",
+      "title": "Hierarchy & Continuity in Key Issues",
+      "description": {
+        "summary": "Explore the diversity of Peace Agreements through time, revealing their coverage and evolution in issues addressed.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [
+              "f_pax_ppname",
+              "f_pax_agtid"
+            ],
+            "usage_note": "field_ids confirmed via tooltip/lookup code in index.html; the hierarchy.json topic-score structure itself (category, level, overall score) is derived/computed, not raw PA-X columns."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tobias_kauer"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "4",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/hierarchy/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://pax.peaceagreements.org/visualizations/data-overview-visualization/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/hierarchy",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "pax-hierarchy.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_tree",
+            "name": "Topic Hierarchy Tree",
+            "kind": "view",
+            "description": "D3 tree layout of the topic hierarchy (index.html, d3.tree() over hierarchy.json).",
+            "visualisation_types": [
+              "tree"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": []
+          },
+          {
+            "id": "view_agreement_bubbles",
+            "name": "Agreement Bubbles",
+            "kind": "view",
+            "description": "Agreements plotted as circles sized by topic score, grouped/sortable, with tooltips (PPName, agreement, category, level).",
+            "visualisation_types": [
+              "bubble_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "sort",
+              "filter"
+            ],
+            "related_dimensions": [
+              "activity",
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_back_and_forth_peace_negotiations",
+      "title": "Back and Forth in Peace Negotiations",
+      "description": {
+        "summary": "Explore the contrast between an ideal peace process and the messy reality, as our data captures the stages of agreements signed.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [
+              "f_pax_dat",
+              "f_pax_agtid"
+            ],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tobias_kauer"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "6",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/v7_messy_timeline/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://pax.peaceagreements.org/visualizations/messy-peace-processes/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/v7_messy_timeline",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "messy-timeline.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "beeswarm"
+        ],
+        "views_components": [
+          {
+            "id": "view_beeswarm_timeline",
+            "name": "Negotiation Beeswarm Timeline",
+            "kind": "view",
+            "description": "Circles positioned along a time (d3.scaleTime) x-axis by agreement date, jittered to avoid overlap ('messy timeline'), showing negotiation back-and-forth (index.html, data/pax_all_agreements_v10.csv).",
+            "visualisation_types": [
+              "beeswarm"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "search",
+              "zoom"
+            ],
+            "related_dimensions": [
+              "time",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_search",
+            "name": "Agreement Search",
+            "kind": "component",
+            "description": "Typeahead/select2 search box to find and highlight a specific agreement.",
+            "visualisation_types": [],
+            "component_type": "search",
+            "interaction_types": [
+              "search"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_map_peace_agreements_time_space",
+      "title": "Map Visualising Peace Agreements in Time and Space",
+      "description": {
+        "summary": "Explore peace agreements and the issues they address using an interactive map and timeline.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Rendered fields (year, count, code, score) are computed/aggregated in JS from the raw CSV (year derived from Dat), not literal source columns, so field_ids left empty rather than guessed."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_lucy_havens"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sarah_schottler"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_mengting_bao"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "5",
+          "purpose": "Data visualisation (with d3-polygon, d3-array, d3-delaunay)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/pax-map/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/pax-map",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/agreements-process-map/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "visualizing-peace-map.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map with glyph markers per peace process, sized/coloured by topic score (js/setup.js, js/geofunctions.js, js/popup.js).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select",
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "space",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Stacked yearly agreement blocks with an overlaid agreement-count trend line (js/timeline.js).",
+            "visualisation_types": [
+              "timeline",
+              "line_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select"
+            ],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_peace_agreement_sequence_comparison",
+      "title": "Peace Agreement Sequence Comparison across Countries",
+      "description": {
+        "summary": "Explore and compare how different peace agreements in case countries unfold over time. Links to main documents and data.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Rendered as a derived stage/code sequence structure (js/shared.js), not raw columns directly, so field_ids left empty."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_lucy_havens"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_sarah_schottler"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "5",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/compare-sequences/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/compare-sequences",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/compare-processes/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "compare-sequences.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_timeline",
+            "name": "Sequence Timeline",
+            "kind": "view",
+            "description": "Up to 3 side-by-side timeline panels (index.html #timeline-v0/v1/v2), each showing an agreement's coded topic/stage sequence for comparison.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select"
+            ],
+            "related_dimensions": [
+              "time",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_code_filter",
+            "name": "Code Selection",
+            "kind": "component",
+            "description": "Checkbox list to select which topic codes are shown across the timelines (js/compare.js codesCheckboxes).",
+            "visualisation_types": [],
+            "component_type": "filter",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          },
+          {
+            "id": "component_legend",
+            "name": "Code Legend",
+            "kind": "component",
+            "description": "Colour legend for topic codes/stages.",
+            "visualisation_types": [],
+            "component_type": "legend",
+            "interaction_types": [],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_pax_key_themes_infographics",
+      "title": "PA-X Key Themes through Interactive Infographics",
+      "description": {
+        "summary": "(already on peacerep website)",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_stewart_lamb_cormar"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_h5p",
+          "version": "",
+          "purpose": "Authors/embeds the interactive infographic content via iframe."
+        },
+        {
+          "tool_id": "tool_google_charts",
+          "version": "",
+          "purpose": "Renders BarChart/PieChart elements within the infographic."
+        },
+        {
+          "tool_id": "tool_uoe_information_services",
+          "version": "",
+          "purpose": "Self-hosts the H5P content (html5.is.ed.ac.uk)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.org/digital-resources/infographics/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "old-infographics.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "infographic"
+        ],
+        "views_components": [
+          {
+            "id": "view_barchart",
+            "name": "Bar Chart",
+            "kind": "view",
+            "description": "Google Charts BarChart within the H5P-embedded infographic (confirmed via google.visualization.BarChart call).",
+            "visualisation_types": [
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_piechart",
+            "name": "Pie Chart",
+            "kind": "view",
+            "description": "Google Charts PieChart within the H5P-embedded infographic (confirmed via google.visualization.PieChart call).",
+            "visualisation_types": [
+              "pie_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "archived"
+    },
+    {
+      "id": "vis_tile_grid_map_peace_issues",
+      "title": "Tile Grid Map of Peace Issues",
+      "description": {
+        "summary": "The Grid map visualisation glimpses into the composition of peace agreements across key issues, types, and negotiation stages.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_mar_canet"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_jaume_nualart"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_react",
+          "version": "",
+          "purpose": "App framework; tile grid appears to be built with plain CSS/SVG in React components (no separate vis/GIS library found in the bundle)."
+        },
+        {
+          "tool_id": "tool_surge",
+          "version": "",
+          "purpose": "Static hosting for the deployed app (areav3.surge.sh)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://areav3.surge.sh/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/petantelcodi/AreaPAX",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tile-grid-map.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "tile_grid_map"
+        ],
+        "views_components": [
+          {
+            "id": "view_tilegrid",
+            "name": "Tile Grid",
+            "kind": "view",
+            "description": "Grid of country tiles coloured by peace-issue attributes (src/Area.jsx, Block.jsx, Group.jsx, Groups.jsx).",
+            "visualisation_types": [
+              "tile_grid_map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select",
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "space",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_filter",
+            "name": "Issue Filter",
+            "kind": "component",
+            "description": "Filter form/list to select which peace issues are shown (src/FilterForm.jsx, FilterList.jsx, FilterListColours.jsx).",
+            "visualisation_types": [],
+            "component_type": "filter",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_peace_agreement_content_alluvial",
+      "title": "Peace Agreement Content Alluvial",
+      "description": {
+        "summary": "Alluvial of mentions is a tracker of 293 categories and issues/sub-issues along the PA-X collection of peace agreements.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "The repo's JS only swaps between pre-rendered static SVG frames — no CSV/JSON data loading found, so field_ids don't apply and are left empty."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_jaume_nualart"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_rawgraphs",
+          "version": "",
+          "purpose": "Used to author the initial alluvial visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://jaumet.github.io/Alluvial-of-Mentions/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/jaumet/Alluvial-of-Mentions",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "alluvial-of-mentions.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "alluvial"
+        ],
+        "views_components": [
+          {
+            "id": "view_alluvial",
+            "name": "Alluvial Diagram",
+            "kind": "view",
+            "description": "Hand-authored alluvial diagram (RAWGraphs-initiated per README) with click-through static SVG frames (svgs/00- through 12-, 99-) and pan/zoom (js/alluvial.js, js/panzoom.js). No live data binding — the JS only swaps pre-rendered SVG files, doesn't parse a CSV/JSON data source.",
+            "visualisation_types": [
+              "alluvial"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select",
+              "zoom",
+              "pan"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_yemen_timeline",
+      "title": "Yemen Timeline",
+      "description": {
+        "summary": "Conflict events & peace and transition documents in Yemen through connected national and local peace initiatives from 1990 onwards, in Arabic or in English.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Data is loaded live from a published Google Sheet (a bespoke Yemen-specific curation described as drawing from PA-X, per the page's own text), not the raw PA-X CSV directly — field_ids left empty rather than guessed."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tobias_kauer"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_benjamin_bach"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_robert_wilson"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_raiman_al_hamdani"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "4",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/yemen-timeline/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/yemen-timeline",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/yemen-timeline/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "yemen-timeline.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "beeswarm"
+        ],
+        "views_components": [
+          {
+            "id": "view_beeswarm_timeline",
+            "name": "Beeswarm Timeline",
+            "kind": "view",
+            "description": "D3 beeswarm timeline (variable literally named 'beeswarm' in the source) of Yemen agreements/events, toggleable by category (Agreements national/local, Events political/violent). Data loaded live from a published Google Sheet, not the repo's local CSV exports.",
+            "visualisation_types": [
+              "beeswarm"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "filter",
+              "click_select",
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "time",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_category_toggle",
+            "name": "Category Toggle",
+            "kind": "component",
+            "description": "Checkboxes to show/hide each category of event.",
+            "visualisation_types": [],
+            "component_type": "filter",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_five_ways_peace_process_inclusion",
+      "title": "Five Ways Peace Process can Support Inclusion More Effectively",
+      "description": {
+        "summary": "Illustrated comic of a visual explanation on inclusion peace-building.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_serena_fiorini"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://github.com/peacerep/peace-illustrations/blob/main/comic-peace.pdf",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/peace-illustrations",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "inclusion-illustrations.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [],
+        "views_components": []
+      },
+      "notes": "",
+      "status": "excluded"
+    },
+    {
+      "id": "vis_call_for_peace_illustrations",
+      "title": "Call for Peace Illustrations",
+      "description": {
+        "summary": "See how conflicts impact children's growth, women's lives, and our daily travel.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_serena_fiorini"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://github.com/peacerep/peace-illustrations/blob/main/illustration.pdf",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/peace-illustrations",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "call-for-peace-illustration.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [],
+        "views_components": []
+      },
+      "notes": "",
+      "status": "excluded"
+    },
+    {
+      "id": "vis_pax_gender_key_insights_story",
+      "title": "PA-X Gender Key Insights Story",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          },
+          {
+            "dataset_id": "dataset_pa_x_gender",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed via peacerep/pax_gender repo: public/data/pax_gender_v9.csv loaded alongside pax_v9.csv."
+          }
+        ],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_laura_wise"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_render",
+          "version": "",
+          "purpose": "Hosting."
+        },
+        {
+          "tool_id": "tool_svelte",
+          "version": "3.0.0",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_rollup",
+          "version": "2.3.4",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.9.0",
+          "purpose": "Data visualisation."
+        },
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "1.13.1",
+          "purpose": "Base map."
+        },
+        {
+          "tool_id": "tool_onsvisual_svelte_charts",
+          "version": "",
+          "purpose": "Chart components."
+        },
+        {
+          "tool_id": "tool_onsvisual_svelte_maps",
+          "version": "",
+          "purpose": "Map components."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://pax-gender.onrender.com",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/gender-vis/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/pax_gender",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "pax-gender.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "scrollytelling"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Geography step (src/vis/Map.svelte, Geography.svelte).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Timeline step (src/vis/Timeline.svelte).",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          },
+          {
+            "id": "view_dendrogram",
+            "name": "Dendrogram",
+            "kind": "view",
+            "description": "Radial hierarchical clustering of agreements by topic (src/vis/Dendrogram.svelte, d3.hierarchy).",
+            "visualisation_types": [
+              "dendrogram"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          },
+          {
+            "id": "view_waffle",
+            "name": "Agreement Grid",
+            "kind": "view",
+            "description": "Grid of one rectangle per agreement, canvas-rendered for performance (src/vis/Rectangles.svelte, Canvas*.svelte).",
+            "visualisation_types": [
+              "waffle_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "filter"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          },
+          {
+            "id": "view_area_lines",
+            "name": "Area/Line Trend",
+            "kind": "view",
+            "description": "Area and line trend charts over time (src/vis/Area.svelte, Lines.svelte).",
+            "visualisation_types": [
+              "area_chart",
+              "line_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_yemen_map",
+      "title": "Yemen Map",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [
+              "f_pax_agtid",
+              "f_pax_ppname",
+              "f_pax_dat",
+              "f_pax_stage",
+              "f_pax_status"
+            ],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "space",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_sarah_schottler"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_lucy_havens"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_mengting_bao"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_d3",
+          "version": "5",
+          "purpose": "Data visualisation (with d3-polygon, d3-array, d3-delaunay)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/yemen-map/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/visualizations/yemen-map/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/yemen-map",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "yemen-map.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map of Yemen agreements by location (js/yemenmap.js, js/setup.js), geocoded via LocalLat/LocalLon.",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "click_select"
+            ],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_timeline",
+            "name": "Timeline",
+            "kind": "view",
+            "description": "Timeline of agreements (js/timeline.js) — same map+timeline template pattern as peacerep/pax-map.",
+            "visualisation_types": [
+              "timeline"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select"
+            ],
+            "related_dimensions": [
+              "time"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          }
+        ]
+      },
+      "notes": "",
+      "status": "deprecated"
+    },
+    {
+      "id": "vis_pieces_of_peace",
+      "title": "Pieces of Peace: Women and Gender in Peace Processes",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          },
+          {
+            "dataset_id": "dataset_pa_x_gender",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed by the linked blog post's title: 'Representing PA-X Gender through Data Physicalisation'."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_jenny_long"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_jinrui_wang"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_laura_wise"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_serena_fiorini"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://peacerep.org/2024/11/22/artistic-perspective-representing-pa-x-gender-through-data-physicalisation/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "pieces-of-peace.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "data_physicalisation"
+        ],
+        "views_components": [
+          {
+            "id": "view_physical_piece",
+            "name": "Physical Data Piece",
+            "kind": "view",
+            "description": "Physical, non-digital artefact representing PA-X Gender data (per peacerep.org/2024/11/22/artistic-perspective-representing-pa-x-gender-through-data-physicalisation/); no chart-level type applies since it's not software-rendered.",
+            "visualisation_types": [],
+            "component_type": "",
+            "interaction_types": [],
+            "related_dimensions": [
+              "actor",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x_gender"
+            ]
+          }
+        ]
+      },
+      "notes": "Constructed with physical materials (data physicalisation), not a software tool — no `tools` entries apply. Includes two illustrations by Serena Fiorini, made from hand drawings (per direct user confirmation, 2026-07-29; not documented on any public page).",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_pax_chart_explorer",
+      "title": "PA-X Chart Explorer",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          },
+          {
+            "dataset_id": "dataset_paa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed via server/actors.py and server/peace_process.py (actor scatter map + actor co-occurrence UpSet plot)."
+          }
+        ],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_shiny",
+          "version": "",
+          "purpose": "App framework, hosted on shinyapps.io."
+        }
+      ],
+      "links": [
+        {
+          "type": "public_link",
+          "url": "https://peacerep.shinyapps.io/paxplorer/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/paxplorer",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "pax-explorer.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_home_bars",
+            "name": "Home Bar Charts",
+            "kind": "view",
+            "description": "Stage-comparison bar charts on the Home tab (server/home.py, matplotlib ax.bar).",
+            "visualisation_types": [
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "view_actors_map",
+            "name": "Actors Geo-Scatter",
+            "kind": "view",
+            "description": "Geographic scatter map of actors (server/actors.py, plotly px.scatter_geo) plus stage bar charts.",
+            "visualisation_types": [
+              "map",
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "filter"
+            ],
+            "related_dimensions": [
+              "space",
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_peace_process_upset",
+            "name": "Actor Co-occurrence UpSet",
+            "kind": "view",
+            "description": "UpSet plot of actor co-occurrence across agreements (server/peace_process.py, python upsetplot.UpSet).",
+            "visualisation_types": [
+              "upset_plot"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_paa_x"
+            ]
+          },
+          {
+            "id": "view_topics_map_scatter",
+            "name": "Topics Geo-Scatter",
+            "kind": "view",
+            "description": "Geographic scatter map (plotly px.scatter_geo) and matplotlib scatter/bar charts by topic (server/topics.py).",
+            "visualisation_types": [
+              "map",
+              "scatterplot",
+              "bar_chart"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "filter"
+            ],
+            "related_dimensions": [
+              "space",
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_sidebar_filter",
+            "name": "Sidebar Filters",
+            "kind": "component",
+            "description": "Shared sidebar filter controls across tabs (components/sidebar.py, filters.py).",
+            "visualisation_types": [],
+            "component_type": "filter",
+            "interaction_types": [
+              "filter"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_peacerep_style_guide",
+      "title": "PeaceRep Style Guide",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacerep.github.io/logos/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/peacerep/logos",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "style-guide.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [],
+        "views_components": []
+      },
+      "notes": "",
+      "status": "excluded"
+    },
+    {
+      "id": "vis_mend",
+      "title": "MEND",
+      "description": {
+        "summary": "",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_mend",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed via tvancisin/mend repo: public/data/mend_april.csv (event-level mediation data) plus mend_all_actors.csv (actor lookup table, itself keyed by GLOPAD_ID)."
+          },
+          {
+            "dataset_id": "dataset_ucdp",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Confirmed via tvancisin/mend repo: public/data/ucdp_last_last.csv (country/month/best fatality estimate)."
+          }
+        ],
+        "dimensions": []
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_mateja_peter"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_svelte",
+          "version": "5.1.3",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_vite",
+          "version": "5.4.10",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.9.0",
+          "purpose": "Data visualisation."
+        },
+        {
+          "tool_id": "tool_mapbox_gl",
+          "version": "3.8.0",
+          "purpose": "Base map."
+        },
+        {
+          "tool_id": "tool_turf",
+          "version": "3.0.14",
+          "purpose": "Geospatial analysis."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://peacehub.st-andrews.ac.uk",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/mend",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "mend-peacehub.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "dashboard"
+        ],
+        "views_components": [
+          {
+            "id": "view_network",
+            "name": "Mediator Network",
+            "kind": "view",
+            "description": "Force-directed network of mediators/actors (src/routes/SubPage.svelte force-simulation params: manyBodyStrength, nodeStrokeWidth).",
+            "visualisation_types": [
+              "network"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan",
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "actor",
+              "relational_data"
+            ],
+            "related_dataset_ids": [
+              "dataset_mend"
+            ]
+          },
+          {
+            "id": "view_map",
+            "name": "Map",
+            "kind": "view",
+            "description": "Map of mediation events/actors (src/routes/Map.svelte).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "zoom",
+              "pan"
+            ],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_mend"
+            ]
+          },
+          {
+            "id": "view_heatmap",
+            "name": "Heatmap",
+            "kind": "view",
+            "description": "Heatmap, likely of mediation activity by year/actor (src/routes/Heatmap.svelte).",
+            "visualisation_types": [
+              "heatmap"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip"
+            ],
+            "related_dimensions": [
+              "time",
+              "actor"
+            ],
+            "related_dataset_ids": [
+              "dataset_mend",
+              "dataset_ucdp"
+            ]
+          }
+        ]
+      },
+      "notes": "SubPage.svelte assembles a per-country report from 9 numbered sub-sections (First.svelte..Nine.svelte) beyond the 3 views logged here; not individually itemized given diminishing returns at this point in the pass — worth a closer look in a future session if per-section detail matters.",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_pax_tracker",
+      "title": "PA-X Tracker",
+      "description": {
+        "summary": "The PA-X Tracker is an interactive platform that consolidates a range of widely used data sources through PeaceTech tools that provide snap-shot overviews and insights into the dynamic nature of peace and transition processes.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "time",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_uoe_information_services",
+          "version": "",
+          "purpose": "Hosts peaceagreements.org/tracker (per user confirmation; site resolves to a University of Edinburgh IP block and is served by gunicorn, not a commercial PaaS)."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://www.peaceagreements.org/tracker/",
+          "label": ""
+        },
+        {
+          "type": "public_link",
+          "url": "https://www.peaceagreements.org/tracker/",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "tracker.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "map"
+        ],
+        "views_components": [
+          {
+            "id": "view_country_map",
+            "name": "Country Navigation Map",
+            "kind": "view",
+            "description": "Clickable world map for navigating to a country's tracker sub-pages ('Explore... by clicking on maps, or view All', per the page's own text).",
+            "visualisation_types": [
+              "map"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "click_select"
+            ],
+            "related_dimensions": [
+              "space"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_country_search",
+            "name": "Country Search",
+            "kind": "component",
+            "description": "Text search/filter over the country dropdown (#inputSearchCountries).",
+            "visualisation_types": [],
+            "component_type": "search",
+            "interaction_types": [
+              "search"
+            ],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "This record is the PA-X Tracker's landing/navigation page (peaceagreements.org/tracker/), which links out to the per-topic tracker tools already logged as their own records (Process Overview Dashboard, Peace Impacts Dashboard(s), Timelines of Institutional Change, Map Visualising Peace Agreements in Time and Space, Live Process Global Map) — kept minimal here rather than duplicating their content.",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_provenance_of_peacebuilding",
+      "title": "Provenance of Peacebuilding",
+      "description": {
+        "summary": "This visualization explores the provenance of peacebuilding by making visible the processes and people involved.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_pa_x",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "This visualisation depicts PA-X's own production pipeline/methodology (collection, translation, transcription, QC, database, research use) as tree nodes — it's about PA-X, not built from PA-X's content fields, so field_ids don't apply."
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "activity",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "actor",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          },
+          {
+            "id": "relational_data",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_id": "person_uta_hinrichs",
+          "entity_type": "person"
+        },
+        {
+          "entity_id": "person_jinrui_wang",
+          "entity_type": "person"
+        },
+        {
+          "entity_id": "person_benjamin_bach",
+          "entity_type": "person"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_svelte",
+          "version": "4.0.5",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_vite",
+          "version": "4.4.5",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.9.0",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://tvancisin.github.io/provenance/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/provenance",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "provenance.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "2026-07-24",
+        "updated_at": "2026-07-24"
+      },
+      "content": {
+        "visualisation_types": [
+          "provenance_tree"
+        ],
+        "views_components": [
+          {
+            "id": "view_provenance_tree",
+            "name": "Provenance Tree",
+            "kind": "view",
+            "description": "Bidirectional upstream/downstream tree (src/lib/ForegroundTree.svelte, BackgroundTree.svelte) showing how PA-X data itself is produced (nodes include pax_collect, pax_translate, pax_transcribe, pax_quality_control, pax_db, research) — visualises the data pipeline/methodology, not PA-X's content fields.",
+            "visualisation_types": [
+              "provenance_tree"
+            ],
+            "component_type": "",
+            "interaction_types": [
+              "hover_tooltip",
+              "click_select"
+            ],
+            "related_dimensions": [
+              "activity"
+            ],
+            "related_dataset_ids": [
+              "dataset_pa_x"
+            ]
+          },
+          {
+            "id": "component_legend",
+            "name": "Legend",
+            "kind": "component",
+            "description": "Legend(s) for node/people types (src/lib/Legend.svelte, PeopleLegend.svelte, TreeLegend.svelte).",
+            "visualisation_types": [],
+            "component_type": "legend",
+            "interaction_types": [],
+            "related_dimensions": [],
+            "related_dataset_ids": []
+          }
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    },
+    {
+      "id": "vis_ssd_survey_map",
+      "title": "South Sudan Peace Perceptions Map",
+      "description": {
+        "summary": "This map visualises the survey results on South Sudan people's perception of peace.",
+        "keywords": [],
+        "research_questions": [],
+        "audiences": []
+      },
+      "data_coverage": {
+        "datasets": [
+          {
+            "dataset_id": "dataset_ssd_surveys",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": ""
+          }
+        ],
+        "dimensions": [
+          {
+            "id": "geogrphical",
+            "is_covered": true,
+            "description": "",
+            "related_fields": []
+          }
+        ]
+      },
+      "contributors": [
+        {
+          "entity_type": "person",
+          "entity_id": "person_tomas_vancisin"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_id": "person_jan_pospisil",
+          "entity_type": "person"
+        }
+      ],
+      "tools": [
+        {
+          "tool_id": "tool_svelte",
+          "version": "4.0.5",
+          "purpose": "App framework."
+        },
+        {
+          "tool_id": "tool_vite",
+          "version": "4.4.5",
+          "purpose": "Build tool."
+        },
+        {
+          "tool_id": "tool_d3",
+          "version": "7.9.0",
+          "purpose": "Data visualisation."
+        }
+      ],
+      "links": [
+        {
+          "type": "embed_link",
+          "url": "https://tvancisin.github.io/south_sudan_survey/",
+          "label": ""
+        },
+        {
+          "type": "source_code",
+          "url": "https://github.com/tvancisin/south_sudan_survey",
+          "label": ""
+        }
+      ],
+      "thumbnail": {
+        "url": "ssd-survey-map.png",
+        "alt_text": "",
+        "credit": ""
+      },
+      "timestamps": {
+        "created_at": "",
+        "updated_at": ""
+      },
+      "content": {
+        "visualisation_types": [
+          "map"
+        ],
+        "views_components": [
+        ]
+      },
+      "notes": "",
+      "status": "experimental"
+    }
+  ]
+}

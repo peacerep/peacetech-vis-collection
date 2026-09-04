@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "people": [
+    {
+      "id": "person_jinrui_wang",
+      "display_name": "Jinrui Wang",
+      "given_name": "Jinrui",
+      "family_name": "Wang",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_niamh_henry",
+      "display_name": "Niamh Henry",
+      "given_name": "Niamh",
+      "family_name": "Henry",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_benjamin_bach",
+      "display_name": "Benjamin Bach",
+      "given_name": "Benjamin",
+      "family_name": "Bach",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_uta_hinrichs",
+      "display_name": "Uta Hinrichs",
+      "given_name": "Uta",
+      "family_name": "Hinrichs",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_roy_gardner",
+      "display_name": "Roy Gardner",
+      "given_name": "Roy",
+      "family_name": "Gardner",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Job title ('Consultant, Research Team - PeaceTech', per peacerep.org/about/people/) Role set to 'developer' based on the Signatories Network Analysis app's own credit ('Analysis/coding: Roy Gardner').",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_tomas_vancisin",
+      "display_name": "Tomas Vancisin",
+      "given_name": "Tomas",
+      "family_name": "Vancisin",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Appears as 'Tomas (UoE)' in data.csv row 20. Not listed on peacerep.org/about/people/, but confirmed on vishub.net/people as PeaceRep's Data Visualization Engineer (Edinburgh Futures Institute) — marked as a collaboration partner per Phase 3 rule (not in the official people list). Confirmed full-time PeaceRep staff (per user) — is_collaboration_partner set to false despite not appearing on peacerep.org/about/people/.",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_mateja_peter",
+      "display_name": "Mateja Peter",
+      "given_name": "Mateja",
+      "family_name": "Peter",
+      "affiliation_ids": [
+        "org_university_of_st_andrews"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_stewart_lamb_cormar",
+      "display_name": "Stewart Lamb Cormar",
+      "given_name": "Stewart",
+      "family_name": "Cormar",
+      "affiliation_ids":[
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_sarah_schottler",
+      "display_name": "Sarah Schöttler",
+      "given_name": "Sarah",
+      "family_name": "Schöttler",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Confirmed on vishub.net/people Alumni section: PhD graduated 2025. Affiliation set to UoE, reflecting her PeaceRep-era work — per project convention, affiliation records the time of the project, not current position. Her GitHub profile shows she has since moved to TU Eindhoven.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_sanja_badanjak",
+      "display_name": "Sanja Badanjak",
+      "given_name": "Sanja",
+      "family_name": "Badanjak",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Job title (Data Director; Chancellor's Fellow in Global Challenges, per peacerep.org/about/people/) Role set to 'data_curator' — credited as a data researcher (not vis designer) on the actor-networks and third-party-scroll pages on peaceagreements.org.",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_christine_bell",
+      "display_name": "Christine Bell",
+      "given_name": "Christine",
+      "family_name": "Bell",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_jan_pospisil",
+      "display_name": "Jan Pospisil",
+      "given_name": "Jan",
+      "family_name": "Pospisil",
+      "affiliation_ids": [
+        "org_detcro"
+      ],
+      "notes": "data.csv row 14 lists 'Niamh Henry, Jan Pospisil and Partners' — 'Partners' is not a named individual and was not created as a person record.",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_sean_molloy",
+      "display_name": "Sean Molloy",
+      "given_name": "Sean",
+      "family_name": "Molloy",
+      "affiliation_ids": [
+        "org_newcastle_university"
+      ],
+      "notes": "Listed under 'Affiliates' (Senior Research Affiliate, Newcastle Law School) rather than a core institutional Research Team on peacerep.org/about/people/ — is_collaboration_partner set to true.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_lucy_havens",
+      "display_name": "Lucy Havens",
+      "given_name": "Lucy",
+      "family_name": "Havens",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Appears as 'Lucy' alone in data.csv row 21, and as 'Lucy Havens' in row 22 with the same co-authors. Confirmed on vishub.net/people Alumni section: PhD student, graduated 2023.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_tobias_kauer",
+      "display_name": "Tobias Kauer",
+      "given_name": "Tobias",
+      "family_name": "Kauer",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "Confirmed on vishub.net/people Alumni section: PhD student, graduated 2024.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_jaume_nualart",
+      "display_name": "Jaume Nualart",
+      "given_name": "Jaume",
+      "family_name": "Nualart",
+      "affiliation_ids": [
+        "org_uoc"
+      ],
+      "notes": "Listed as 'Dr Jaume Nualart' / 'Dr Jaume Nualart (UOC)' in source data. External to the PeaceRep consortium (UOC, Spain) — is_collaboration_partner set to true.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_mar_canet",
+      "display_name": "Mar Canet",
+      "given_name": "Mar",
+      "family_name": "Canet",
+      "affiliation_ids": [
+        "org_uoc"
+      ],
+      "notes": "External to the PeaceRep consortium (UOC, Spain) — is_collaboration_partner set to true.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_jenny_long",
+      "display_name": "Jenny Long",
+      "given_name": "Jenny",
+      "family_name": "Long",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_serena_fiorini",
+      "display_name": "Serena Fiorini",
+      "given_name": "Serena",
+      "family_name": "Fiorini",
+      "affiliation_ids": [],
+      "notes": "Not found on peacerep.org/about/people/ or vishub.net/people; illustration/comic work (data.csv rows 27, 28) suggests an external commissioned illustrator rather than PeaceRep team.",
+      "is_collaboration_partner": true,
+      "roles": [
+        "designer/developer"
+      ]
+    },
+    {
+      "id": "person_laura_wise",
+      "display_name": "Laura Wise",
+      "given_name": "Laura",
+      "family_name": "Wise",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_robert_wilson",
+      "display_name": "Robert Wilson",
+      "given_name": "Robert",
+      "family_name": "Wilson",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "is_collaboration_partner": false,
+      "notes": "Confirmed on peacerep.org/about/people/: Research Fellow and Policy Co-ordinator, 'researches local peace processes with a focus on Yemen.' Missed in the original Yemen Timeline contributor lookup because it wasn't in data.csv's Author field and the source_code repo has no README to check — added per direct user confirmation.",
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_raiman_al_hamdani",
+      "display_name": "Raiman Al-Hamdani",
+      "given_name": "Raiman",
+      "family_name": "Al-Hamdani",
+      "affiliation_ids": [
+        "org_yemen_policy_center"
+      ],
+      "is_collaboration_partner": true,
+      "notes": "Associate Fellow, Yemen Policy Center (yemenpolicy.org/raiman-al-hamdani/); also previously affiliated with ARK Group and ECFR. Added per direct user confirmation — not discoverable via data.csv, source_code, or public/embed links.",
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
+      "id": "person_mengting_bao",
+      "display_name": "Mengting Bao",
+      "given_name": "Mengting",
+      "family_name": "Bao",
+      "affiliation_ids": [
+        "org_university_of_edinburgh"
+      ],
+      "roles": [
+        "designer/developer"
+      ],
+      "is_collaboration_partner": true,
+      "notes": "Discovered via GitHub commit history (github.com username mtBao-DsBr) on the pax-map and yemen-map repos; not in data.csv, peacerep.org/about/people/, or vishub.net/people. GitHub profile lists 'The University of Edinburgh' as her affiliation."
+    }
+  ]
+}

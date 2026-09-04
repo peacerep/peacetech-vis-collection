@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "organisations": [
+    {
+      "id": "org_university_of_edinburgh",
+      "name": "University of Edinburgh",
+      "short_name": "UoE",
+      "type": "university",
+      "url": "",
+      "country": "United Kingdom",
+      "notes": "Host institution of PeaceRep, not a partner.",
+      "is_collaboration_partner": false
+    },
+    {
+      "id": "org_uoc",
+      "name": "Universitat Oberta de Catalunya",
+      "short_name": "UOC",
+      "type": "university",
+      "url": "",
+      "country": "Spain",
+      "notes": "Only the abbreviation 'UOC' appears in the source data (data.csv row 25). Full organisation name not yet confirmed.",
+      "is_collaboration_partner": true
+    },
+    {
+      "id": "org_newcastle_university",
+      "name": "Newcastle University",
+      "short_name": "Newcastle",
+      "type": "university",
+      "url": "",
+      "country": "United Kingdom",
+      "notes": "Logo visible on the children-youth.png thumbnail (data.csv row 15); not mentioned in data.csv itself. External to the PeaceRep consortium (Sean Molloy's affiliate institution).",
+      "is_collaboration_partner": true
+    },
+    {
+      "id": "org_university_of_st_andrews",
+      "name": "University of St Andrews",
+      "short_name": "St Andrews",
+      "type": "university",
+      "url": "",
+      "country": "United Kingdom",
+      "notes": "Logo visible on the south-sudan-mediation.png and third-party-story.png thumbnails (data.csv rows 4 and 5); not mentioned in data.csv itself. Consortium member institution (not the host) — Global Transitions research theme and MEND project are based there per peacerep.org/about/people/.",
+      "is_collaboration_partner": true
+    },
+    {
+      "id": "org_yemen_policy_center",
+      "name": "Yemen Policy Center",
+      "short_name": "YPC",
+      "type": "research_institute",
+      "url": "",
+      "country": "Yemen",
+      "is_collaboration_partner": true,
+      "notes": "Raiman Al-Hamdani's affiliation, per yemenpolicy.org/raiman-al-hamdani/."
+    },
+    {
+      "id": "org_detcro",
+      "name": "Detcro",
+      "short_name": "Detcro",
+      "type": "ngo",
+      "url": "",
+      "country": "South Sudan",
+      "is_collaboration_partner": true,
+      "notes": "Jan Pospisil's affiliation per peacerep.org/about/people/; consortium partner organisation, not the host institution."
+    }
+  ]
+}
