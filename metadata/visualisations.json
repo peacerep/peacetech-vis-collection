@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "visualisations": [
     {
       "id": "vis_peace_agreement_signatory_dashboard",
       "title": "Peace Agreement Signatory Dashboard",
       "description": {
-        "summary": "A network dashboard template that maps out actor's involvement in peace and transition processes.",
+        "summary": "A network dashboard template mapping actors' involvement in peace and transition processes, using the PA-X and PAA-X (Peace Agreement Actor) datasets.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -221,14 +221,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_implementation_narratives_interface",
-      "title": "Implementation Narratives + Interface",
+      "title": "Implementation Narratives Tracker",
       "description": {
-        "summary": "Tracks implementation records in accordance with peace agreement provisions by topics.",
+        "summary": "A dashboard tracking implementation records against peace agreement provisions by topic, using PA-X and Implementation Reports data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -360,14 +370,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "experimental"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_pax_local_agreements_map",
       "title": "PA-X Local Agreements Map",
       "description": {
-        "summary": "A map visualizes all agreements that deal in some way with local issues, involve local actors, and deal with forms of local/communal violent conflict.",
+        "summary": "A map of agreements addressing local issues, local actors, and local/communal violent conflict, using the PA-X Local dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -497,14 +517,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_sudan_mediation_analysis",
       "title": "Sudan Mediation Analysis",
       "description": {
-        "summary": "GLO-PAD pilot data with Sudan and South Sudan visualisations.",
+        "summary": "A dashboard analysing Sudan and South Sudan mediation processes, using pilot data from GLO-PAD.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -672,14 +701,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "experimental"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_third_party_storytelling",
       "title": "Third Party in Peace Agreements Storytelling",
       "description": {
-        "summary": "Scrollytelling application of Practical Third Party data. Includes involvement over time, by stage, space and with who.",
+        "summary": "A scrollytelling piece tracing practical third-party involvement in peace processes over time, stage, and location, using the PAA-X and PA-X datasets.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -883,14 +921,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_live_process_global_map",
-      "title": "Live process global map",
+      "title": "PA-X Tracker Globe",
       "description": {
-        "summary": "Globe as alternative entry point to tracker. Idea is to get a world snapshot of how things are going in terms of conflict levels and ongoing processes.",
+        "summary": "An interactive globe giving a world snapshot of ongoing peace processes and conflict levels, using PA-X, UCDP, and ACLED data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1048,14 +1096,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_signatories_network_analysis",
       "title": "Peace Agreement Signatories Network Analysis",
       "description": {
-        "summary": "A deep dive into presence or absence of signatories in peace agreements using network analysis methodologies.",
+        "summary": "A network-analysis dashboard examining the presence or absence of signatories across peace agreements, using the PAA-X dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1152,14 +1209,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "deprecated"
+      "status": [
+        "experimental"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_semantic_mapping_constitutions",
       "title": "Semantic Mapping: Peace Agreements — Constitutions",
       "description": {
-        "summary": "An analysis of how peace agreements influence subsequent constitutions using semantic mapping of similar provisions in their later constitutions.",
+        "summary": "A timeline and bar-chart analysis of how peace agreements influence subsequent constitutions, using semantic mapping of similar provisions, drawing on PA-X agreement data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1234,14 +1300,21 @@
         ],
         "views_components": []
       },
+      "structure": {
+        "kind": "",
+        "qualities": []
+      },
       "notes": "",
-      "status": "excluded"
+      "status": [
+        "experimental"
+      ],
+      "excluded": true
     },
     {
       "id": "vis_ukraine_map",
-      "title": "Ukraine Map",
+      "title": "Ukraine Conflict Map",
       "description": {
-        "summary": "Our visualization of Ukraine conflict maps presents a comprehensive amalgamation of intricate data sourced from different portals. - Conflict violence data from ACLED, each dot depicts a record of battles, explosions/remote violence, protests, riots, strategic developments and violence against civilians - Deaths data from UCDP, covering deaths from state-based conflict, non-state conflict and one-sided conflict. - Ethnic makeup data from EPR, contributing critical context to the conflict. - Power Plants locations from global power plant database and OECD - Humanitarian corridors from research by PeaceRep and partners. Together, these multi-faceted layers provide a rich and detailed representation of the complex dynamics and human impact of the Russian-Ukraine War.",
+        "summary": "An interactive map layering conflict dynamics of the Russia-Ukraine war — violence events, conflict deaths, ethnic composition, power infrastructure, and humanitarian corridors — using data from ACLED, UCDP, EPR, the Global Power Plant Database, and PeaceRep/partner humanitarian-corridor research.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1420,14 +1493,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_timelines_institutional_change",
       "title": "Timelines of Institutional Change",
       "description": {
-        "summary": "Interactive timelines to illustrate the formal change process in a selected country, including: peace agreements, local agreements, constitutional events, amnesties, elections, coups & other relevant events.",
+        "summary": "Interactive timelines of formal institutional change in a selected country — peace and local agreements, constitutional events, amnesties, elections, and coups — using PA-X, Colpus, Constitute, NELDA, and Amnesties data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1549,14 +1631,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_process_overview_dashboard",
       "title": "Process Overview Dashboard",
       "description": {
-        "summary": "Interactive data report/dashboard to provide a snapshot of high-level process data from PA-X - can see for all of PA-X or select specific countries or processes, or types of agreements. Can see number of agreements, types of agreements, the stage they were introduced, a timeline of agreements and a snapshot look at the key issues addressed in the agreement contents.",
+        "summary": "A dashboard giving a high-level snapshot of PA-X process data — filterable by country, process, or agreement type — covering agreement counts, types, negotiation stage, a timeline, and key issues addressed.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1674,14 +1766,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_peace_impacts_dashboards",
       "title": "Peace Impacts Dashboard(s)",
       "description": {
-        "summary": "Interactive data report/dashboard to provide insights into the impacts the process has had on the general experiences in the country, across conflict, security, political, economic and humanitarian data indicators.",
+        "summary": "A dashboard tracking the impacts of peace processes on conflict, security, political, economic, and humanitarian indicators in a country, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1775,14 +1876,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_agreement_actor_networks",
-      "title": "Agreement - Actor Networks",
+      "title": "Agreement - Actor Networks Country Profiles",
       "description": {
-        "summary": "Interactive agreement-actor networks where nodes can be actors or agreements, and connected if they were a party or third party signatory to an agreement. When you click on an agreement you can see information on it and a link to the full text as well as highlight all who sign it. When you click an actor you can see information on them, and a list of agreements they are signatories to.",
+        "summary": "An interactive network of agreement-actor relationships, where actors and agreements are linked by party or third-party signatory status, with click-through detail on each node, using the PAA-X dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1874,14 +1984,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_south_sudan_perceptions_of_peace_survey",
       "title": "South Sudan Perceptions of Peace Survey",
       "description": {
-        "summary": "This interactive data report presents insights and key findings from a longitudinal survey on Perceptions of Peace in South Sudan by PeaceRep, Detcro, USIP and partners.",
+        "summary": "A dashboard presenting findings from a longitudinal survey on perceptions of peace in South Sudan, by PeaceRep, Detcro, USIP and partners, using the SSD Surveys dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -1978,14 +2098,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_children_and_youth_peace_agreements",
       "title": "Children and Youth in Peace Agreements",
       "description": {
-        "summary": "This interactive data report presents references to children and/or youth in peace agreements signed between 1990 and 2022. This dataset has drawn on 348 peace agreements in PA-X, which code for general references to children and/or youth. Using this data, the Children and Youth in Peace Agreements dataset further codes these provisions into specific topics. Coded topics include child soldiers, children's rights, children and transitional justice, children and third-party actors and children and references to their inclusion, protection and provision.",
+        "summary": "A dashboard coding references to children and/or youth across 348 peace agreements (1990-2022) into topics such as child soldiers, children's rights, transitional justice, third-party actors, and inclusion/protection provisions, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2099,20 +2228,36 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_dialogue_mapping_ukraine",
-      "title": "Dialogue Mapping - Ukraine",
+      "title": "Ukraine-Russia Conflict: Dialogues, Proposals and Issues",
       "description": {
-        "summary": "Over the course of the conflict there have been a number of published proposals for peace, from external countries or groups of country, and also some forms of agreement reached that include Ukraine and Russia, with respect to dimensions of the conflict. Based on Cindy Wittke's work on 'Islands of civility' we set out the agreements and proposals, to explore: (a) what topics they deal with (b) where there is overlap in topics (c) who has signed agreements that deal with dimensions of the conflict, where agreement has been reached. The tool also provides a short narrative of each talk topic or agreement, and easy access to the relevant documents and basic background information.",
+        "summary": "A network mapping peace proposals and agreements in Russia's war against Ukraine, what topics they address, where topics overlap, and who has signed, using Cindy Wittke's 'Islands of Agreement and Civility' research report.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
       },
       "data_coverage": {
-        "datasets": [],
+        "datasets": [
+          {
+            "dataset_id": "dataset_islands_of_civility",
+            "version_id": "",
+            "field_ids": [],
+            "usage_note": "Data source for the Kumu network (confirmed by the user)."
+          }
+        ],
         "dimensions": [
           {
             "id": "activity",
@@ -2142,6 +2287,10 @@
         {
           "entity_type": "person",
           "entity_id": "person_niamh_henry"
+        },
+        {
+          "entity_type": "person",
+          "entity_id": "person_cindy_wittke"
         }
       ],
       "tools": [
@@ -2194,14 +2343,23 @@
           }
         ]
       },
-      "notes": "Underlying data is a bespoke qualitative compilation drawn from Cindy Wittke's 'Islands of Civility' research report (per data.csv's Data column: 'Research report'), not a registered structured dataset — no source_code link and the Kumu page's content isn't fetchable (JS-rendered SPA), so no dataset_id is linked here rather than guessing one.",
-      "status": "experimental"
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
+      "notes": "",
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_practical_third_parties_dashboard",
       "title": "Practical Third Parties Dashboard",
       "description": {
-        "summary": "Have subset of PAA-X data that looks at practical/de-facto third parties. Have made a dashboard to explore the data by actor or process and see overall trends.",
+        "summary": "A dashboard exploring practical/de-facto third-party involvement in peace processes by actor or process, using a subset of the PAA-X dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2283,14 +2441,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_dialogue_mapping_experiments",
       "title": "Dialogue mapping experiments",
       "description": {
-        "summary": "Need to finalise usable outputs from them - last instance was the myanmar questions unsure where to go from here - need to get from IDEA but even with this unsure how useful.",
+        "summary": "An interactive vis exploring dialogue-mapping methods, last trialled on Myanmar-related questions; it was an experiment with country specific outputs.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2328,14 +2495,23 @@
         "visualisation_types": [],
         "views_components": []
       },
-      "notes": "No public_link, embed_link, or source_code exists for this record, and its data.csv description ('Need to finalise usable outputs... unsure where to go from here... unsure how useful') reads as an internal note about an unfinished/abandoned experiment rather than a description of a deployed visualisation. Leaving content.visualisation_types and views_components empty rather than guessing — there is nothing fetchable to investigate.",
-      "status": "deprecated"
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
+      "notes": "",
+      "status": [
+        "experimental"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_hierarchy_continuity_key_issues",
       "title": "Hierarchy & Continuity in Key Issues",
       "description": {
-        "summary": "Explore the diversity of Peace Agreements through time, revealing their coverage and evolution in issues addressed.",
+        "summary": "A dashboard showing the diversity of peace agreements over time, revealing how coverage of key issues has evolved, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2456,14 +2632,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_back_and_forth_peace_negotiations",
       "title": "Back and Forth in Peace Negotiations",
       "description": {
-        "summary": "Explore the contrast between an ideal peace process and the messy reality, as our data captures the stages of agreements signed.",
+        "summary": "A bespoke timeline contrasting the ideal peace-process sequence with the messy reality of the negotiation stages agreements actually pass through, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2584,14 +2769,24 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view",
+          "template"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_map_peace_agreements_time_space",
       "title": "Map Visualising Peace Agreements in Time and Space",
       "description": {
-        "summary": "Explore peace agreements and the issues they address using an interactive map and timeline.",
+        "summary": "A map-and-timeline dashboard of peace agreements and the issues they address, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2727,14 +2922,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_peace_agreement_sequence_comparison",
       "title": "Peace Agreement Sequence Comparison across Countries",
       "description": {
-        "summary": "Explore and compare how different peace agreements in case countries unfold over time. Links to main documents and data.",
+        "summary": "A comparison timeline tool of how peace agreement sequences unfold over time across case countries, using PA-X data, with links to full agreement texts.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2861,14 +3065,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "inactive"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_pax_key_themes_infographics",
       "title": "PA-X Key Themes through Interactive Infographics",
       "description": {
-        "summary": "(already on peacerep website)",
+        "summary": "An infographic series highlighting key themes in PA-X peace agreement data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -2964,14 +3177,21 @@
           }
         ]
       },
+      "structure": {
+        "kind": "container",
+        "qualities": []
+      },
       "notes": "",
-      "status": "archived"
+      "status": [
+        "inactive"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_tile_grid_map_peace_issues",
       "title": "Tile Grid Map of Peace Issues",
       "description": {
-        "summary": "The Grid map visualisation glimpses into the composition of peace agreements across key issues, types, and negotiation stages.",
+        "summary": "A tile grid map showing the composition of peace agreements across key issues, agreement types, and negotiation stages, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3078,14 +3298,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "inactive"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_peace_agreement_content_alluvial",
       "title": "Peace Agreement Content Alluvial",
       "description": {
-        "summary": "Alluvial of mentions is a tracker of 293 categories and issues/sub-issues along the PA-X collection of peace agreements.",
+        "summary": "An alluvial diagram tracking 293 issue and sub-issue categories mentioned across the PA-X collection of peace agreements.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3176,14 +3405,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "inactive"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_yemen_timeline",
       "title": "Yemen Timeline",
       "description": {
-        "summary": "Conflict events & peace and transition documents in Yemen through connected national and local peace initiatives from 1990 onwards, in Arabic or in English.",
+        "summary": "A beeswarm timeline of conflict events and peace/transition documents in Yemen since 1990, connecting national and local peace initiatives, in Arabic and English, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3317,14 +3555,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_five_ways_peace_process_inclusion",
       "title": "Five Ways Peace Process can Support Inclusion More Effectively",
       "description": {
-        "summary": "Illustrated comic of a visual explanation on inclusion peace-building.",
+        "summary": "An illustrated comic explaining five ways peace processes can support inclusion more effectively.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3372,14 +3619,21 @@
         "visualisation_types": [],
         "views_components": []
       },
+      "structure": {
+        "kind": "",
+        "qualities": []
+      },
       "notes": "",
-      "status": "excluded"
+      "status": [
+        "promoted"
+      ],
+      "excluded": true
     },
     {
       "id": "vis_call_for_peace_illustrations",
       "title": "Call for Peace Illustrations",
       "description": {
-        "summary": "See how conflicts impact children's growth, women's lives, and our daily travel.",
+        "summary": "A set of illustrations depicting how conflict impacts children's growth, women's lives, and daily travel.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3433,14 +3687,21 @@
         "visualisation_types": [],
         "views_components": []
       },
+      "structure": {
+        "kind": "",
+        "qualities": []
+      },
       "notes": "",
-      "status": "excluded"
+      "status": [
+        "promoted"
+      ],
+      "excluded": true
     },
     {
       "id": "vis_pax_gender_key_insights_story",
       "title": "PA-X Gender Key Insights Story",
       "description": {
-        "summary": "",
+        "summary": "A scrollytelling story of key insights on gender provisions in peace agreements — geography, timeline, topic clustering, and trends over time — using PA-X and PA-X Gender data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3633,14 +3894,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_yemen_map",
       "title": "Yemen Map",
       "description": {
-        "summary": "",
+        "summary": "A dashboard mapping and timelining Yemen peace agreements by location and date, using the PA-X Peace Agreements Database.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3763,14 +4033,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "deprecated"
+      "status": [
+        "experimental"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_pieces_of_peace",
       "title": "Pieces of Peace: Women and Gender in Peace Processes",
       "description": {
-        "summary": "",
+        "summary": "A data physicalisation artwork representing women and gender in peace processes, translating PA-X and PA-X Gender data into physical pieces.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -3819,10 +4098,6 @@
         {
           "entity_type": "person",
           "entity_id": "person_niamh_henry"
-        },
-        {
-          "entity_type": "person",
-          "entity_id": "person_serena_fiorini"
         }
       ],
       "tools": [],
@@ -3865,14 +4140,23 @@
           }
         ]
       },
-      "notes": "Constructed with physical materials (data physicalisation), not a software tool — no `tools` entries apply. Includes two illustrations by Serena Fiorini, made from hand drawings (per direct user confirmation, 2026-07-29; not documented on any public page).",
-      "status": "experimental"
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
+        ]
+      },
+      "notes": "",
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_pax_chart_explorer",
       "title": "PA-X Chart Explorer",
       "description": {
-        "summary": "",
+        "summary": "A dashboard exploring PA-X and PAA-X data through stage-comparison bar charts, actor and topic geo-scatter maps, and an actor co-occurrence UpSet plot.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -4031,14 +4315,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_peacerep_style_guide",
       "title": "PeaceRep Style Guide",
       "description": {
-        "summary": "",
+        "summary": "A logo and brand-asset showcase for PeaceRep — not a research data visualisation — listing downloadable PeaceRep logo variants.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -4079,14 +4372,21 @@
         "visualisation_types": [],
         "views_components": []
       },
+      "structure": {
+        "kind": "",
+        "qualities": []
+      },
       "notes": "",
-      "status": "excluded"
+      "status": [
+        "promoted"
+      ],
+      "excluded": true
     },
     {
       "id": "vis_mend",
-      "title": "MEND",
+      "title": "Global PeaceHub - Mediation Event and Negotiators Database",
       "description": {
-        "summary": "",
+        "summary": "An interactive report of mediation data of conflicts by external third parties — a mediator network, map, and heatmap against conflict activity — using MEND mediation-event data and UCDP.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -4236,8 +4536,15 @@
           }
         ]
       },
-      "notes": "SubPage.svelte assembles a per-country report from 9 numbered sub-sections (First.svelte..Nine.svelte) beyond the 3 views logged here; not individually itemized given diminishing returns at this point in the pass — worth a closer look in a future session if per-section detail matters.",
-      "status": "experimental"
+      "structure": {
+        "kind": "container",
+        "qualities": []
+      },
+      "notes": "",
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_pax_tracker",
@@ -4345,14 +4652,21 @@
           }
         ]
       },
-      "notes": "This record is the PA-X Tracker's landing/navigation page (peaceagreements.org/tracker/), which links out to the per-topic tracker tools already logged as their own records (Process Overview Dashboard, Peace Impacts Dashboard(s), Timelines of Institutional Change, Map Visualising Peace Agreements in Time and Space, Live Process Global Map) — kept minimal here rather than duplicating their content.",
-      "status": "experimental"
+      "structure": {
+        "kind": "container",
+        "qualities": []
+      },
+      "notes": "",
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_provenance_of_peacebuilding",
       "title": "Provenance of Peacebuilding",
       "description": {
-        "summary": "This visualization explores the provenance of peacebuilding by making visible the processes and people involved.",
+        "summary": "A provenance-tree visualisation making visible the processes and people involved in peacebuilding, using PA-X data.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -4485,14 +4799,23 @@
           }
         ]
       },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "multi_view"
+        ]
+      },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     },
     {
       "id": "vis_ssd_survey_map",
       "title": "South Sudan Peace Perceptions Map",
       "description": {
-        "summary": "This map visualises the survey results on South Sudan people's perception of peace.",
+        "summary": "A map of survey results on South Sudanese people's perceptions of peace, using the SSD Surveys dataset.",
         "keywords": [],
         "research_questions": [],
         "audiences": []
@@ -4571,11 +4894,19 @@
         "visualisation_types": [
           "map"
         ],
-        "views_components": [
+        "views_components": []
+      },
+      "structure": {
+        "kind": "standalone",
+        "qualities": [
+          "single_view"
         ]
       },
       "notes": "",
-      "status": "experimental"
+      "status": [
+        "promoted"
+      ],
+      "excluded": false
     }
   ]
 }

@@ -12,3 +12,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Node (review app)
+node_modules/
+dist/

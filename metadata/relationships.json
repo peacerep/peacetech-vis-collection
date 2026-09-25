@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "edges": [
+    {
+      "source": "vis_third_party_storytelling",
+      "target": "vis_peace_agreement_signatory_dashboard",
+      "type": "design",
+      "name": "expansion",
+      "tooltip": "Expansion by added explanatory content."
+    },
+    {
+      "source": "vis_agreement_actor_networks",
+      "target": "vis_dialogue_mapping_experiments",
+      "type": "design",
+      "name": "expansion",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_peace_agreement_signatory_dashboard",
+      "target": "vis_agreement_actor_networks",
+      "type": "design",
+      "name": "expansion",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_tracker",
+      "target": "vis_live_process_global_map",
+      "type": "design",
+      "name": "alternative",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_peace_agreement_content_alluvial",
+      "target": "vis_hierarchy_continuity_key_issues",
+      "type": "design",
+      "name": "expansion",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_yemen_timeline",
+      "target": "vis_timelines_institutional_change",
+      "type": "design",
+      "name": "visual inspiration",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_yemen_timeline",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "design",
+      "name": "visual inspiration",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_mend",
+      "target": "vis_sudan_mediation_analysis",
+      "type": "design",
+      "name": "expansion",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_mend",
+      "target": "vis_sudan_mediation_analysis",
+      "type": "design",
+      "name": "visual simplification",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_hierarchy_continuity_key_issues",
+      "target": "vis_timelines_institutional_change",
+      "type": "design",
+      "name": "narrowing focus",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_hierarchy_continuity_key_issues",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "design",
+      "name": "narrowing focus",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_third_party_storytelling",
+      "target": "vis_peace_agreement_signatory_dashboard",
+      "type": "structural",
+      "name": "reused views",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_peace_agreement_signatory_dashboard",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_third_party_storytelling",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_live_process_global_map",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_agreement_actor_networks",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_gender_key_insights_story",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "structural",
+      "name": "reused views",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_ukraine_map",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_ssd_survey_map",
+      "target": "vis_south_sudan_perceptions_of_peace_survey",
+      "type": "design",
+      "name": "visual simplification",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_yemen_timeline",
+      "target": "vis_implementation_narratives_interface",
+      "type": "design",
+      "name": "visual inspiration",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_map_peace_agreements_time_space",
+      "target": "vis_process_overview_dashboard",
+      "type": "design",
+      "name": "alternative",
+      "tooltip": ""
+    }
+
+
+
+  ]
+}

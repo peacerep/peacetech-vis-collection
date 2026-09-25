@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "dimensions": [
     {
       "id": "time",
@@ -209,6 +209,49 @@
     {
       "id": "custom",
       "label": "Custom"
+    }
+  ],
+  "structure_kinds": [
+    {
+      "id": "standalone",
+      "label": "Standalone vis",
+      "description": "A visualisation in its own right."
+    },
+    {
+      "id": "container",
+      "label": "Container",
+      "description": "A page or hub that hosts other visualisations. Has no qualities."
+    }
+  ],
+  "structure_qualities": [
+    {
+      "id": "single_view",
+      "label": "Single-view",
+      "description": "One view. Mutually exclusive with multi_view."
+    },
+    {
+      "id": "multi_view",
+      "label": "Multi-view",
+      "description": "Several coordinated views. Mutually exclusive with single_view."
+    },
+    {
+      "id": "template",
+      "label": "Template",
+      "description": "Reusable template instantiated for different data/contexts."
+    }
+  ],
+  "edge_types": [
+    {
+      "id": "design",
+      "label": "Design",
+      "description": "The relationship concerns the visualisation's design."
+    }
+  ],
+  "edge_names": [
+    {
+      "id": "expansion",
+      "label": "Expansion",
+      "description": "Target expands on source."
     }
   ],
   "component_types": [
@@ -465,28 +508,19 @@
   ],
   "status": [
     {
+      "id": "promoted",
+      "label": "Promoted",
+      "description": "Current and maintained; recommended for showcasing."
+    },
+    {
       "id": "experimental",
-      "label": "Experimental"
+      "label": "Experimental",
+      "description": "Prototype or work in progress; may change."
     },
     {
-      "id": "outdated",
-      "label": "Outdated"
-    },
-    {
-      "id": "up-to-date",
-      "label": "Up-to-date"
-    },
-    {
-      "id": "archived",
-      "label": "Archived"
-    },
-    {
-      "id": "deprecated",
-      "label": "Deprecated"
-    },
-    {
-      "id": "excluded",
-      "label": "Excluded"
+      "id": "inactive",
+      "label": "Inactive",
+      "description": "No longer actively maintained or developed."
     }
   ]
 }

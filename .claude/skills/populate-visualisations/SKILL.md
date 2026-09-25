@@ -11,7 +11,7 @@ Turns rows of `data.csv` into records in `metadata/visualisations.json`. Schema 
 
 Never populate more than ~8 rows in one pass. If this is the first time populating a fresh batch of rows (e.g. `data.csv` was extended), pilot on 5 rows first, stop, and get explicit confirmation the output is right before continuing — judgment calls made early (naming conventions, how ambiguous fields get handled) set the pattern for everything after.
 
-After every batch: run `python3 review/build_review.py` to regenerate the QA page, and spot-check it.
+After every batch: spot-check the QA page (`npm run dev` in `review/`; it reloads on metadata edits).
 
 ## Field-by-field conventions
 
@@ -27,7 +27,9 @@ After every batch: run `python3 review/build_review.py` to regenerate the QA pag
 - **`thumbnail.alt_text` / `thumbnail.credit`**: leave empty (`""`). **Do not open or read thumbnail images at all** — visualisation type/alt-text inference from thumbnails is handled by a separate workflow outside this project.
 - **`content.visualisation_types` / `content.views_components`**: leave empty (`[]`) — same reason as alt_text above.
 - **`timestamps.created_at` / `updated_at`**: set to the date this record is drafted. `data.csv` has no real creation date for any row — this is a known, permanent limitation. Don't flag it per record; it's already documented here.
-- **`status`**: required on every record. Values come from `vocabularies.status`: `experimental`, `outdated`, `up-to-date`, `archived`, `deprecated`, `excluded`. Default to `experimental` unless the user gives a specific reason for another value — never infer `archived`/`deprecated`/`excluded` on your own judgment.
+- **`status`**: required on every record; a list of IDs from `vocabularies.status`: `promoted`, `experimental`, `inactive`. Default to `["experimental"]` unless the user gives a specific reason for another value — never infer `promoted`/`inactive` on your own judgment.
+- **`excluded`**: required boolean, default `false`. Set `true` only on the user's say-so, with the reason in `notes`.
+- **`structure`**: `{"kind": "", "qualities": []}` until classified. `kind` is `standalone` or `container`; `qualities` (`single_view`/`multi_view`/`template`) only apply to `standalone`. Don't infer these from the CSV — leave empty unless the user or the live page makes it unambiguous.
 - **`notes`**: only for something that genuinely can't be resolved from `data.csv` (a vocabulary gap, an unverifiable claim, an inferred dataset link per above) — one clean sentence, not a restatement of these conventions. Leave `""` when there's nothing to flag.
 
 ## Validation before calling a batch done

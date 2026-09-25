@@ -6773,6 +6773,19 @@
         }
       ],
       "notes": "Fields extracted from tvancisin/mend repo's public/data/mend_april.csv (event-level data; 2 trailing unnamed columns in the source file dropped). A companion actor-lookup file in the same repo, mend_all_actors.csv, is keyed by GLOPAD_ID/PAAX_ID — not included as separate fields here. No citation found yet; flagging rather than guessing one."
+    },
+    {
+      "id": "dataset_islands_of_civility",
+      "name": "Islands of Agreement and Civility: Conflict Management in Russia's War against Ukraine",
+      "short_name": "Islands of Civility",
+      "description": "Research report by Cindy Wittke examining humanitarian negotiations and 'islands of civility'/'islands of agreement' as conflict management tools in Russia's war against Ukraine, linked to five points of President Zelensky's 10-point peace plan. A qualitative report (PDF), not a structured dataset.",
+      "publisher_organisation_id": "org_university_of_edinburgh",
+      "source_url": "https://era.ed.ac.uk/items/967e38ef-5f9f-4ce2-b9b7-829b812193e5",
+      "licence": "",
+      "citation": "Wittke, C. (2023). Islands of Agreement and Civility: Conflict Management in Russia's War against Ukraine [Research report]. University of Edinburgh. https://doi.org/10.7488/era/5201",
+      "versions": [],
+      "fields": [],
+      "notes": "Source confirmed by the user for vis_dialogue_mapping_ukraine (2026-09-24). Metadata from the Edinburgh Research Archive item page: issued 2023-03-24, PeaceRep Publications Database collection, handle https://hdl.handle.net/1842/42507, file Wittke-2023-Creating-Islands-of-Agreement-and-Civility.pdf. licence left empty — the ERA page shows only the site-wide University of Edinburgh copyright notice, no explicit licence. No fields: the source is a PDF report."
     }
   ]
 }

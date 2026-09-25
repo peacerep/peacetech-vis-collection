@@ -156,6 +156,19 @@
       ]
     },
     {
+      "id": "person_cindy_wittke",
+      "display_name": "Cindy Wittke",
+      "given_name": "Cindy",
+      "family_name": "Wittke",
+      "affiliation_ids": [
+      ],
+      "notes": "",
+      "is_collaboration_partner": false,
+      "roles": [
+        "domain_researcher"
+      ]
+    },
+    {
       "id": "person_jan_pospisil",
       "display_name": "Jan Pospisil",
       "given_name": "Jan",

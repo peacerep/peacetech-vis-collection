@@ -18,6 +18,7 @@ metadata/
   organisations.json
   datasets.json
   tools.json
+  relationships.json
   vocabularies.json
   README.md
 ```
@@ -56,9 +57,13 @@ metadata/
     - [Description](#description-4)
     - [Top-level structure](#top-level-structure-4)
     - [Tool record fields](#tool-record-fields)
-  - [`vocabularies.json`](#vocabulariesjson)
+  - [`relationships.json`](#relationshipsjson)
     - [Description](#description-5)
     - [Top-level structure](#top-level-structure-5)
+    - [Edge record fields](#edge-record-fields)
+  - [`vocabularies.json`](#vocabulariesjson)
+    - [Description](#description-6)
+    - [Top-level structure](#top-level-structure-6)
     - [Vocabulary item fields](#vocabulary-item-fields)
 - [Notes on dates](#notes-on-dates)
 - [Notes on empty values](#notes-on-empty-values)
@@ -75,6 +80,7 @@ metadata/
 | `organisations.json` | Reusable records for organisations, institutions, labs, centres, funders, and partners. |
 | `datasets.json` | Reusable records for datasets, dataset versions, and dataset fields. |
 | `tools.json` | Reusable records for software, platforms, and tools. |
+| `relationships.json` | Network edges between visualisations. |
 | `vocabularies.json` | Controlled terms used across the metadata system. |
 | `README.md` | Documentation for the metadata structure. |
 
@@ -205,7 +211,11 @@ Each visualisation record describes what the visualisation is, what data it uses
 | `content.views_components[].interaction_types` | array | optional | Interaction types from `vocabularies.interaction_types`. |
 | `content.views_components[].related_dimensions` | array | optional | Related dimension IDs. |
 | `content.views_components[].related_dataset_ids` | array | optional | Related dataset IDs. |
-| `status` | string | recommended | Record status from `vocabularies.status`. |
+| `structure` | object | recommended | How the visualisation is structured. |
+| `structure.kind` | string | yes | `standalone` or `container`, from `vocabularies.structure_kinds`. Empty string until classified. |
+| `structure.qualities` | array | yes | Qualities from `vocabularies.structure_qualities` (`single_view`, `multi_view`, `template`). Only for `standalone`; must be empty for `container`. `single_view` and `multi_view` are mutually exclusive. |
+| `status` | array | recommended | Record statuses from `vocabularies.status` (`promoted`, `experimental`, `inactive`). |
+| `excluded` | boolean | yes | `true` if the record is kept for reference but excluded from the collection (e.g. not a research visualisation). Give the reason in `notes`. |
 | `notes` | string | optional | Internal notes. |
 
 ---
@@ -340,6 +350,35 @@ Tool version and tool purpose for a specific visualisation should be stored in `
 
 ---
 
+## `relationships.json`
+
+### Description
+
+Network edges between visualisations: each edge connects two records in `visualisations.json`.
+
+Only curated relationships belong here — ones that aren't recorded anywhere else. Connections that could be derived from shared metadata (datasets, contributors, tools) are not stored or generated as edges.
+
+Every edge is directed and reads source → target, e.g. an `expansion` edge means the target expands on the source. Each edge is classified twice: `type` says what the relationship concerns (e.g. `design`), and `name` says what the relationship is (e.g. `expansion`). If a pair is related in more than one type, store one edge per type.
+
+### Top-level structure
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| `schema_version` | string | yes | Version of the metadata schema. |
+| `edges` | array | yes | List of edges. |
+
+### Edge record fields
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| `source` | string | yes | Visualisation ID the edge points from. |
+| `target` | string | yes | Visualisation ID the edge points to. |
+| `type` | string | yes | What the relationship concerns, from `vocabularies.edge_types` (e.g. `design`). |
+| `name` | string | yes | What the relationship is, from `vocabularies.edge_names` (e.g. `expansion`). |
+| `tooltip` | string | optional | Qualitative description of the relationship, shown as the edge's tooltip in the network view. |
+
+---
+
 ## `vocabularies.json`
 
 ### Description
@@ -359,6 +398,10 @@ For example, use one approved value such as `policy_makers` instead of several v
 | `audiences` | array | recommended | Controlled terms for intended audiences. |
 | `contributor_roles` | array | recommended | Controlled terms for contributor roles. |
 | `visualisation_types` | array | recommended | Controlled terms for visualisation types. |
+| `structure_kinds` | array | recommended | Controlled terms for `structure.kind`. |
+| `structure_qualities` | array | recommended | Controlled terms for `structure.qualities`. |
+| `edge_types` | array | recommended | Controlled terms for `relationships.json` edge `type` (what the relationship concerns). |
+| `edge_names` | array | recommended | Controlled terms for `relationships.json` edge `name` (what the relationship is). |
 | `component_types` | array | recommended | Controlled terms for view/component types. |
 | `interaction_types` | array | recommended | Controlled terms for interaction types. |
 | `link_types` | array | recommended | Controlled terms for link types. |
@@ -444,6 +487,12 @@ Before committing metadata, check:
 - [ ] Every visualisation type exists in `vocabularies.visualisation_types`.
 - [ ] Every link type exists in `vocabularies.link_types`.
 - [ ] Every status value exists in `vocabularies.status`.
+- [ ] `structure.kind` exists in `vocabularies.structure_kinds` (or is empty, pending classification).
+- [ ] Every `structure.qualities` value exists in `vocabularies.structure_qualities`; `container` records have no qualities; `single_view` and `multi_view` never appear together.
+- [ ] Every record with `excluded: true` explains why in `notes`.
+- [ ] Every edge `source` and `target` references an existing visualisation ID, and they differ (no self-loops).
+- [ ] Every edge `type` exists in `vocabularies.edge_types` and every edge `name` in `vocabularies.edge_names`.
+- [ ] No two edges share the same `source`, `target`, `type` and `name`.
 - [ ] `created_at` and `updated_at` use ISO date format.
 - [ ] Thumbnail has useful `alt_text`.
 
@@ -457,4 +506,5 @@ Before committing metadata, check:
 4. Add or check tools in `tools.json`.
 5. Add or check controlled terms in `vocabularies.json`.
 6. Add the visualisation record in `visualisations.json`.
-7. Validate that all referenced IDs exist.
+7. Add any edges to other visualisations in `relationships.json`.
+8. Validate that all referenced IDs exist.

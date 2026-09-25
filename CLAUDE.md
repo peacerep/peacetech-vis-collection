@@ -14,6 +14,7 @@ Turning a messy `data.csv` (37 visualisation entries) into structured metadata u
 - [ ] `tools.json` — not yet populated (still the placeholder example)
 - [x] `check-links` run across all 36 rows: `source_code` filled for 21 rows total from confirmed GitHub matches; 13 rows have no confident repo match (Kumu/PowerBI-hosted, or genuinely unmatched) and remain empty. Iframe check found one real discrepancy (South Sudan Perceptions survey, now resolved by the user); two others matched aside from a harmless `?embedded=True` param. `peaceagreements.org/visualizations/` hub cross-checked for missing `public_link`s — 6 added.
 - [x] `trace-contributors` run across all 36 rows: roles + affiliation + partner status resolved for 20 people via peacerep.org/about/people/ + vishub.net/people. All ~22 `source_code` repo READMEs checked (raw file) for uncredited contributors. Robert Wilson and Raiman Al-Hamdani added to Yemen Timeline per direct user confirmation — not discoverable via any automated source (that repo has no README at all).
+- [x] `proj-summary` run across all 37 rows: every `description.summary` rewritten to name vis type + topic/research focus + data used (drawn from `data_coverage.datasets`/`content`, capped at 80 words). `vis_peacerep_style_guide` flagged in `notes` instead — its repo README confirms it's a logo/brand-asset library, not a research visualisation, so it doesn't fit the topic/data template; may be worth excluding from `visualisations.json` entirely.
 
 ## Global rules
 

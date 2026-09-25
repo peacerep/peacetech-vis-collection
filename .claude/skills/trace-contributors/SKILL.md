@@ -59,4 +59,4 @@ Set `people.json`'s `affiliation_ids` to the institution the person appears unde
 
 ## After changes
 
-Run `python3 review/build_review.py` to regenerate the QA page.
+Spot-check the QA page (`npm run dev` in `review/`; it reloads on metadata edits).

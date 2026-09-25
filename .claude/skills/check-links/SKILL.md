@@ -41,4 +41,4 @@ Don't assign a public_link on a weak/generic title match alone. If a credits sec
 
 ## After changes
 
-Run `python3 review/build_review.py` to regenerate the QA page.
+Spot-check the QA page (`npm run dev` in `review/`; it reloads on metadata edits).
