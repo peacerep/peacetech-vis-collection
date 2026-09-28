@@ -49,4 +49,4 @@ By default:
 
 ## Deployment
 
-Hosted on a small Nova VM (university OpenStack) with nginx serving `/var/www/html`; the VM has a clone of this repo. It builds on the VM, so it needs Node ≥ 20.19 (installed via NodeSource `setup_22.x` — Ubuntu's apt Node is too old for Vite 8). To publish: push to GitHub, then on the VM run `~/<repo>/review/deploy.sh` (pull → `npm ci` → build → rsync `dist/` into the web root with `--delete`). Metadata is baked into the bundle, so a `git pull` alone does not update the site.
+Hosted on a small Nova VM (university OpenStack) with nginx serving `/var/www/html`; the VM has a clone of this repo. It builds on the VM, so it needs Node ≥ 20.19 (installed via NodeSource `setup_22.x` — Ubuntu's apt Node is too old for Vite 8). To publish: push to GitHub, then on the VM run `~/<repo>/review/deploy.sh` (pull → `npm ci` → build → rsync `dist/` into the web root with `--delete`). Metadata is baked into the bundle, so a `git pull` alone does not update the site. Optional automation: a cron job runs `review/auto-deploy.sh` every 10 min, which fetches and calls `deploy.sh` only when `origin/main` has new commits (log: `~/deploy.log`).
