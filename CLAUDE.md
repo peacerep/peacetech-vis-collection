@@ -41,8 +41,12 @@ Invoke via `/populate-visualisations`, `/check-links`, `/trace-contributors`.
 
 ## Review tool
 
-`review/build_review.py` renders `metadata/*.json` into `review/index.html` — a local, static QA page (no upload, opened directly from disk). Regenerate after editing metadata: `python3 review/build_review.py`. Visualisations has three views (Full/Minimal tables + a Grid of cards) and a flagged-only filter. Style convention: dense tables, one row per record — not card grids — is the default; Grid is a deliberate addition, not a replacement.
+`review/` is a Svelte + Vite app that imports `metadata/*.json` at build time and serves `mini-fig/` thumbnails. Local dev: `cd review && npm install && npm run dev`. `review/index.html` is only the Vite entry shell — the deployable page is the `review/dist/` build output (gitignored). Visualisations has three views (Full/Minimal tables + a Grid of cards) and a flagged-only filter. Style convention: dense tables, one row per record — not card grids — is the default; Grid is a deliberate addition, not a replacement.
 
 By default:
 - the Review tool full view should hide DESCRIPTION field, enable that feature with the option to show it. 
 - no need to show the is_partner and role on the Contributor field.
+
+## Deployment
+
+Hosted on a small Nova VM (university OpenStack) with nginx serving `/var/www/html`; the VM has a clone of this repo. It builds on the VM, so it needs Node ≥ 20.19 (installed via NodeSource `setup_22.x` — Ubuntu's apt Node is too old for Vite 8). To publish: push to GitHub, then on the VM run `~/<repo>/review/deploy.sh` (pull → `npm ci` → build → rsync `dist/` into the web root with `--delete`). Metadata is baked into the bundle, so a `git pull` alone does not update the site.
