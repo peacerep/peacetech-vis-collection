@@ -117,6 +117,13 @@
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_hierarchy_continuity_key_issues",
       "type": "structural",
+      "name": "narrowing focus",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_gender_key_insights_story",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "structural",
       "name": "reused views",
       "tooltip": ""
     },

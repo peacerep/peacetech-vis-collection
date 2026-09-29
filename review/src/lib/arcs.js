@@ -25,9 +25,7 @@ const symbol = (id, scale = 1) =>
     Math.PI * (radius(id) * scale) ** 2
   )();
 
-// Colour: one categorical hue per edge name (type is ignored). Names are ranked
-// by edge count (ties: first seen) into the 9 hues --edge-1..9 in app.css, which
-// were picked so every pair stays visibly distinct. A 10th name needs a new hue.
+// Colour: one categorical hue per edge name
 const SLOTS = 9;
 const counts = d3.rollup(edges, (v) => v.length, (e) => e.name);
 export const edgeNames = [...counts.keys()].sort((a, b) => counts.get(b) - counts.get(a));
