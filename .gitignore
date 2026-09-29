@@ -16,3 +16,4 @@ venv/
 # Node (review app)
 node_modules/
 dist/
+.thumbs/

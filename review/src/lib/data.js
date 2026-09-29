@@ -51,8 +51,9 @@ export function structureLabels(v) {
   };
 }
 
+// Served as the resized WebP copy made by scripts/thumbs.js.
 export const thumbSrc = (v) =>
-  v.thumbnail?.url ? import.meta.env.BASE_URL + v.thumbnail.url : null;
+  v.thumbnail?.url ? import.meta.env.BASE_URL + v.thumbnail.url.replace(/\.[^.]+$/, '.webp') : null;
 
 export const toolNames = (v) =>
   v.tools.map((t) => toolsById.get(t.tool_id)?.name ?? `missing tool: ${t.tool_id}`);

@@ -1,14 +1,11 @@
 <script>
-  // One swatch per edge name, grouped by type, plus the node encoding.
-  import { namesOf, color } from '../lib/arcs.js';
+  // One swatch per edge name, plus the node encoding.
+  import { edgeNames, color } from '../lib/arcs.js';
 </script>
 
 <div class="arc-legend">
-  {#each ['structural', 'design'] as type}
-    <span class="dim">{type}:</span>
-    {#each namesOf(type) as name}
-      <span><i style:background={color.get(name)}></i>{name}</span>
-    {/each}
+  {#each edgeNames as name}
+    <span><i style:background={color.get(name)}></i>{name}</span>
   {/each}
   <span class="dim">● standalone · ■ container · size = no. of links</span>
 </div>

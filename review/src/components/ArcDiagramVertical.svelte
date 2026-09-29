@@ -2,7 +2,7 @@
   // Vertical arc diagram: nodes in a column, arcs bulging right, card on the right.
   // Data, styling and hover behaviour are shared via lib/arcs.js.
   import * as d3 from 'd3';
-  import { edges, nodeIds, radius, arcPath, visById, renderArcDiagram } from '../lib/arcs.js';
+  import { edges, nodeIds, radius, nodeScaleFor, arcPath, visById, renderArcDiagram } from '../lib/arcs.js';
   import ArcLegend from './ArcLegend.svelte';
   import ArcCard from './ArcCard.svelte';
 
@@ -17,19 +17,20 @@
   let cards = $state([]); // hovered node (1 card) or edge (source + target); kept after hover-out
 
   // Widest node label, measured in bold (hover state) so highlighted labels fit too.
-  function labelWidth() {
+  function labelWidth(scale) {
     const ctx = document.createElement('canvas').getContext('2d');
     ctx.font = `bold 11px ${getComputedStyle(svgEl).fontFamily}`;
-    return d3.max(nodeIds, (id) => ctx.measureText(visById.get(id)?.title ?? id).width + radius(id));
+    return d3.max(nodeIds, (id) => ctx.measureText(visById.get(id)?.title ?? id).width + radius(id) * scale);
   }
 
   $effect(() => {
-    const left = labelWidth() + 16;
     // Fill the viewport from the SVG's top edge down, less a small gap.
     const top = svgEl.getBoundingClientRect().top + window.scrollY;
     const height = Math.max(innerHeight - top - PAGE_GAP, MIN_ROW * (nodeIds.length - 1) + MARGIN.top + MARGIN.bottom);
     svgHeight = height;
     const y = d3.scalePoint(nodeIds, [MARGIN.top, height - MARGIN.bottom]);
+    const scale = nodeScaleFor(y.step());
+    const left = labelWidth(scale) + 16;
     const bulge = (e) => (Math.abs(y(e.target) - y(e.source)) / 2) * (1 + 0.3 * e.stack);
     const pos = (id) => [left, y(id)];
 
@@ -39,6 +40,8 @@
         width: left + d3.max(edges, bulge) + MARGIN.right,
         height,
         pos,
+        nodeScale: scale,
+        thumbnails: true,
         arc: (e) => arcPath(pos(e.source), pos(e.target), bulge(e), [1, 0]),
         arcLabelOffset: [8, 0],
         arcLabelAnchor: 'start',
@@ -46,7 +49,7 @@
         nodeLabel: (text) =>
           text
             .attr('text-anchor', 'end')
-            .attr('x', (id) => -radius(id) - 8)
+            .attr('x', (id) => -radius(id) * scale - 8)
             .attr('dy', '0.32em')
             .text((id) => visById.get(id)?.title ?? id),
       },

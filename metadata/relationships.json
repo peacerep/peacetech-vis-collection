@@ -40,14 +40,14 @@
       "source": "vis_yemen_timeline",
       "target": "vis_timelines_institutional_change",
       "type": "design",
-      "name": "visual inspiration",
+      "name": "inspiration",
       "tooltip": ""
     },
     {
       "source": "vis_yemen_timeline",
       "target": "vis_back_and_forth_peace_negotiations",
       "type": "design",
-      "name": "visual inspiration",
+      "name": "inspiration",
       "tooltip": ""
     },
     {
@@ -61,7 +61,7 @@
       "source": "vis_mend",
       "target": "vis_sudan_mediation_analysis",
       "type": "design",
-      "name": "visual simplification",
+      "name": "simplification",
       "tooltip": ""
     },
     {
@@ -115,7 +115,7 @@
     },
     {
       "source": "vis_pax_gender_key_insights_story",
-      "target": "vis_back_and_forth_peace_negotiations",
+      "target": "vis_hierarchy_continuity_key_issues",
       "type": "structural",
       "name": "reused views",
       "tooltip": ""
@@ -128,28 +128,53 @@
       "tooltip": ""
     },
     {
-      "source": "vis_ssd_survey_map",
-      "target": "vis_south_sudan_perceptions_of_peace_survey",
-      "type": "design",
-      "name": "visual simplification",
-      "tooltip": ""
-    },
-    {
       "source": "vis_yemen_timeline",
       "target": "vis_implementation_narratives_interface",
       "type": "design",
-      "name": "visual inspiration",
+      "name": "inspiration",
       "tooltip": ""
     },
     {
-      "source": "vis_map_peace_agreements_time_space",
-      "target": "vis_process_overview_dashboard",
+      "source": "vis_peace_agreement_signatory_dashboard",
+      "target": "vis_third_party_storytelling",
       "type": "design",
-      "name": "alternative",
+      "name": "topical relatedness",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_dialogue_mapping_ukraine",
+      "target": "vis_dialogue_mapping_experiments",
+      "type": "design",
+      "name": "topical relatedness",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_gender_key_insights_story",
+      "target": "vis_pieces_of_peace",
+      "type": "design",
+      "name": "topical relatedness",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_gender_key_insights_story",
+      "target": "vis_children_and_youth_peace_agreements",
+      "type": "design",
+      "name": "topical relatedness",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_timelines_institutional_change",
+      "target": "vis_implementation_narratives_interface",
+      "type": "design",
+      "name": "Complementarity",
+      "tooltip": ""
+    },
+    {
+      "source": "vis_pax_tracker",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "design",
+      "name": "Complementarity",
       "tooltip": ""
     }
-
-
-
   ]
 }

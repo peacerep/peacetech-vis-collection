@@ -2,12 +2,12 @@
   // Horizontal arc diagram: nodes in a row, arcs above, card below.
   // Data, styling and hover behaviour are shared via lib/arcs.js.
   import * as d3 from 'd3';
-  import { edges, nodeIds, radius, arcPath, wrapLabel, visById, renderArcDiagram } from '../lib/arcs.js';
+  import { edges, nodeIds, radius, nodeScaleFor, arcPath, wrapLabel, visById, renderArcDiagram } from '../lib/arcs.js';
   import ArcLegend from './ArcLegend.svelte';
   import ArcCard from './ArcCard.svelte';
 
   // Left/bottom leave room for labels rotated -45° down-left of each node.
-  const MARGIN = { top: 30, right: 20, bottom: 130, left: 130 };
+  const MARGIN = { top: 30, right: 20, bottom: 160, left: 160 };
 
   let width = $state(0);
   let svgEl;
@@ -19,6 +19,7 @@
     const bulge = (e) => (Math.abs(x(e.target) - x(e.source)) / 2) * (1 + 0.3 * e.stack);
     const baseline = MARGIN.top + d3.max(edges, bulge);
     const pos = (id) => [x(id), baseline];
+    const scale = nodeScaleFor(x.step());
 
     renderArcDiagram(
       svgEl,
@@ -26,6 +27,8 @@
         width,
         height: baseline + MARGIN.bottom,
         pos,
+        nodeScale: scale,
+        thumbnails: true,
         arc: (e) => arcPath(pos(e.source), pos(e.target), bulge(e), [0, -1]),
         arcLabelOffset: [0, -10],
         arcLabelAnchor: 'middle',
@@ -37,7 +40,7 @@
             .selectAll('tspan')
             .data((id) => wrapLabel(visById.get(id)?.title ?? id).map((line, i, all) => ({ id, line, i, n: all.length })))
             .join('tspan')
-            .attr('x', (t) => -radius(t.id) - 6)
+            .attr('x', (t) => -radius(t.id) * scale - 6)
             .attr('dy', (t) => (t.i === 0 ? `${0.32 - 0.55 * (t.n - 1)}em` : '1.1em'))
             .text((t) => t.line),
       },
