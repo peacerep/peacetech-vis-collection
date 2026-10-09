@@ -26,15 +26,17 @@
       "source": "vis_pax_tracker",
       "target": "vis_live_process_global_map",
       "type": "design",
+      "code_by":["person_tomas_vancisin", "person_sanja_badanjak"],
       "name": "alternative",
-      "tooltip": ""
+      "tooltip": "The [source] is an alternative to the [target], which are the same thing but the [target] offers a more engaging entry point."
     },
     {
-      "source": "vis_peace_agreement_content_alluvial",
-      "target": "vis_hierarchy_continuity_key_issues",
+      "source": "vis_hierarchy_continuity_key_issues",
+      "target": "vis_peace_agreement_content_alluvial",
       "type": "design",
       "name": "expansion",
-      "tooltip": ""
+      "code_by": ["person_sanja_badanjak"],
+      "tooltip": "[source] is a natural next step of the [target], which expanded on visualising how frequently these topics are coded among what kind of agreements."
     },
     {
       "source": "vis_yemen_timeline",
@@ -79,13 +81,6 @@
       "tooltip": ""
     },
     {
-      "source": "vis_third_party_storytelling",
-      "target": "vis_peace_agreement_signatory_dashboard",
-      "type": "structural",
-      "name": "reused views",
-      "tooltip": ""
-    },
-    {
       "source": "vis_peace_agreement_signatory_dashboard",
       "target": "vis_pax_tracker",
       "type": "structural",
@@ -124,7 +119,7 @@
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_back_and_forth_peace_negotiations",
       "type": "structural",
-      "name": "reused views",
+      "name": "is part of",
       "tooltip": ""
     },
     {
@@ -139,49 +134,75 @@
       "target": "vis_implementation_narratives_interface",
       "type": "design",
       "name": "inspiration",
-      "tooltip": ""
+      "code_by": ["person_jinrui_wang"],
+      "tooltip": "[source] inspired visually the layout of implementation reports timeline in [target]."
     },
     {
       "source": "vis_peace_agreement_signatory_dashboard",
       "target": "vis_third_party_storytelling",
       "type": "design",
-      "name": "topical relatedness",
+      "name": "shared theme",
       "tooltip": ""
     },
     {
       "source": "vis_dialogue_mapping_ukraine",
       "target": "vis_dialogue_mapping_experiments",
       "type": "design",
-      "name": "topical relatedness",
+      "name": "shared theme",
       "tooltip": ""
     },
     {
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_pieces_of_peace",
       "type": "design",
-      "name": "topical relatedness",
+      "name": "shared theme",
       "tooltip": ""
     },
     {
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_children_and_youth_peace_agreements",
       "type": "design",
-      "name": "topical relatedness",
+      "name": "shared theme",
       "tooltip": ""
     },
     {
       "source": "vis_timelines_institutional_change",
       "target": "vis_implementation_narratives_interface",
       "type": "design",
-      "name": "Complementarity",
+      "name": "complement",
       "tooltip": ""
     },
     {
       "source": "vis_pax_tracker",
       "target": "vis_back_and_forth_peace_negotiations",
       "type": "design",
-      "name": "Complementarity",
+      "name": "complement",
       "tooltip": ""
+    },
+    {
+      "source": "vis_ssd_survey_map",
+      "target": "vis_south_sudan_perceptions_of_peace_survey",
+      "type": "design",
+      "code_by": "person_jinrui_wang",
+      "name": "simplification",
+      "tooltip": "The visual representation and data covered in [source] is a simplified version of [target]."
+    },
+    {
+      "source": "vis_map_peace_agreements_time_space",
+      "target": "vis_yemen_map",
+      "type": "design",
+      "code_by": "person_jinrui_wang",
+      "name": "expansion",
+      "tooltip": "[source] is an expansion of [target] where [source] use a similar approach visualizing peace processes but comprehensively covers all countries in PA-X."
+    },
+    {
+      "source": "vis_yemen_timeline",
+      "target": "vis_pax_tracker",
+      "type": "design",
+      "code_by": "person_jinrui_wang",
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] in the Yemen country case profile."
     }
+    
   ]
 }

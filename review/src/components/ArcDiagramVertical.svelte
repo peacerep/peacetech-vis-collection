@@ -5,6 +5,7 @@
   import { edges, nodeIds, radius, nodeScaleFor, arcPath, visById, renderArcDiagram } from '../lib/arcs.js';
   import ArcLegend from './ArcLegend.svelte';
   import ArcCard from './ArcCard.svelte';
+  import EdgeCard from './EdgeCard.svelte';
 
   // Right = room for arc labels at the apex; left is sized to the widest node label.
   const MARGIN = { top: 20, right: 130, bottom: 20 };
@@ -15,6 +16,9 @@
   let innerHeight = $state(0);
   let svgHeight = $state(0); // card panel is capped to this
   let cards = $state([]); // hovered node (1 card) or edge (source + target); kept after hover-out
+  let edge = $state(null); // hovered/clicked edge, shown in its own card above the node cards
+  let edgeName = $state(null); // legend selection: highlights every edge of that name
+  let diagram = $state.raw(null);
 
   // Widest node label, measured in bold (hover state) so highlighted labels fit too.
   function labelWidth(scale) {
@@ -34,7 +38,7 @@
     const bulge = (e) => (Math.abs(y(e.target) - y(e.source)) / 2) * (1 + 0.3 * e.stack);
     const pos = (id) => [left, y(id)];
 
-    renderArcDiagram(
+    diagram = renderArcDiagram(
       svgEl,
       {
         width: left + d3.max(edges, bulge) + MARGIN.right,
@@ -53,20 +57,24 @@
             .attr('dy', '0.32em')
             .text((id) => visById.get(id)?.title ?? id),
       },
-      (c) => (cards = c)
+      (c, e) => ((cards = c), (edge = e))
     );
   });
+
+  // Re-applied after every redraw (diagram changes) and on legend clicks.
+  $effect(() => diagram?.setEdgeName(edgeName));
 </script>
 
 <svelte:window bind:innerHeight />
 
 <div class="arc-wrap">
-  <ArcLegend />
+  <ArcLegend bind:selected={edgeName} />
   <div class="arc-row">
     <svg bind:this={svgEl}></svg>
     <!-- Card panel: as tall as the diagram at most, so the page never scrolls.
          One card for a node, source above target for an edge. -->
     <aside style:max-height="{svgHeight}px">
+      {#if edge}<EdgeCard e={edge} />{/if}
       {#each cards as c (c.v.id + c.role)}<ArcCard v={c.v} role={c.role} variant="split" />{:else}<p class="empty">Hover a node or edge to see details.</p>{/each}
     </aside>
   </div>

@@ -9,11 +9,18 @@ export const visById = new Map(vis.map((v) => [v.id, v]));
 
 // Nodes = every visualisation id mentioned in an edge, in first-seen order.
 export const nodeIds = [...new Set(edges.flatMap((e) => [e.source, e.target]))];
+// Every non-excluded visualisation: the connected nodes first, then the
+// unconnected ones (used by the force view, where they float freely).
+export const allNodeIds = [
+  ...nodeIds,
+  ...vis.filter((v) => !v.excluded && !nodeIds.includes(v.id)).map((v) => v.id),
+];
 
 // Node size = number of edges touching it; shape = square for containers, else circle.
 const degree = d3.rollup(edges.flatMap((e) => [e.source, e.target]), (v) => v.length, (id) => id);
-const radiusScale = d3.scaleSqrt([1, d3.max(degree.values())], [4, 11]);
-export const radius = (id) => radiusScale(degree.get(id));
+// Unconnected nodes (degree 0) clamp to the smallest size.
+const radiusScale = d3.scaleSqrt([1, d3.max(degree.values())], [4, 11]).clamp(true);
+export const radius = (id) => radiusScale(degree.get(id) ?? 0);
 // Radius multiplier for thumbnail nodes: up to `max`, with the largest node's
 // diameter spanning at most `overlap` × the node spacing `step` — neighbours may
 // overlap (Edge Maps style); smaller nodes are drawn on top.
@@ -54,6 +61,12 @@ export function arcPath(a, b, bulge, [nx, ny]) {
   return { d: `M${a} ${seg(apex)} ${seg(b)}`, apex };
 }
 
+// Edge tooltip text: [source] / [target] placeholders become the visualisation titles.
+export const edgeTooltip = (e) =>
+  (e.tooltip ?? '')
+    .replaceAll('[source]', visById.get(e.source)?.title ?? e.source)
+    .replaceAll('[target]', visById.get(e.target)?.title ?? e.target);
+
 // Split long titles into lines at the space nearest the middle.
 export function wrapLabel(text, maxChars = 22) {
   if (text.length <= maxChars) return [text];
@@ -68,9 +81,15 @@ export function wrapLabel(text, maxChars = 22) {
  * Draw the diagram into `svgEl`.
  * layout: { width, height, pos(id) → [x, y], arc(e) → { d, apex },
  *           arcLabelOffset: [dx, dy], arcLabelAnchor, nodeLabel(textSelection),
- *           nodeScale?: radius multiplier, thumbnails?: fill nodes with their mini-fig image }
- * onSelect(cards) fires on hover with the cards to show: [{ v }] for a node,
- * [{ v, role: 'Source' }, { v, role: 'Target' }] for an edge.
+ *           nodeScale?: radius multiplier, thumbnails?: fill nodes with their mini-fig image,
+ *           nodeIds?: nodes to draw (default: those with an edge) }
+ * onSelect(cards, edge) fires on hover/click with the cards to show: [{ v }]
+ * for a node (edge = null), [{ v, role: 'Source' }, { v, role: 'Target' }]
+ * plus the edge itself for an edge.
+ * Clicking a node/edge pins its highlight (hover is paused while pinned);
+ * clicking it again or the empty background unpins.
+ * Returns { setEdgeName(name | null) }: highlights every edge of that name
+ * (e.g. from a legend click) as the resting view; it also clears any pin.
  */
 export function renderArcDiagram(svgEl, layout, onSelect) {
   const svg = d3.select(svgEl).attr('width', layout.width).attr('height', layout.height);
@@ -102,7 +121,18 @@ export function renderArcDiagram(svgEl, layout, onSelect) {
     .attr('d', (e) => geo.get(e).d)
     .style('stroke', (e) => color.get(e.name))
     .attr('marker-mid', (e) => `url(#${markerId(e.name)})`);
-  arcs.filter((e) => e.tooltip).append('title').text((e) => e.tooltip);
+  // Invisible wide copies of the arcs on top take the pointer events, so thin
+  // arcs are easy to hover and click.
+  const arcHits = svg
+    .append('g')
+    .attr('fill', 'none')
+    .selectAll('path')
+    .data(edges)
+    .join('path')
+    .attr('d', (e) => geo.get(e).d)
+    .attr('stroke', 'transparent')
+    .attr('stroke-width', 10)
+    .style('cursor', 'pointer');
 
   // Arc labels at each apex, hidden until hovered. Drawn twice: a bold
   // background-coloured copy underneath acts as a halo behind the coloured text.
@@ -121,7 +151,7 @@ export function renderArcDiagram(svgEl, layout, onSelect) {
 
   // Nodes: symbol at its position, largest first so smaller (possibly
   // overlapping) nodes stay visible on top; the layout decides label placement.
-  const byRadius = d3.sort(nodeIds, (id) => -radius(id));
+  const byRadius = d3.sort(layout.nodeIds ?? nodeIds, (id) => -radius(id));
   const nodes = svg
     .append('g')
     .selectAll('g')
@@ -197,24 +227,49 @@ export function renderArcDiagram(svgEl, layout, onSelect) {
       labelGroups.sort((a, b) => radius(b) - radius(a));
     }
   }
-  highlight(null);
+  // Resting view that hover-out returns to: a clicked (pinned) node/edge,
+  // else the legend's edge name, else nothing emphasised.
+  let legend = null;
+  let pinned = null;
+  const rest = () => (pinned ? highlight(pinned.hit, pinned.ids) : highlight(legend));
+  rest();
 
-  // Hover swaps the cards; hover-out resets the drawing but keeps the cards.
+  // A "view" is what hovering or clicking a node/edge shows.
   const card = (id, role) => ({ v: visById.get(id), role });
-  for (const sel of [nodes, labelGroups]) sel
-    .on('mouseenter', (_, id) => {
-      highlight((e) => e.source === id || e.target === id, [id]);
-      onSelect([card(id)]);
-    })
-    .on('mouseleave', () => highlight(null));
-  arcs
-    .on('mouseenter', (_, d) => {
-      highlight((e) => e === d, [d.source, d.target]);
-      onSelect([card(d.source, 'Source'), card(d.target, 'Target')]);
-    })
-    .on('mouseleave', () => highlight(null));
-}
+  const nodeView = (id) => ({ key: id, hit: (e) => e.source === id || e.target === id, ids: [id], cards: [card(id)], edge: null });
+  const edgeView = (d) => ({ key: d, hit: (e) => e === d, ids: [d.source, d.target], cards: [card(d.source, 'Source'), card(d.target, 'Target')], edge: d });
+  function preview(view) {
+    highlight(view.hit, view.ids);
+    onSelect(view.cards, view.edge);
+  }
+  // Click pins the view; clicking the pinned element again unpins it.
+  function pin(event, view) {
+    event.stopPropagation();
+    pinned = pinned?.key === view.key ? null : view;
+    pinned ? (rest(), onSelect(view.cards, view.edge)) : preview(view);
+  }
+  svg.on('click', () => {
+    if (pinned) (pinned = null), rest();
+  });
 
+  // Hover previews (cards kept after hover-out) unless something is pinned.
+  for (const sel of [nodes, labelGroups]) sel
+    .on('mouseenter', (_, id) => pinned || preview(nodeView(id)))
+    .on('mouseleave', () => pinned || rest())
+    .on('click', (ev, id) => pin(ev, nodeView(id)));
+  arcHits
+    .on('mouseenter', (_, d) => pinned || preview(edgeView(d)))
+    .on('mouseleave', () => pinned || rest())
+    .on('click', (ev, d) => pin(ev, edgeView(d)));
+
+  return {
+    setEdgeName(name) {
+      legend = name ? (e) => e.name === name : null;
+      pinned = null;
+      rest();
+    },
+  };
+}
 // Card tags: status (+ Excluded), then structure kind and qualities.
 export const statusTags = (v) => [
   ...(v.status ?? []).map((s) => label.status.get(s) ?? s),

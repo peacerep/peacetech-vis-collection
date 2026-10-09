@@ -6,13 +6,15 @@
   import Vocab from './components/Vocab.svelte';
   import ArcDiagram from './components/ArcDiagram.svelte';
   import ForceDiagram from './components/ForceDiagram.svelte';
-  import ArcDiagramVertical from './components/ArcDiagramVertical.svelte';
+  // import ArcDiagramVertical from './components/ArcDiagramVertical.svelte';
+  import StudyPairs from './components/StudyPairs.svelte';
 
   const TABS = [
     { id: 'vis', label: 'Visualisations' },
     { id: 'rel', label: 'Relationships' },
-    { id: 'rel-v', label: 'Relationships (vertical)' },
+    // { id: 'rel-v', label: 'Relationships (vertical)' },
     { id: 'rel-f', label: 'Relationships (force-directed)' },
+    { id: 'pairs', label: 'Study pairs' },
     { id: 'people', label: 'People' },
     { id: 'orgs', label: 'Organisations' },
     { id: 'datasets', label: 'Datasets' },
@@ -38,10 +40,12 @@
   <Visualisations />
 {:else if tab === 'rel'}
   <ArcDiagram />
-{:else if tab === 'rel-v'}
-  <ArcDiagramVertical />
+<!-- {:else if tab === 'rel-v'}
+  <ArcDiagramVertical /> -->
 {:else if tab === 'rel-f'}
   <ForceDiagram />
+{:else if tab === 'pairs'}
+  <StudyPairs />
 
 {:else if tab === 'people'}
   <SimpleTable headers={['Name', 'ID', 'Given', 'Family', 'Affiliation', 'Roles', 'Partner', 'Notes']} rows={people}>

@@ -5,6 +5,7 @@
   import { edges, nodeIds, radius, nodeScaleFor, arcPath, wrapLabel, visById, renderArcDiagram } from '../lib/arcs.js';
   import ArcLegend from './ArcLegend.svelte';
   import ArcCard from './ArcCard.svelte';
+  import EdgeCard from './EdgeCard.svelte';
 
   // Left/bottom leave room for labels rotated -45° down-left of each node.
   const MARGIN = { top: 30, right: 20, bottom: 160, left: 160 };
@@ -12,6 +13,9 @@
   let width = $state(0);
   let svgEl;
   let cards = $state([]); // hovered node (1 card) or edge (source + target); kept after hover-out
+  let edge = $state(null); // hovered/clicked edge, shown in its own card above the node cards
+  let edgeName = $state(null); // legend selection: highlights every edge of that name
+  let diagram = $state.raw(null);
 
   $effect(() => {
     if (!width) return;
@@ -21,7 +25,7 @@
     const pos = (id) => [x(id), baseline];
     const scale = nodeScaleFor(x.step());
 
-    renderArcDiagram(
+    diagram = renderArcDiagram(
       svgEl,
       {
         width,
@@ -44,15 +48,19 @@
             .attr('dy', (t) => (t.i === 0 ? `${0.32 - 0.55 * (t.n - 1)}em` : '1.1em'))
             .text((t) => t.line),
       },
-      (c) => (cards = c)
+      (c, e) => ((cards = c), (edge = e))
     );
   });
+
+  // Re-applied after every redraw (diagram changes) and on legend clicks.
+  $effect(() => diagram?.setEdgeName(edgeName));
 </script>
 
 <div class="arc-wrap" bind:clientWidth={width}>
-  <ArcLegend />
+  <ArcLegend bind:selected={edgeName} />
   <svg bind:this={svgEl}></svg>
   <!-- One wide card for a node; source and target side by side (summary below) for an edge. -->
+  {#if edge}<div class="arc-edge"><EdgeCard e={edge} /></div>{/if}
   <div class="arc-cards">
     {#each cards as c (c.v.id + c.role)}<ArcCard v={c.v} role={c.role} variant={cards.length > 1 ? 'split' : 'wide'} />{:else}<p class="empty">Hover a node or edge to see details.</p>{/each}
   </div>
@@ -61,6 +69,7 @@
 <style>
   .arc-wrap { width: 80vw; margin: 0 auto; }
   svg { display: block; }
+  .arc-edge { margin-bottom: 12px; }
   .arc-cards { display: flex; gap: 16px; }
   .arc-cards > :global(*) { flex: 1; min-width: 0; }
 </style>

@@ -3,9 +3,10 @@
   // d3-force simulation (run to rest up front), edges are straight links.
   // Data, styling and hover behaviour are shared via lib/arcs.js.
   import * as d3 from 'd3';
-  import { edges, nodeIds, radius, arcPath, wrapLabel, visById, renderArcDiagram } from '../lib/arcs.js';
+  import { edges, allNodeIds, radius, arcPath, wrapLabel, visById, renderArcDiagram } from '../lib/arcs.js';
   import ArcLegend from './ArcLegend.svelte';
   import ArcCard from './ArcCard.svelte';
+  import EdgeCard from './EdgeCard.svelte';
 
   // Sizes are tuned for an 860px-tall canvas and shrink proportionally below it.
   const DESIGN_HEIGHT = 860;
@@ -18,6 +19,9 @@
   let viewportHeight = $state(0);
   let svgEl;
   let cards = $state([]); // hovered node (1 card) or edge (source + target); kept after hover-out
+  let edge = $state(null); // hovered/clicked edge, shown in its own card above the node cards
+  let edgeName = $state(null); // legend selection: highlights every edge of that name
+  let diagram = $state.raw(null);
 
   $effect(() => {
     if (!width || !viewportHeight) return;
@@ -30,7 +34,7 @@
     const scale = NODE_SCALE * k;
     const r = (id) => radius(id) * scale;
 
-    const nodes = nodeIds.map((id) => ({ id }));
+    const nodes = allNodeIds.map((id) => ({ id }));
     const links = edges.map((e) => ({ source: e.source, target: e.target }));
     const sim = d3
       .forceSimulation(nodes)
@@ -60,12 +64,13 @@
     const at = new Map(nodes.map((n) => [n.id, [n.x, n.y]]));
     const pos = (id) => at.get(id);
 
-    renderArcDiagram(
+    diagram = renderArcDiagram(
       svgEl,
       {
         width,
         height: HEIGHT,
         pos,
+        nodeIds: allNodeIds,
         nodeScale: scale,
         thumbnails: true,
         // Straight link; extra edges between the same pair curve out so they
@@ -88,9 +93,12 @@
             .attr('dy', (t) => (t.i === 0 ? `${0.32 - 0.55 * (t.n - 1)}em` : '1.1em'))
             .text((t) => t.line),
       },
-      (c) => (cards = c)
+      (c, e) => ((cards = c), (edge = e))
     );
   });
+
+  // Re-applied after every redraw (diagram changes) and on legend clicks.
+  $effect(() => diagram?.setEdgeName(edgeName));
 </script>
 
 <svelte:window bind:innerHeight={viewportHeight} />
@@ -98,10 +106,11 @@
 <!-- Network on the left (2/3), hover cards stacked on the right (1/3), centred vertically. -->
 <div class="force-wrap">
   <div bind:clientWidth={width}>
-    <ArcLegend />
+    <ArcLegend bind:selected={edgeName} />
     <svg bind:this={svgEl}></svg>
   </div>
   <div class="force-cards">
+    {#if edge}<EdgeCard e={edge} />{/if}
     {#each cards as c (c.v.id + c.role)}<ArcCard v={c.v} role={c.role} variant="split" />{:else}<p class="empty">Hover a node or edge to see details.</p>{/each}
   </div>
 </div>

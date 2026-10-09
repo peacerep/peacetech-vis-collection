@@ -17,7 +17,7 @@
     <div class="cell-title">{v.title}</div>
     <div class="cell-id"><code>{v.id}</code></div>
     <div class="arc-tags">
-      {#each statusTags(v) as t}<span class="tag-type">{t}</span>{/each}
+      {#each statusTags(v) as t}<span class="tag-type tag-structure">{t}</span>{/each}
       {#each structureTags(v) as t}<span class="tag-type tag-structure">{t}</span>{/each}
     </div>
     <div class="arc-links">
