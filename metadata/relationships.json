@@ -2,33 +2,44 @@
   "schema_version": "1.0",
   "edges": [
     {
-      "source": "vis_third_party_storytelling",
-      "target": "vis_peace_agreement_signatory_dashboard",
-      "type": "design",
-      "name": "expansion",
-      "tooltip": "Expansion by added explanatory content."
-    },
-    {
-      "source": "vis_agreement_actor_networks",
-      "target": "vis_dialogue_mapping_experiments",
-      "type": "design",
-      "name": "expansion",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_peace_agreement_signatory_dashboard",
-      "target": "vis_agreement_actor_networks",
-      "type": "design",
-      "name": "expansion",
-      "tooltip": ""
-    },
-    {
       "source": "vis_pax_tracker",
       "target": "vis_live_process_global_map",
       "type": "design",
       "code_by":["person_tomas_vancisin", "person_sanja_badanjak"],
       "name": "alternative",
       "tooltip": "The [source] is an alternative to the [target], which are the same thing but the [target] offers a more engaging entry point."
+    },
+    {
+      "source": "vis_timelines_institutional_change",
+      "target": "vis_implementation_narratives_interface",
+      "type": "design",
+      "name": "complement",
+      "code_by":["person_robert_wilson"],
+      "tooltip": "Using [source] complement [target] that they can offer new insights."
+    },
+    {
+      "source": "vis_pax_tracker",
+      "target": "vis_back_and_forth_peace_negotiations",
+      "type": "design",
+      "name": "complement",
+      "code_by":["person_robert_wilson"],
+      "tooltip": "Using [source] complement [target] that they can offer new insights."
+    },
+    {
+      "source": "vis_third_party_storytelling",
+      "target": "vis_peace_agreement_signatory_dashboard",
+      "type": "design",
+      "name": "expansion",
+      "code_by": ["person_tomas_vancisin"],
+      "tooltip": "[target] is an expansion of [source] by adding explanation and narration to the network data."
+    },
+    {
+      "source": "vis_agreement_actor_networks",
+      "target": "vis_dialogue_mapping_experiments",
+      "type": "design",
+      "name": "expansion",
+      "code_by": ["person_jinrui_wang", "person_robert_wilson"],
+      "tooltip": "[target] is an experiment that fed into the development of [source] where data is expanded."
     },
     {
       "source": "vis_hierarchy_continuity_key_issues",
@@ -39,95 +50,36 @@
       "tooltip": "[source] is a natural next step of the [target], which expanded on visualising how frequently these topics are coded among what kind of agreements."
     },
     {
-      "source": "vis_yemen_timeline",
-      "target": "vis_timelines_institutional_change",
-      "type": "design",
-      "name": "inspiration",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_yemen_timeline",
-      "target": "vis_back_and_forth_peace_negotiations",
-      "type": "design",
-      "name": "inspiration",
-      "tooltip": ""
-    },
-    {
       "source": "vis_mend",
       "target": "vis_sudan_mediation_analysis",
       "type": "design",
       "name": "expansion",
-      "tooltip": ""
+      "code_by": ["person_tomas_vancisin"],
+      "tooltip": "[source] is an expansion of the experimental project [target] that includes more analysis, and more country data."
     },
     {
-      "source": "vis_mend",
-      "target": "vis_sudan_mediation_analysis",
+      "source": "vis_map_peace_agreements_time_space",
+      "target": "vis_yemen_map",
       "type": "design",
-      "name": "simplification",
-      "tooltip": ""
+      "code_by": ["person_jinrui_wang"],
+      "name": "expansion",
+      "tooltip": "[source] is an expansion of [target] where [source] use a similar approach visualizing peace processes but comprehensively covers all countries in PA-X."
     },
     {
-      "source": "vis_hierarchy_continuity_key_issues",
+      "source": "vis_yemen_timeline",
       "target": "vis_timelines_institutional_change",
       "type": "design",
-      "name": "narrowing focus",
-      "tooltip": ""
+      "name": "inspiration",
+      "code_by": ["person_robert_wilson"],
+      "tooltip": "[source] is an indirect inspiration of [target] that viusalizes peace and conflict data using timeline views."
     },
     {
-      "source": "vis_hierarchy_continuity_key_issues",
+      "source": "vis_yemen_timeline",
       "target": "vis_back_and_forth_peace_negotiations",
       "type": "design",
-      "name": "narrowing focus",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_peace_agreement_signatory_dashboard",
-      "target": "vis_pax_tracker",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_third_party_storytelling",
-      "target": "vis_pax_tracker",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_live_process_global_map",
-      "target": "vis_pax_tracker",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_agreement_actor_networks",
-      "target": "vis_pax_tracker",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_pax_gender_key_insights_story",
-      "target": "vis_hierarchy_continuity_key_issues",
-      "type": "structural",
-      "name": "narrowing focus",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_pax_gender_key_insights_story",
-      "target": "vis_back_and_forth_peace_negotiations",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_ukraine_map",
-      "target": "vis_pax_tracker",
-      "type": "structural",
-      "name": "is part of",
-      "tooltip": ""
+      "name": "inspiration",
+      "code_by": ["person_robert_wilson"],
+      "tooltip": "[source] inspired conceptually for making timeline in [target], and visually for using coloured lines."
     },
     {
       "source": "vis_yemen_timeline",
@@ -139,70 +91,115 @@
     },
     {
       "source": "vis_peace_agreement_signatory_dashboard",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] and is directly accessible in its represented country pages."
+    },
+    {
+      "source": "vis_third_party_storytelling",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] and is directly accessible in its represented country pages."
+    },
+    {
+      "source": "vis_live_process_global_map",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] that offers an overview of the countries covered in [target]."
+    },
+    {
+      "source": "vis_agreement_actor_networks",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] and is directly accessible in its represented country pages."
+    },
+    {
+      "target": "vis_pax_gender_key_insights_story",
+      "source": "vis_back_and_forth_peace_negotiations",
+      "type": "structural",
+      "name": "is part of",
+      "code_by": ["person_tomas_vancisin"],
+      "tooltip": "[source] is used in [target] as part of the narration."
+    },
+    {
+      "source": "vis_ukraine_map",
+      "target": "vis_pax_tracker",
+      "type": "structural",
+      "name": "is part of",
+      "code_by": [],
+      "tooltip": "[source] is part of the Ukraine country profile of [target]."
+    },
+    {
+      "source": "vis_yemen_timeline",
+      "target": "vis_pax_tracker",
+      "type": "design",
+      "code_by": ["person_jinrui_wang"],
+      "name": "is part of",
+      "tooltip": "[source] is part of [target] in the Yemen country case profile."
+    },
+    {
+      "source": "vis_hierarchy_continuity_key_issues",
+      "target": "vis_timelines_institutional_change",
+      "type": "design",
+      "name": "narrowing focus",
+      "code_by": ["person_sanja_badanjak"],
+      "tooltip": "[target] flows from [source] as a narrowed focus on specific topical visualisation."
+    },
+    {
+      "source": "vis_hierarchy_continuity_key_issues",
+      "target": "vis_pax_gender_key_insights_story",
+      "type": "design",
+      "name": "narrowing focus",
+      "code_by":["person_sanja_badanjak"],
+      "tooltip": "[target] flows from [source] as a narrowed focus on specific topical visualisation, where [target] takes the subject further."
+    },
+    {
+      "source": "vis_peace_agreement_signatory_dashboard",
       "target": "vis_third_party_storytelling",
       "type": "design",
       "name": "shared theme",
-      "tooltip": ""
+      "tooltip": "[source] and [target] are both under the theme of actor analysis and covers same countries."
     },
     {
       "source": "vis_dialogue_mapping_ukraine",
       "target": "vis_dialogue_mapping_experiments",
       "type": "design",
       "name": "shared theme",
-      "tooltip": ""
+      "tooltip": "[source] and [target] are both under the theme of actor analysis."
     },
     {
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_pieces_of_peace",
       "type": "design",
       "name": "shared theme",
-      "tooltip": ""
+      "tooltip": "[source] and [target] are both under the topic of gender topics in peace agreements."
     },
     {
       "source": "vis_pax_gender_key_insights_story",
       "target": "vis_children_and_youth_peace_agreements",
       "type": "design",
       "name": "shared theme",
-      "tooltip": ""
+      "tooltip": "[source] and [target] are broadly under the theme of inclusion."
     },
     {
-      "source": "vis_timelines_institutional_change",
-      "target": "vis_implementation_narratives_interface",
+      "source": "vis_mend",
+      "target": "vis_sudan_mediation_analysis",
       "type": "design",
-      "name": "complement",
-      "tooltip": ""
-    },
-    {
-      "source": "vis_pax_tracker",
-      "target": "vis_back_and_forth_peace_negotiations",
-      "type": "design",
-      "name": "complement",
-      "tooltip": ""
+      "name": "simplification",
+      "code_by": ["person_tomas_vancisin"],
+      "tooltip": "Visual representation in [source] is simplified from [target], for example coordinated views and arc diagrams are simplified."
     },
     {
       "source": "vis_ssd_survey_map",
       "target": "vis_south_sudan_perceptions_of_peace_survey",
       "type": "design",
-      "code_by": "person_jinrui_wang",
+      "code_by": ["person_jinrui_wang"],
       "name": "simplification",
       "tooltip": "The visual representation and data covered in [source] is a simplified version of [target]."
-    },
-    {
-      "source": "vis_map_peace_agreements_time_space",
-      "target": "vis_yemen_map",
-      "type": "design",
-      "code_by": "person_jinrui_wang",
-      "name": "expansion",
-      "tooltip": "[source] is an expansion of [target] where [source] use a similar approach visualizing peace processes but comprehensively covers all countries in PA-X."
-    },
-    {
-      "source": "vis_yemen_timeline",
-      "target": "vis_pax_tracker",
-      "type": "design",
-      "code_by": "person_jinrui_wang",
-      "name": "is part of",
-      "tooltip": "[source] is part of [target] in the Yemen country case profile."
     }
-    
   ]
 }

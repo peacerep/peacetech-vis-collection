@@ -82,6 +82,7 @@ export function wrapLabel(text, maxChars = 22) {
  * layout: { width, height, pos(id) → [x, y], arc(e) → { d, apex },
  *           arcLabelOffset: [dx, dy], arcLabelAnchor, nodeLabel(textSelection),
  *           nodeScale?: radius multiplier, thumbnails?: fill nodes with their mini-fig image,
+ *           arrowSize?: arrowhead size in stroke widths (default 6),
  *           nodeIds?: nodes to draw (default: those with an edge) }
  * onSelect(cards, edge) fires on hover/click with the cards to show: [{ v }]
  * for a node (edge = null), [{ v, role: 'Source' }, { v, role: 'Target' }]
@@ -105,8 +106,8 @@ export function renderArcDiagram(svgEl, layout, onSelect) {
     .attr('id', ([name]) => markerId(name))
     .attr('viewBox', '0 -5 10 10')
     .attr('refX', 5)
-    .attr('markerWidth', 6)
-    .attr('markerHeight', 6)
+    .attr('markerWidth', layout.arrowSize ?? 6)
+    .attr('markerHeight', layout.arrowSize ?? 6)
     .attr('orient', 'auto')
     .append('path')
     .attr('d', 'M0,-5L10,0L0,5Z')

@@ -59,7 +59,7 @@ a{ color:inherit; }
 @media (max-width:1400px){ .cardgrid-multi{ grid-template-columns:repeat(3, 1fr); } }
 @media (max-width:1000px){ .cardgrid-multi{ grid-template-columns:repeat(2, 1fr); } }
 @media (max-width:640px){ .cardgrid-multi{ grid-template-columns:1fr; } }
-.gridcard{ background:var(--card); border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+.gridcard{ background:var(--card); border:2px solid var(--border); border-radius:8px; padding: 8px; overflow:hidden; }
 .gridcard.row-flagged{ border-color:var(--accent); }
 .gridcard .thumb{ width:100%; height:140px; border-radius:0; }
 .gridcard-body{ padding:12px 14px 14px; }
