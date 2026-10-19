@@ -32,6 +32,7 @@ th{ position:sticky; top:0; background:var(--card); color:var(--muted); font-siz
 .vis-table th[data-col="title"], .vis-table td[data-col="title"]{ width:220px; }
 .vis-table th[data-col="status"], .vis-table td[data-col="status"]{ width:110px; }
 .vis-table th[data-col="structure"], .vis-table td[data-col="structure"]{ width:170px; }
+.vis-table th[data-col="datasets"], .vis-table td[data-col="datasets"]{ width:180px; }
 tbody tr:last-child td{ border-bottom:none; }
 tbody tr:hover{ background:var(--accent-bg); }
 tr.row-flagged td:first-child{ box-shadow: inset 3px 0 0 var(--accent); }

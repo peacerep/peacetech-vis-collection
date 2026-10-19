@@ -10,6 +10,14 @@
       "tooltip": "The [source] is an alternative to the [target], which are the same thing but the [target] offers a more engaging entry point."
     },
     {
+      "source": "vis_peace_agreement_signatory_dashboard",
+      "target": "vis_agreement_actor_networks",
+      "type": "design",
+      "code_by": ["person_jinrui_wang"],
+      "name": "alternative",
+      "tooltip": "The [source] is an alternative to the [target], which both visualise the same dataset but in different forms."
+    },
+    {
       "source": "vis_timelines_institutional_change",
       "target": "vis_implementation_narratives_interface",
       "type": "design",
@@ -39,7 +47,7 @@
       "type": "design",
       "name": "expansion",
       "code_by": ["person_jinrui_wang", "person_robert_wilson"],
-      "tooltip": "[target] is an experiment that fed into the development of [source] where data is expanded."
+      "tooltip": "[source] is an expansion of the experiement in [target] where [source] take on a more generalisable appraoch for extending data to other countries."
     },
     {
       "source": "vis_hierarchy_continuity_key_issues",

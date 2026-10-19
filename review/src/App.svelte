@@ -11,10 +11,11 @@
 
   const TABS = [
     { id: 'vis', label: 'Visualisations' },
-    { id: 'rel', label: 'Relationships' },
+    // Hidden for now (code kept): horizontal arc diagram and study pairs.
+    // { id: 'rel', label: 'Relationships' },
     // { id: 'rel-v', label: 'Relationships (vertical)' },
     { id: 'rel-f', label: 'Relationships (force-directed)' },
-    { id: 'pairs', label: 'Study pairs' },
+    // { id: 'pairs', label: 'Study pairs' },
     { id: 'people', label: 'People' },
     { id: 'orgs', label: 'Organisations' },
     { id: 'datasets', label: 'Datasets' },
@@ -23,6 +24,7 @@
   ];
 
   let tab = $state('vis');
+  let showDatasetFields = $state(false);
 </script>
 
 <h1>PeaceRep Programe - Visualisation Collection</h1>
@@ -74,8 +76,11 @@
     {/snippet}
   </SimpleTable>
 {:else if tab === 'datasets'}
+  <div class="col-toggles">
+    <label class="col-toggle-label"><input type="checkbox" bind:checked={showDatasetFields} /> Fields</label>
+  </div>
   <SimpleTable
-    headers={['Name', 'ID', 'Short', 'Description', 'Publisher', 'Source URL', 'Licence', 'Citation', 'Versions', 'Fields', 'Notes']}
+    headers={['Name', 'ID', 'Short', 'Description', 'Publisher', 'Source URL', 'Licence', 'Citation', 'Versions', ...(showDatasetFields ? ['Fields'] : []), 'Notes']}
     rows={datasets}
     flagged={isUncertain}
   >
@@ -100,13 +105,15 @@
           </ul>
         {:else}<Val />{/if}
       </td>
-      <td>
-        {#if d.fields.length}
-          <ul class="tight">
-            {#each d.fields as f}<li>{f.name} <span class="dim">(<Val value={f.data_type} />)</span></li>{/each}
-          </ul>
-        {:else}<Val />{/if}
-      </td>
+      {#if showDatasetFields}
+        <td>
+          {#if d.fields.length}
+            <ul class="tight">
+              {#each d.fields as f}<li>{f.name} <span class="dim">(<Val value={f.data_type} />)</span></li>{/each}
+            </ul>
+          {:else}<Val />{/if}
+        </td>
+      {/if}
       <td><Val value={d.notes} /></td>
     {/snippet}
   </SimpleTable>

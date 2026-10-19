@@ -81,7 +81,7 @@
   {:else if key === 'structure'}
     <Structure {v} />
   {:else if key === 'datasets'}
-    <Lists kind="datasets" items={v.data_coverage.datasets} />
+    <Lists kind="datasets" items={v.data_coverage.datasets} showNote={false} />
   {:else if key === 'dimensions'}
     <Lists kind="dimensions" items={v.data_coverage.dimensions} />
   {:else if key === 'contributors'}

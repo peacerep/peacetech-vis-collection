@@ -1,8 +1,9 @@
 <script>
   // Checklist for the relationship-labelling study: one row per ordered A → B
-  // pair from relationships.json. Tick which pairs go into the study and edit
-  // the expected label(s); picks are kept in this browser and exported as CSV.
-  import { edges, visById } from '../lib/arcs.js';
+  // pair from relationships.json, sorted by label. Tick which pairs go into the
+  // study and set a confidence level and slot; picks are kept in this browser
+  // and exported as CSV.
+  import { edges, visById, color, edgeTooltip } from '../lib/arcs.js';
   import { thumbSrc } from '../lib/data.js';
 
   const STORE_KEY = 'study-pairs-v2';
@@ -13,22 +14,28 @@
   for (const e of edges) {
     const key = `${e.source}→${e.target}`;
     if (!byKey.has(key)) {
-      const p = { key, source: e.source, target: e.target, labels: [] };
+      const p = { key, source: e.source, target: e.target, labels: [], notes: [] };
       byKey.set(key, p);
       pairs.push(p);
     }
     byKey.get(key).labels.push(e.name);
+    // Edge tooltip with [source]/[target] replaced by the visualisation titles.
+    if (e.tooltip) byKey.get(key).notes.push(edgeTooltip(e));
   }
+  pairs.sort((a, b) => a.labels.join('; ').localeCompare(b.labels.join('; ')));
 
-  // Defaults: nothing included; labels text pre-filled from relationships.json.
+  const CONFIDENCE = ['high', 'medium', 'low'];
+
+  // Defaults: nothing included, no confidence or slot set.
   const defaults = () =>
-    Object.fromEntries(pairs.map((p) => [p.key, { include: false, labels: p.labels.join('; ') }]));
+    Object.fromEntries(pairs.map((p) => [p.key, { include: false, confidence: '', slot: '' }]));
 
   function load() {
     const base = defaults();
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) ?? '{}');
-      for (const k of Object.keys(base)) if (saved[k]) base[k] = { ...base[k], ...saved[k] };
+      for (const k of Object.keys(base))
+        if (saved[k]) base[k] = { include: !!saved[k].include, confidence: saved[k].confidence ?? '', slot: saved[k].slot ?? '' };
     } catch {}
     return base;
   }
@@ -44,11 +51,8 @@
   const rows = $derived(includedOnly ? pairs.filter((p) => picks[p.key].include) : pairs);
   const includedCount = $derived(pairs.filter((p) => picks[p.key].include).length);
 
-  // Differs from what relationships.json says → highlight so edits stand out.
-  const changed = (p) => picks[p.key].labels.trim() !== p.labels.join('; ');
-
   function reset() {
-    if (confirm('Reset all ticks and labels to the relationships.json defaults?')) picks = defaults();
+    if (confirm('Reset all ticks, confidence levels and slots?')) picks = defaults();
   }
 
   const title = (id) => visById.get(id)?.title ?? id;
@@ -80,16 +84,20 @@
   }
   const pairHtml = (p) => `${cardHtml(p.source, 'A', '#1f6fd1')}\n\n${cardHtml(p.target, 'B', '#b5401f')}`;
 
+  // `copied` = key of the button just used, so it can show a tick briefly.
   let copied = $state('');
-  async function copyHtml(p) {
+  async function copy(text, key, fallback) {
     try {
-      await navigator.clipboard.writeText(pairHtml(p));
-      copied = p.key;
-      setTimeout(() => copied === p.key && (copied = ''), 1500);
+      await navigator.clipboard.writeText(text);
+      copied = key;
+      setTimeout(() => copied === key && (copied = ''), 1500);
     } catch {
-      alert('Clipboard not available — use Export Qualtrics HTML instead.');
+      alert(`Clipboard not available — ${fallback}`);
     }
   }
+  const copyHtml = (p) => copy(pairHtml(p), `${p.key}:html`, 'use Export Qualtrics HTML instead.');
+  const notesText = (p) => p.notes.join('\n');
+  const copyNotes = (p) => copy(notesText(p), `${p.key}:notes`, 'use Export CSV instead.');
 
   function download(text, name, type) {
     const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([text], { type })), download: name });
@@ -107,11 +115,11 @@
 
   function exportCsv() {
     const q = (s) => `"${String(s ?? '').replaceAll('"', '""')}"`;
-    const header = ['source_id', 'source_title', 'target_id', 'target_title', 'labels', 'original_labels'];
+    const header = ['source_id', 'source_title', 'target_id', 'target_title', 'labels', 'notes', 'confidence', 'slot'];
     const lines = pairs
       .filter((p) => picks[p.key].include)
       .map((p) =>
-        [p.source, title(p.source), p.target, title(p.target), picks[p.key].labels, p.labels.join('; ')]
+        [p.source, title(p.source), p.target, title(p.target), p.labels.join('; '), notesText(p), picks[p.key].confidence, picks[p.key].slot]
           .map(q)
           .join(',')
       );
@@ -142,6 +150,9 @@
         <th></th>
         <th>Visualisation B</th>
         <th>Labels</th>
+        <th>Confidence</th>
+        <th>Slot</th>
+        <th>Copy notes</th>
         <th>Qualtrics</th>
       </tr>
     </thead>
@@ -153,10 +164,20 @@
           {@render visCell(p.source)}
           <td class="arrow">→</td>
           {@render visCell(p.target)}
-          <td class:changed={changed(p)} title={changed(p) ? `Differs from relationships.json: ${p.labels.join('; ')}` : ''}>
-            <textarea rows="2" bind:value={picks[p.key].labels} placeholder="labels…"></textarea>
+          <td class="labels">
+            {#each p.labels as l}<span class="tag-type" style:color={color.get(l)} style:border-color={color.get(l)}>{l}</span>{/each}
           </td>
-          <td><button type="button" class="pill-toggle" onclick={() => copyHtml(p)}>{copied === p.key ? 'Copied ✓' : 'Copy HTML'}</button></td>
+          <td>
+            <select bind:value={picks[p.key].confidence}>
+              <option value="">–</option>
+              {#each CONFIDENCE as c}<option value={c}>{c}</option>{/each}
+            </select>
+          </td>
+          <td><input class="slot" type="text" bind:value={picks[p.key].slot} placeholder="slot…" /></td>
+          <td>
+            {#if p.notes.length}<button type="button" class="pill-toggle" title={notesText(p)} onclick={() => copyNotes(p)}>{copied === `${p.key}:notes` ? 'Copied ✓' : 'Copy'}</button>{:else}<span class="dim">no tooltip</span>{/if}
+          </td>
+          <td><button type="button" class="pill-toggle" onclick={() => copyHtml(p)}>{copied === `${p.key}:html` ? 'Copied ✓' : 'Copy HTML'}</button></td>
         </tr>
       {/each}
     </tbody>
@@ -181,6 +202,8 @@
   .arrow { font-size: 18px; color: var(--muted); text-align: center; }
   .tick { text-align: center; vertical-align: middle; }
   .tick input { width: 16px; height: 16px; cursor: pointer; }
-  td.changed { background: var(--accent-bg); }
-  textarea { width: 160px; font: inherit; font-size: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; resize: vertical; }
+  .labels { min-width: 110px; }
+  .labels .tag-type { display: inline-block; margin: 0 4px 4px 0; background: none; border: 1px solid; white-space: nowrap; }
+  select, .slot { font: inherit; font-size: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; }
+  .slot { width: 80px; }
 </style>

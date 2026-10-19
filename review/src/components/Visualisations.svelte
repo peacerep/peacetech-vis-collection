@@ -12,7 +12,7 @@
   let view = $state('table');
   let flaggedOnly = $state(false);
   let showExcluded = $state(false);
-  let columns = $state({ status: true, structure: true, links: true });
+  let columns = $state({ status: true, structure: true, datasets: true, links: true });
 
   const excludedCount = vis.filter((v) => v.excluded).length;
   const visible = $derived(showExcluded ? vis : vis.filter((v) => !v.excluded));
