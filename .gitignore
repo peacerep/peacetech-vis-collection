@@ -17,3 +17,6 @@ venv/
 node_modules/
 dist/
 .thumbs/
+
+# Study data (not for git)
+study-results/

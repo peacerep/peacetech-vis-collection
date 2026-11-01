@@ -8,22 +8,24 @@
   import ForceDiagram from './components/ForceDiagram.svelte';
   // import ArcDiagramVertical from './components/ArcDiagramVertical.svelte';
   import StudyPairs from './components/StudyPairs.svelte';
+  // import RandomNetwork from './components/RandomNetwork.svelte';
 
   const TABS = [
     { id: 'vis', label: 'Visualisations' },
-    // Hidden for now (code kept): horizontal arc diagram and study pairs.
+    // Hidden for now (code kept).
     // { id: 'rel', label: 'Relationships' },
     // { id: 'rel-v', label: 'Relationships (vertical)' },
     { id: 'rel-f', label: 'Relationships (force-directed)' },
+    // { id: 'rand', label: 'Random network' },
     // { id: 'pairs', label: 'Study pairs' },
-    { id: 'people', label: 'People' },
-    { id: 'orgs', label: 'Organisations' },
-    { id: 'datasets', label: 'Datasets' },
-    { id: 'tools', label: 'Tools' },
-    { id: 'vocab', label: 'Vocabularies' },
+    // { id: 'people', label: 'People' },
+    // { id: 'orgs', label: 'Organisations' },
+    // { id: 'datasets', label: 'Datasets' },
+    // { id: 'tools', label: 'Tools' },
+    // { id: 'vocab', label: 'Vocabularies' },
   ];
 
-  let tab = $state('vis');
+  let tab = $state('rel-f');
   let showDatasetFields = $state(false);
 </script>
 
@@ -46,6 +48,8 @@
   <ArcDiagramVertical /> -->
 {:else if tab === 'rel-f'}
   <ForceDiagram />
+<!-- {:else if tab === 'rand'}
+  <RandomNetwork /> -->
 {:else if tab === 'pairs'}
   <StudyPairs />
 
