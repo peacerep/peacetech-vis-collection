@@ -15,7 +15,7 @@
     // Hidden for now (code kept).
     // { id: 'rel', label: 'Relationships' },
     // { id: 'rel-v', label: 'Relationships (vertical)' },
-    { id: 'rel-f', label: 'Relationships (force-directed)' },
+    { id: 'rel-f', label: 'Relationships' },
     // { id: 'rand', label: 'Random network' },
     // { id: 'pairs', label: 'Study pairs' },
     // { id: 'people', label: 'People' },
@@ -30,9 +30,9 @@
 </script>
 
 <h1>PeaceRep Programe - Visualisation Collection</h1>
-<p class="sub">
+<!-- <p class="sub">
   This repository collect and organise visualisation projects created within PeaceRep program from 2019 to 2026.
-</p>
+</p> -->
 
 <nav>
   {#each TABS as t}
